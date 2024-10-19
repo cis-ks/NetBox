@@ -4,6 +4,16 @@
 namespace Cis\NetBox;
 
 use Cis\NetBox\Api\NetBoxCircuits;
+use Cis\NetBox\Api\NetBoxCore;
+use Cis\NetBox\Api\NetBoxDcim;
+use Cis\NetBox\Api\NetBoxExtras;
+use Cis\NetBox\Api\NetBoxIpam;
+use Cis\NetBox\Api\NetBoxStatus;
+use Cis\NetBox\Api\NetBoxTenancy;
+use Cis\NetBox\Api\NetBoxUsers;
+use Cis\NetBox\Api\NetBoxVirtualization;
+use Cis\NetBox\Api\NetBoxVpn;
+use Cis\NetBox\Api\NetBoxWireless;
 use Cis\NetBox\Exceptions\NetBoxMissingAuthenticationException;
 use Cis\NetBox\Exceptions\NetBoxUrlValidationException;
 use GraphQL\Query;
@@ -102,7 +112,11 @@ class NetBoxApi
     {
         $this->resetError();
         try {
-            $response = $this->client->get(sprintf('api/%s?%s', ltrim($endpoint, '/'), http_build_query($parameters)));
+            $response = $this->client->get(sprintf(
+                '%s?%s',
+                $this->getUrl($endpoint, $parameters),
+                http_build_query($parameters)
+            ));
             return $noResult ? $response : new NetBoxResult($endpoint, $response);
         } catch (GuzzleException $e) {
             $this->error = true;
@@ -169,6 +183,51 @@ class NetBoxApi
         return new NetBoxCircuits($this);
     }
 
+    public function core(): NetBoxCore
+    {
+        return new NetBoxCore($this);
+    }
+
+    public function dcim(): NetBoxDcim
+    {
+        return new NetBoxDcim($this);
+    }
+
+    public function extras(): NetBoxExtras
+    {
+        return new NetBoxExtras($this);
+    }
+
+    public function ipam(): NetBoxIpam
+    {
+        return new NetBoxIpam($this);
+    }
+
+    public function tenancy(): NetBoxTenancy
+    {
+        return new NetBoxTenancy($this);
+    }
+
+    public function users(): NetBoxUsers
+    {
+        return new NetBoxUsers($this);
+    }
+
+    public function virtualization(): NetBoxVirtualization
+    {
+        return new NetBoxVirtualization($this);
+    }
+
+    public function vpn(): NetBoxVpn
+    {
+        return new NetBoxVpn($this);
+    }
+
+    public function wireless(): NetBoxWireless
+    {
+        return new NetBoxWireless($this);
+    }
+
     private function resetError(): void
     {
         $this->error = false;
@@ -178,7 +237,7 @@ class NetBoxApi
     private function getUrl(string $endpoint, array &$parameters = []): string
     {
         $url = rtrim(sprintf(
-            'api/%s/%d/%s',
+            'api/%s/%s/%s',
             trim($endpoint, '/'),
             array_key_exists('id', $parameters) ? $parameters['id'] : '',
             array_key_exists('id', $parameters) && array_key_exists('submodule', $parameters)

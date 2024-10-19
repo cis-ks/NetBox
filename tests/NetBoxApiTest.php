@@ -4,8 +4,6 @@ use Cis\NetBox\Exceptions\NetBoxMissingAuthenticationException;
 use Cis\NetBox\Exceptions\NetBoxUrlValidationException;
 use Cis\NetBox\NetBoxApi;
 use Cis\NetBox\NetBoxGraphQlResult;
-use GuzzleHttp\Exception\GuzzleException;
-use Psr\Http\Client\ClientExceptionInterface;
 
 const NETBOX_VERSION = "4.1";
 const NETBOX_TOKEN = "92a04a610801ed7e62384ce510daa61539f6c5db";
@@ -43,4 +41,21 @@ it('Test GraphQL', function () {
 it('Test Data For Circuits', function () {
     $netBoxApi = new NetBoxApi(NETBOX_API_URL, NETBOX_TOKEN);
     fwrite(STDERR, print_r($netBoxApi->circuits()->circuits(), true));
+});
+
+it('Check all Classes exists', function () {
+    $schema = file_get_contents(rtrim(NETBOX_API_URL, '/') . '/schema/?format=json');
+
+    $endpoints = array_filter(array_map(
+        fn ($ep) => explode('/', preg_replace('/.*\/api\/(.*)/', '$1', $ep), 4),
+        array_keys((array) json_decode($schema)->paths)
+    ), fn ($ep) => $ep[0] != 'plugins');
+
+    $classes = array_unique(array_column($endpoints, 0));
+
+    foreach ($classes as $class) {
+        $endpointSlug = ucfirst(preg_replace_callback('/[-_]([a-zA-Z])/', fn ($m) => strtoupper($m[1]), $class));
+        $className = 'Cis\NetBox\Api\NetBox' . $endpointSlug;
+        expect(class_exists($className))->toBeTrue($className . ' don\'t exists');
+    }
 });
