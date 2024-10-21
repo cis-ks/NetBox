@@ -1,0 +1,30 @@
+{
+  "name": "cis-bv/netbox-client",
+  "description": "NetBox Client with supporting of GraphQl",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Kay Schroeder",
+      "email": "kay.schroeder@cis-gotha.de"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Cis\\NetBox\\": "src/"
+    }
+  },
+  "require": {
+    "php": "^8.3",
+    "cis-bv/gql-builder": "^v0.1.0",
+    "guzzlehttp/guzzle": "7.9.2"
+  },
+  "require-dev": {
+    "pestphp/pest": "^3.4"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  }
+}
