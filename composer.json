@@ -1,5 +1,5 @@
 {
-  "name": "cis/netbox-client",
+  "name": "cis-bv/netbox-client",
   "description": "NetBox Client with supporting of GraphQl",
   "type": "library",
   "license": "MIT",

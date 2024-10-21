@@ -2,11 +2,16 @@
 
 namespace Cis\NetBox;
 
+use ArrayAccess;
+use Countable;
+use Iterator;
 use Psr\Http\Message\ResponseInterface;
+use ReturnTypeWillChange;
 
-class NetBoxResult
+class NetBoxResult implements ArrayAccess, Iterator, Countable
 {
     private string $body;
+    private int $position = 0;
     private object|null $data = null;
     private int $statusCode;
 
@@ -31,16 +36,6 @@ class NetBoxResult
         return $this->statusCode;
     }
 
-    public function getCount(): int
-    {
-        if (property_exists($this->data, 'count')) {
-            return $this->data->count;
-        } elseif (is_object($this->data) && !property_exists($this->data, 'error')) {
-            return 1;
-        }
-        return 0;
-    }
-
     public function getResults(): array
     {
         if (property_exists($this->data, 'results')) {
@@ -63,11 +58,7 @@ class NetBoxResult
 
     public function get(int $key): object|null
     {
-        if (property_exists($this->data, 'results') && array_key_exists($key, $this->data->results)) {
-            return $this->data->results[$key];
-        } else {
-            return null;
-        }
+        return $this->offsetGet($key);
     }
 
     public function last(): object|null
@@ -96,5 +87,85 @@ class NetBoxResult
     public function getEndpoint(): string
     {
         return trim($this->netBoxEndpoint, '/');
+    }
+
+    public function current(): mixed
+    {
+        if (property_exists($this->data, 'results')) {
+            return $this->data->results[$this->position];
+        } else {
+            return $this->data;
+        }
+    }
+
+    public function next(): void
+    {
+        if (property_exists($this->data, 'results')) {
+            ++$this->position;
+        }
+    }
+
+    #[ReturnTypeWillChange]
+    public function key(): int
+    {
+        return $this->position;
+    }
+
+    public function valid(): bool
+    {
+        if (property_exists($this->data, 'results')) {
+            return isset($this->data->results[$this->position]);
+        } else {
+            return is_object($this->data);
+        }
+    }
+
+    public function rewind(): void
+    {
+        $this->position = 0;
+    }
+
+    public function offsetExists(mixed $offset): bool
+    {
+        if (property_exists($this->data, 'results')) {
+            return isset($this->data->results[$offset]);
+        } else {
+            return $offset === 0;
+        }
+    }
+
+    public function offsetGet(mixed $offset): mixed
+    {
+        if (property_exists($this->data, 'results')) {
+            return $this->data->results[$offset];
+        } else {
+            return $this->data;
+        }
+    }
+
+    public function offsetSet(mixed $offset, mixed $value): void
+    {
+        if (property_exists($this->data, 'results')) {
+            $this->data->results[$offset] = $value;
+        } elseif ($offset === 0 && is_object($value)) {
+            $this->data = $value;
+        }
+    }
+
+    public function offsetUnset(mixed $offset): void
+    {
+        if (property_exists($this->data, 'results') && isset($this->data->results[$offset])) {
+            unset($this->data->results[$offset]);
+        }
+    }
+
+    public function count(): int
+    {
+        if (property_exists($this->data, 'count')) {
+            return $this->data->count;
+        } elseif (is_object($this->data) && !property_exists($this->data, 'error')) {
+            return 1;
+        }
+        return 0;
     }
 }
