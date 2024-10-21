@@ -34,7 +34,7 @@ $baseFunctions = ['get' => '', 'post' => 'Create', 'delete' => 'Delete', 'patch'
 $constTemplate = "\tprivate const string %s = '%s/%s';";
 $functionHeaderTemplate = "\t#region %s";
 $functionFooterTemplate = "\t#endregion %s\n";
-$baseFunctionTemplate = "\tpublic function %s%s%s(%sarray \$parameters = []): NetBoxResult|null\n\t{\n\t\treturn \$this->api->%s(self::%s, %s\$parameters%s);\n\t}\n";
+$baseFunctionTemplate = "\tpublic function %s%s%s(%s...\$parameters): NetBoxResult|null\n\t{\n\t\treturn \$this->doCall('%s', self::%s, \$parameters%s);\n\t}\n";
 
 $missingClasses = [];
 
@@ -96,8 +96,7 @@ foreach ($classes as $class) {
                 'int $id, ',
                 'get',
                 $constName,
-                "['id' => \$id, 'submodule' => '{$endpoint["parts"][3]}', ...",
-                "]"
+                ", \$id, '{$endpoint["parts"][3]}'",
             );
         } elseif (in_array(trim($endpoint['parts'][2]), ['', '{id}'])) {
             foreach ($endpoint['methods'] as $method) {
@@ -109,8 +108,7 @@ foreach ($classes as $class) {
                     $byId ? 'int $id, ' : '',
                     $method,
                     $constName,
-                    $byId ? '[\'id\' => $id, ...' : '',
-                    $byId ? ']' : ''
+                    $byId ? ', $id' : ''
                 );
             }
         }
