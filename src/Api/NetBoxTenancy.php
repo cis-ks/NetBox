@@ -1,12 +1,11 @@
-<?php
+<?php /** @noinspection PhpUnused */
 
 namespace Cis\NetBox\Api;
 
-use Cis\NetBox\NetBoxApi;
 use Cis\NetBox\NetBoxResult;
 
 
-class NetBoxTenancy
+class NetBoxTenancy extends NetBoxApiAbstract
 {
     private const string CONTACT_ASSIGNMENTS = 'tenancy/contact-assignments';
     private const string CONTACT_GROUPS = 'tenancy/contact-groups';
@@ -14,10 +13,6 @@ class NetBoxTenancy
     private const string CONTACTS = 'tenancy/contacts';
     private const string TENANT_GROUPS = 'tenancy/tenant-groups';
     private const string TENANTS = 'tenancy/tenants';
-
-    public function __construct(
-        private readonly NetBoxApi $api,
-    ) {}
 
     #region contactAssignments
     public function contactAssignments(array $parameters = []): NetBoxResult|null

@@ -1,22 +1,17 @@
-<?php
+<?php /** @noinspection PhpUnused */
 
 namespace Cis\NetBox\Api;
 
-use Cis\NetBox\NetBoxApi;
 use Cis\NetBox\NetBoxResult;
 
 
-class NetBoxUsers
+class NetBoxUsers extends NetBoxApiAbstract
 {
     private const string CONFIG = 'users/config';
     private const string GROUPS = 'users/groups';
     private const string PERMISSIONS = 'users/permissions';
     private const string TOKENS = 'users/tokens';
     private const string USERS = 'users/users';
-
-    public function __construct(
-        private readonly NetBoxApi $api,
-    ) {}
 
     #region config
     public function config(array $parameters = []): NetBoxResult|null

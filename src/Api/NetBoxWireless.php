@@ -1,20 +1,15 @@
-<?php
+<?php /** @noinspection PhpUnused */
 
 namespace Cis\NetBox\Api;
 
-use Cis\NetBox\NetBoxApi;
 use Cis\NetBox\NetBoxResult;
 
 
-class NetBoxWireless
+class NetBoxWireless extends NetBoxApiAbstract
 {
     private const string WIRELESS_LAN_GROUPS = 'wireless/wireless-lan-groups';
     private const string WIRELESS_LANS = 'wireless/wireless-lans';
     private const string WIRELESS_LINKS = 'wireless/wireless-links';
-
-    public function __construct(
-        private readonly NetBoxApi $api,
-    ) {}
 
     #region wirelessLanGroups
     public function wirelessLanGroups(array $parameters = []): NetBoxResult|null

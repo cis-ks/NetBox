@@ -40,7 +40,11 @@ it('Test GraphQL', function () {
 
 it('Test Data For Circuits', function () {
     $netBoxApi = new NetBoxApi(NETBOX_API_URL, NETBOX_TOKEN);
-    fwrite(STDERR, print_r($netBoxApi->circuits()->circuits(), true));
+//    fwrite(STDERR, print_r($netBoxApi->circuits()->circuits(), true));
+
+    $device = $netBoxApi->dcim()->devices(['has_primary_ip' => '1']);
+    $t = $device->getResults();
+    $kl = true;
 });
 
 it('Check all Classes exists', function () {
@@ -49,7 +53,7 @@ it('Check all Classes exists', function () {
     $endpoints = array_filter(array_map(
         fn ($ep) => explode('/', preg_replace('/.*\/api\/(.*)/', '$1', $ep), 4),
         array_keys((array) json_decode($schema)->paths)
-    ), fn ($ep) => $ep[0] != 'plugins');
+    ), fn ($ep) => !in_array($ep[0], ['schema', 'status']));
 
     $classes = array_unique(array_column($endpoints, 0));
 
@@ -58,4 +62,8 @@ it('Check all Classes exists', function () {
         $className = 'Cis\NetBox\Api\NetBox' . $endpointSlug;
         expect(class_exists($className))->toBeTrue($className . ' don\'t exists');
     }
+});
+
+it('Check Plugin', function () {
+    $netBoxApi = new NetBoxApi(NETBOX_API_URL, NETBOX_TOKEN);
 });

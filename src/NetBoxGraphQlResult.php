@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUnused */
 
 namespace Cis\NetBox;
 
@@ -6,9 +6,9 @@ use Psr\Http\Message\ResponseInterface;
 
 class NetBoxGraphQlResult
 {
-    private string $body = '';
+    private string $body;
     private object|null $object = null;
-    private int $statusCode = 499;
+    private int $statusCode;
     private bool $error = true;
 
     public function __construct(

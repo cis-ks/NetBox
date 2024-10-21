@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUnused */
 
 
 namespace Cis\NetBox;
@@ -8,7 +8,7 @@ use Cis\NetBox\Api\NetBoxCore;
 use Cis\NetBox\Api\NetBoxDcim;
 use Cis\NetBox\Api\NetBoxExtras;
 use Cis\NetBox\Api\NetBoxIpam;
-use Cis\NetBox\Api\NetBoxStatus;
+use Cis\NetBox\Api\NetBoxPlugins;
 use Cis\NetBox\Api\NetBoxTenancy;
 use Cis\NetBox\Api\NetBoxUsers;
 use Cis\NetBox\Api\NetBoxVirtualization;
@@ -82,20 +82,13 @@ class NetBoxApi
     public function getNetBoxVersion(): string|false
     {
         $this->resetError();
-        try {
-            $version = $this->get('', noResult: true)->getHeader('api-version');
+        $version = $this->get('', noResult: true)?->getHeader('api-version');
 
-            if ($version === []) {
-                return false;
-            } else {
-                return array_shift($version);
-            }
-        } catch (GuzzleException $e) {
-            $this->error = true;
-            $this->lastError = $e->getMessage();
+        if ($version === null || $version === []) {
+            return false;
+        } else {
+            return array_shift($version);
         }
-
-        return false;
     }
 
     public function hasError(): bool
@@ -121,8 +114,8 @@ class NetBoxApi
         } catch (GuzzleException $e) {
             $this->error = true;
             $this->lastError = $e->getMessage();
+            return null;
         }
-        return null;
     }
 
     public function post(string $endpoint, array $parameters = []): NetBoxResult|null
@@ -201,6 +194,11 @@ class NetBoxApi
     public function ipam(): NetBoxIpam
     {
         return new NetBoxIpam($this);
+    }
+
+    public function plugins(string|null $plugin = null, string $delimiter = '-'): NetBoxPlugins
+    {
+        return new NetBoxPlugins($this, $plugin, $delimiter);
     }
 
     public function tenancy(): NetBoxTenancy

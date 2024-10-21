@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUnused */
 
 namespace Cis\NetBox;
 
@@ -6,15 +6,14 @@ use Psr\Http\Message\ResponseInterface;
 
 class NetBoxResult
 {
-    private string $body = '';
+    private string $body;
     private object|null $data = null;
-    private int $statusCode = 499;
+    private int $statusCode;
 
     public function __construct(
-        private string $netboxEndpoint,
+        private readonly string            $netBoxEndpoint,
         private readonly ResponseInterface $response,
-    )
-    {
+    ) {
         $this->statusCode = $this->response->getStatusCode();
         $this->body = $this->response->getBody()->getContents();
         if (json_validate($this->body)) {
@@ -62,6 +61,24 @@ class NetBoxResult
         return null;
     }
 
+    public function get(int $key): object|null
+    {
+        if (property_exists($this->data, 'results') && array_key_exists($key, $this->data->results)) {
+            return $this->data->results[$key];
+        } else {
+            return null;
+        }
+    }
+
+    public function last(): object|null
+    {
+        if (property_exists($this->data, 'results')) {
+            return array_slice($this->data->results, -1, 1)[0];
+        } else {
+            return null;
+        }
+    }
+
     public function hasError(): bool
     {
         return is_object($this->data) && property_exists($this->data, 'error');
@@ -78,6 +95,6 @@ class NetBoxResult
 
     public function getEndpoint(): string
     {
-        return trim($this->netboxEndpoint, '/');
+        return trim($this->netBoxEndpoint, '/');
     }
 }

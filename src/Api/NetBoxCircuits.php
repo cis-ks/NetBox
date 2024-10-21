@@ -1,12 +1,11 @@
-<?php
+<?php /** @noinspection PhpUnused */
 
 namespace Cis\NetBox\Api;
 
-use Cis\NetBox\NetBoxApi;
 use Cis\NetBox\NetBoxResult;
 
 
-class NetBoxCircuits
+class NetBoxCircuits extends NetBoxApiAbstract
 {
     private const string CIRCUIT_GROUP_ASSIGNMENTS = 'circuits/circuit-group-assignments';
     private const string CIRCUIT_GROUPS = 'circuits/circuit-groups';
@@ -16,10 +15,6 @@ class NetBoxCircuits
     private const string PROVIDER_ACCOUNTS = 'circuits/provider-accounts';
     private const string PROVIDER_NETWORKS = 'circuits/provider-networks';
     private const string PROVIDERS = 'circuits/providers';
-
-    public function __construct(
-        private readonly NetBoxApi $api,
-    ) {}
 
     #region circuitGroupAssignments
     public function circuitGroupAssignments(array $parameters = []): NetBoxResult|null

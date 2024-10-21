@@ -34,7 +34,7 @@ $baseFunctions = ['get' => '', 'post' => 'Create', 'delete' => 'Delete', 'patch'
 $constTemplate = "\tprivate const string %s = '%s/%s';";
 $functionHeaderTemplate = "\t#region %s";
 $functionFooterTemplate = "\t#endregion %s\n";
-$baseFunctionTemplate = "\tpublic function %s%s%s(%sarray \$parameters = []): NetBoxResult\n\t{\n\t\treturn \$this->api->%s(self::%s, %s\$parameters%s);\n\t}\n";
+$baseFunctionTemplate = "\tpublic function %s%s%s(%sarray \$parameters = []): NetBoxResult|null\n\t{\n\t\treturn \$this->api->%s(self::%s, %s\$parameters%s);\n\t}\n";
 
 $missingClasses = [];
 
@@ -115,7 +115,7 @@ foreach ($classes as $class) {
     $functions[] = sprintf($functionFooterTemplate, $functionName);
 
     $classString = str_replace("\n\n\t#endregion", "\n\t#endregion", sprintf(
-        "<?php\n\nnamespace Cis\NetBox\Api;\n\nuse Cis\NetBox\NetBoxApi;\nuse Cis\NetBox\NetBoxResult;\n\n\nclass NetBox%s\n{\n%s\n\n\tpublic function __construct(\n\t\tprivate readonly NetBoxApi \$api,\n\t) {}\n\n%s}",
+        "<?php /** @noinspection PhpUnused */\n\nnamespace Cis\NetBox\Api;\n\nuse Cis\NetBox\NetBoxResult;\n\n\nclass NetBox%s extends NetBoxApiAbstract\n{\n%s\n\n%s}",
         $endpointSlug,
         implode("\n", $consts),
         implode("\n", $functions)

@@ -1,21 +1,16 @@
-<?php
+<?php /** @noinspection PhpUnused */
 
 namespace Cis\NetBox\Api;
 
-use Cis\NetBox\NetBoxApi;
 use Cis\NetBox\NetBoxResult;
 
 
-class NetBoxCore
+class NetBoxCore extends NetBoxApiAbstract
 {
     private const string DATA_FILES = 'core/data-files';
     private const string DATA_SOURCES = 'core/data-sources';
     private const string JOBS = 'core/jobs';
     private const string OBJECT_CHANGES = 'core/object-changes';
-
-    public function __construct(
-        private readonly NetBoxApi $api,
-    ) {}
 
     #region dataFiles
     public function dataFiles(array $parameters = []): NetBoxResult|null

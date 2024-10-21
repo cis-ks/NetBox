@@ -1,12 +1,11 @@
-<?php
+<?php /** @noinspection PhpUnused */
 
 namespace Cis\NetBox\Api;
 
-use Cis\NetBox\NetBoxApi;
 use Cis\NetBox\NetBoxResult;
 
 
-class NetBoxIpam
+class NetBoxIpam extends NetBoxApiAbstract
 {
     private const string AGGREGATES = 'ipam/aggregates';
     private const string ASN_RANGES = 'ipam/asn-ranges';
@@ -24,10 +23,6 @@ class NetBoxIpam
     private const string VLAN_GROUPS = 'ipam/vlan-groups';
     private const string VLANS = 'ipam/vlans';
     private const string VRFS = 'ipam/vrfs';
-
-    public function __construct(
-        private readonly NetBoxApi $api,
-    ) {}
 
     #region aggregates
     public function aggregates(array $parameters = []): NetBoxResult|null

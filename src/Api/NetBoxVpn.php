@@ -1,12 +1,11 @@
-<?php
+<?php /** @noinspection PhpUnused */
 
 namespace Cis\NetBox\Api;
 
-use Cis\NetBox\NetBoxApi;
 use Cis\NetBox\NetBoxResult;
 
 
-class NetBoxVpn
+class NetBoxVpn extends NetBoxApiAbstract
 {
     private const string IKE_POLICIES = 'vpn/ike-policies';
     private const string IKE_PROPOSALS = 'vpn/ike-proposals';
@@ -18,10 +17,6 @@ class NetBoxVpn
     private const string TUNNEL_GROUPS = 'vpn/tunnel-groups';
     private const string TUNNEL_TERMINATIONS = 'vpn/tunnel-terminations';
     private const string TUNNELS = 'vpn/tunnels';
-
-    public function __construct(
-        private readonly NetBoxApi $api,
-    ) {}
 
     #region ikePolicies
     public function ikePolicies(array $parameters = []): NetBoxResult|null

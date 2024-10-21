@@ -1,12 +1,11 @@
-<?php
+<?php /** @noinspection PhpUnused */
 
 namespace Cis\NetBox\Api;
 
-use Cis\NetBox\NetBoxApi;
 use Cis\NetBox\NetBoxResult;
 
 
-class NetBoxVirtualization
+class NetBoxVirtualization extends NetBoxApiAbstract
 {
     private const string CLUSTER_GROUPS = 'virtualization/cluster-groups';
     private const string CLUSTER_TYPES = 'virtualization/cluster-types';
@@ -14,10 +13,6 @@ class NetBoxVirtualization
     private const string INTERFACES = 'virtualization/interfaces';
     private const string VIRTUAL_DISKS = 'virtualization/virtual-disks';
     private const string VIRTUAL_MACHINES = 'virtualization/virtual-machines';
-
-    public function __construct(
-        private readonly NetBoxApi $api,
-    ) {}
 
     #region clusterGroups
     public function clusterGroups(array $parameters = []): NetBoxResult|null

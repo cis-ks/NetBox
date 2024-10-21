@@ -1,12 +1,11 @@
-<?php
+<?php /** @noinspection PhpUnused */
 
 namespace Cis\NetBox\Api;
 
-use Cis\NetBox\NetBoxApi;
 use Cis\NetBox\NetBoxResult;
 
 
-class NetBoxDcim
+class NetBoxDcim extends NetBoxApiAbstract
 {
     private const string CABLE_TERMINATIONS = 'dcim/cable-terminations';
     private const string CABLES = 'dcim/cables';
@@ -51,10 +50,6 @@ class NetBoxDcim
     private const string SITES = 'dcim/sites';
     private const string VIRTUAL_CHASSIS = 'dcim/virtual-chassis';
     private const string VIRTUAL_DEVICE_CONTEXTS = 'dcim/virtual-device-contexts';
-
-    public function __construct(
-        private readonly NetBoxApi $api,
-    ) {}
 
     #region cableTerminations
     public function cableTerminations(array $parameters = []): NetBoxResult|null

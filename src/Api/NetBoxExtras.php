@@ -1,12 +1,11 @@
-<?php
+<?php /** @noinspection PhpUnused */
 
 namespace Cis\NetBox\Api;
 
-use Cis\NetBox\NetBoxApi;
 use Cis\NetBox\NetBoxResult;
 
 
-class NetBoxExtras
+class NetBoxExtras extends NetBoxApiAbstract
 {
     private const string BOOKMARKS = 'extras/bookmarks';
     private const string CONFIG_CONTEXTS = 'extras/config-contexts';
@@ -27,10 +26,6 @@ class NetBoxExtras
     private const string SUBSCRIPTIONS = 'extras/subscriptions';
     private const string TAGS = 'extras/tags';
     private const string WEBHOOKS = 'extras/webhooks';
-
-    public function __construct(
-        private readonly NetBoxApi $api,
-    ) {}
 
     #region bookmarks
     public function bookmarks(array $parameters = []): NetBoxResult|null
