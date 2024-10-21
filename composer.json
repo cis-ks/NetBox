@@ -16,7 +16,7 @@
   },
   "require": {
     "php": "^8.3",
-    "gmostafa/php-graphql-client": "v1.13",
+    "cis-bv/gql-builder": "^v0.1.0",
     "guzzlehttp/guzzle": "7.9.2"
   },
   "require-dev": {

@@ -3,6 +3,7 @@
 
 namespace Cis\NetBox;
 
+use Cis\GqlBuilder\Query;
 use Cis\NetBox\Api\NetBoxCircuits;
 use Cis\NetBox\Api\NetBoxCore;
 use Cis\NetBox\Api\NetBoxDcim;
@@ -16,7 +17,6 @@ use Cis\NetBox\Api\NetBoxVpn;
 use Cis\NetBox\Api\NetBoxWireless;
 use Cis\NetBox\Exceptions\NetBoxMissingAuthenticationException;
 use Cis\NetBox\Exceptions\NetBoxUrlValidationException;
-use GraphQL\Query;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Psr7\Request;
