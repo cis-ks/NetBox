@@ -14,197 +14,197 @@ class NetBoxUsers extends NetBoxApiAbstract
     private const string USERS = 'users/users';
 
     #region config
-    public function config(array $parameters = []): NetBoxResult|null
+    public function config(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::CONFIG, $parameters);
+        return $this->doCall('get', self::CONFIG, $parameters);
     }
     #endregion config
 
     #region groups
-    public function groups(array $parameters = []): NetBoxResult|null
+    public function groups(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::GROUPS, $parameters);
+        return $this->doCall('get', self::GROUPS, $parameters);
     }
 
-    public function groupsCreate(array $parameters = []): NetBoxResult|null
+    public function groupsCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::GROUPS, $parameters);
+        return $this->doCall('post', self::GROUPS, $parameters);
     }
 
-    public function groupsPut(array $parameters = []): NetBoxResult|null
+    public function groupsPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::GROUPS, $parameters);
+        return $this->doCall('put', self::GROUPS, $parameters);
     }
 
-    public function groupsPatch(array $parameters = []): NetBoxResult|null
+    public function groupsPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::GROUPS, $parameters);
+        return $this->doCall('patch', self::GROUPS, $parameters);
     }
 
-    public function groupsDelete(array $parameters = []): NetBoxResult|null
+    public function groupsDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::GROUPS, $parameters);
+        return $this->doCall('delete', self::GROUPS, $parameters);
     }
 
-    public function groupsById(int $id, array $parameters = []): NetBoxResult|null
+    public function groupsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::GROUPS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::GROUPS, $parameters, $id);
     }
 
-    public function groupsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function groupsByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::GROUPS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::GROUPS, $parameters, $id);
     }
 
-    public function groupsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function groupsByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::GROUPS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::GROUPS, $parameters, $id);
     }
 
-    public function groupsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function groupsByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::GROUPS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::GROUPS, $parameters, $id);
     }
     #endregion groups
 
     #region permissions
-    public function permissions(array $parameters = []): NetBoxResult|null
+    public function permissions(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::PERMISSIONS, $parameters);
+        return $this->doCall('get', self::PERMISSIONS, $parameters);
     }
 
-    public function permissionsCreate(array $parameters = []): NetBoxResult|null
+    public function permissionsCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::PERMISSIONS, $parameters);
+        return $this->doCall('post', self::PERMISSIONS, $parameters);
     }
 
-    public function permissionsPut(array $parameters = []): NetBoxResult|null
+    public function permissionsPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::PERMISSIONS, $parameters);
+        return $this->doCall('put', self::PERMISSIONS, $parameters);
     }
 
-    public function permissionsPatch(array $parameters = []): NetBoxResult|null
+    public function permissionsPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::PERMISSIONS, $parameters);
+        return $this->doCall('patch', self::PERMISSIONS, $parameters);
     }
 
-    public function permissionsDelete(array $parameters = []): NetBoxResult|null
+    public function permissionsDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::PERMISSIONS, $parameters);
+        return $this->doCall('delete', self::PERMISSIONS, $parameters);
     }
 
-    public function permissionsById(int $id, array $parameters = []): NetBoxResult|null
+    public function permissionsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::PERMISSIONS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::PERMISSIONS, $parameters, $id);
     }
 
-    public function permissionsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function permissionsByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::PERMISSIONS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::PERMISSIONS, $parameters, $id);
     }
 
-    public function permissionsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function permissionsByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::PERMISSIONS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::PERMISSIONS, $parameters, $id);
     }
 
-    public function permissionsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function permissionsByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::PERMISSIONS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::PERMISSIONS, $parameters, $id);
     }
     #endregion permissions
 
     #region tokens
-    public function tokens(array $parameters = []): NetBoxResult|null
+    public function tokens(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::TOKENS, $parameters);
+        return $this->doCall('get', self::TOKENS, $parameters);
     }
 
-    public function tokensCreate(array $parameters = []): NetBoxResult|null
+    public function tokensCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::TOKENS, $parameters);
+        return $this->doCall('post', self::TOKENS, $parameters);
     }
 
-    public function tokensPut(array $parameters = []): NetBoxResult|null
+    public function tokensPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::TOKENS, $parameters);
+        return $this->doCall('put', self::TOKENS, $parameters);
     }
 
-    public function tokensPatch(array $parameters = []): NetBoxResult|null
+    public function tokensPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::TOKENS, $parameters);
+        return $this->doCall('patch', self::TOKENS, $parameters);
     }
 
-    public function tokensDelete(array $parameters = []): NetBoxResult|null
+    public function tokensDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::TOKENS, $parameters);
+        return $this->doCall('delete', self::TOKENS, $parameters);
     }
 
-    public function tokensById(int $id, array $parameters = []): NetBoxResult|null
+    public function tokensById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::TOKENS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::TOKENS, $parameters, $id);
     }
 
-    public function tokensByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function tokensByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::TOKENS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::TOKENS, $parameters, $id);
     }
 
-    public function tokensByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function tokensByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::TOKENS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::TOKENS, $parameters, $id);
     }
 
-    public function tokensByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function tokensByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::TOKENS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::TOKENS, $parameters, $id);
     }
     #endregion tokens
 
     #region users
-    public function users(array $parameters = []): NetBoxResult|null
+    public function users(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::USERS, $parameters);
+        return $this->doCall('get', self::USERS, $parameters);
     }
 
-    public function usersCreate(array $parameters = []): NetBoxResult|null
+    public function usersCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::USERS, $parameters);
+        return $this->doCall('post', self::USERS, $parameters);
     }
 
-    public function usersPut(array $parameters = []): NetBoxResult|null
+    public function usersPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::USERS, $parameters);
+        return $this->doCall('put', self::USERS, $parameters);
     }
 
-    public function usersPatch(array $parameters = []): NetBoxResult|null
+    public function usersPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::USERS, $parameters);
+        return $this->doCall('patch', self::USERS, $parameters);
     }
 
-    public function usersDelete(array $parameters = []): NetBoxResult|null
+    public function usersDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::USERS, $parameters);
+        return $this->doCall('delete', self::USERS, $parameters);
     }
 
-    public function usersById(int $id, array $parameters = []): NetBoxResult|null
+    public function usersById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::USERS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::USERS, $parameters, $id);
     }
 
-    public function usersByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function usersByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::USERS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::USERS, $parameters, $id);
     }
 
-    public function usersByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function usersByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::USERS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::USERS, $parameters, $id);
     }
 
-    public function usersByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function usersByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::USERS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::USERS, $parameters, $id);
     }
     #endregion users
 }

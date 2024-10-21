@@ -13,90 +13,90 @@ class NetBoxCore extends NetBoxApiAbstract
     private const string OBJECT_CHANGES = 'core/object-changes';
 
     #region dataFiles
-    public function dataFiles(array $parameters = []): NetBoxResult|null
+    public function dataFiles(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::DATA_FILES, $parameters);
+        return $this->doCall('get', self::DATA_FILES, $parameters);
     }
 
-    public function dataFilesById(int $id, array $parameters = []): NetBoxResult|null
+    public function dataFilesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::DATA_FILES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::DATA_FILES, $parameters, $id);
     }
     #endregion dataFiles
 
     #region dataSources
-    public function dataSources(array $parameters = []): NetBoxResult|null
+    public function dataSources(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::DATA_SOURCES, $parameters);
+        return $this->doCall('get', self::DATA_SOURCES, $parameters);
     }
 
-    public function dataSourcesCreate(array $parameters = []): NetBoxResult|null
+    public function dataSourcesCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::DATA_SOURCES, $parameters);
+        return $this->doCall('post', self::DATA_SOURCES, $parameters);
     }
 
-    public function dataSourcesPut(array $parameters = []): NetBoxResult|null
+    public function dataSourcesPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::DATA_SOURCES, $parameters);
+        return $this->doCall('put', self::DATA_SOURCES, $parameters);
     }
 
-    public function dataSourcesPatch(array $parameters = []): NetBoxResult|null
+    public function dataSourcesPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::DATA_SOURCES, $parameters);
+        return $this->doCall('patch', self::DATA_SOURCES, $parameters);
     }
 
-    public function dataSourcesDelete(array $parameters = []): NetBoxResult|null
+    public function dataSourcesDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::DATA_SOURCES, $parameters);
+        return $this->doCall('delete', self::DATA_SOURCES, $parameters);
     }
 
-    public function dataSourcesById(int $id, array $parameters = []): NetBoxResult|null
+    public function dataSourcesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::DATA_SOURCES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::DATA_SOURCES, $parameters, $id);
     }
 
-    public function dataSourcesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function dataSourcesByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::DATA_SOURCES, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::DATA_SOURCES, $parameters, $id);
     }
 
-    public function dataSourcesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function dataSourcesByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::DATA_SOURCES, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::DATA_SOURCES, $parameters, $id);
     }
 
-    public function dataSourcesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function dataSourcesByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::DATA_SOURCES, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::DATA_SOURCES, $parameters, $id);
     }
 
-    public function dataSourcesByIdSync(int $id, array $parameters = []): NetBoxResult|null
+    public function dataSourcesByIdSync(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::DATA_SOURCES, ['id' => $id, 'submodule' => 'sync', ...$parameters]);
+        return $this->doCall('get', self::DATA_SOURCES, $parameters, $id, 'sync');
     }
     #endregion dataSources
 
     #region jobs
-    public function jobs(array $parameters = []): NetBoxResult|null
+    public function jobs(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::JOBS, $parameters);
+        return $this->doCall('get', self::JOBS, $parameters);
     }
 
-    public function jobsById(int $id, array $parameters = []): NetBoxResult|null
+    public function jobsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::JOBS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::JOBS, $parameters, $id);
     }
     #endregion jobs
 
     #region objectChanges
-    public function objectChanges(array $parameters = []): NetBoxResult|null
+    public function objectChanges(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::OBJECT_CHANGES, $parameters);
+        return $this->doCall('get', self::OBJECT_CHANGES, $parameters);
     }
 
-    public function objectChangesById(int $id, array $parameters = []): NetBoxResult|null
+    public function objectChangesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::OBJECT_CHANGES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::OBJECT_CHANGES, $parameters, $id);
     }
     #endregion objectChanges
 }

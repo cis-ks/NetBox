@@ -19,472 +19,472 @@ class NetBoxVpn extends NetBoxApiAbstract
     private const string TUNNELS = 'vpn/tunnels';
 
     #region ikePolicies
-    public function ikePolicies(array $parameters = []): NetBoxResult|null
+    public function ikePolicies(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::IKE_POLICIES, $parameters);
+        return $this->doCall('get', self::IKE_POLICIES, $parameters);
     }
 
-    public function ikePoliciesCreate(array $parameters = []): NetBoxResult|null
+    public function ikePoliciesCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::IKE_POLICIES, $parameters);
+        return $this->doCall('post', self::IKE_POLICIES, $parameters);
     }
 
-    public function ikePoliciesPut(array $parameters = []): NetBoxResult|null
+    public function ikePoliciesPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::IKE_POLICIES, $parameters);
+        return $this->doCall('put', self::IKE_POLICIES, $parameters);
     }
 
-    public function ikePoliciesPatch(array $parameters = []): NetBoxResult|null
+    public function ikePoliciesPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::IKE_POLICIES, $parameters);
+        return $this->doCall('patch', self::IKE_POLICIES, $parameters);
     }
 
-    public function ikePoliciesDelete(array $parameters = []): NetBoxResult|null
+    public function ikePoliciesDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::IKE_POLICIES, $parameters);
+        return $this->doCall('delete', self::IKE_POLICIES, $parameters);
     }
 
-    public function ikePoliciesById(int $id, array $parameters = []): NetBoxResult|null
+    public function ikePoliciesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::IKE_POLICIES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::IKE_POLICIES, $parameters, $id);
     }
 
-    public function ikePoliciesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function ikePoliciesByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::IKE_POLICIES, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::IKE_POLICIES, $parameters, $id);
     }
 
-    public function ikePoliciesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function ikePoliciesByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::IKE_POLICIES, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::IKE_POLICIES, $parameters, $id);
     }
 
-    public function ikePoliciesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function ikePoliciesByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::IKE_POLICIES, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::IKE_POLICIES, $parameters, $id);
     }
     #endregion ikePolicies
 
     #region ikeProposals
-    public function ikeProposals(array $parameters = []): NetBoxResult|null
+    public function ikeProposals(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::IKE_PROPOSALS, $parameters);
+        return $this->doCall('get', self::IKE_PROPOSALS, $parameters);
     }
 
-    public function ikeProposalsCreate(array $parameters = []): NetBoxResult|null
+    public function ikeProposalsCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::IKE_PROPOSALS, $parameters);
+        return $this->doCall('post', self::IKE_PROPOSALS, $parameters);
     }
 
-    public function ikeProposalsPut(array $parameters = []): NetBoxResult|null
+    public function ikeProposalsPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::IKE_PROPOSALS, $parameters);
+        return $this->doCall('put', self::IKE_PROPOSALS, $parameters);
     }
 
-    public function ikeProposalsPatch(array $parameters = []): NetBoxResult|null
+    public function ikeProposalsPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::IKE_PROPOSALS, $parameters);
+        return $this->doCall('patch', self::IKE_PROPOSALS, $parameters);
     }
 
-    public function ikeProposalsDelete(array $parameters = []): NetBoxResult|null
+    public function ikeProposalsDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::IKE_PROPOSALS, $parameters);
+        return $this->doCall('delete', self::IKE_PROPOSALS, $parameters);
     }
 
-    public function ikeProposalsById(int $id, array $parameters = []): NetBoxResult|null
+    public function ikeProposalsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::IKE_PROPOSALS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::IKE_PROPOSALS, $parameters, $id);
     }
 
-    public function ikeProposalsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function ikeProposalsByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::IKE_PROPOSALS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::IKE_PROPOSALS, $parameters, $id);
     }
 
-    public function ikeProposalsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function ikeProposalsByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::IKE_PROPOSALS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::IKE_PROPOSALS, $parameters, $id);
     }
 
-    public function ikeProposalsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function ikeProposalsByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::IKE_PROPOSALS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::IKE_PROPOSALS, $parameters, $id);
     }
     #endregion ikeProposals
 
     #region ipsecPolicies
-    public function ipsecPolicies(array $parameters = []): NetBoxResult|null
+    public function ipsecPolicies(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::IPSEC_POLICIES, $parameters);
+        return $this->doCall('get', self::IPSEC_POLICIES, $parameters);
     }
 
-    public function ipsecPoliciesCreate(array $parameters = []): NetBoxResult|null
+    public function ipsecPoliciesCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::IPSEC_POLICIES, $parameters);
+        return $this->doCall('post', self::IPSEC_POLICIES, $parameters);
     }
 
-    public function ipsecPoliciesPut(array $parameters = []): NetBoxResult|null
+    public function ipsecPoliciesPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::IPSEC_POLICIES, $parameters);
+        return $this->doCall('put', self::IPSEC_POLICIES, $parameters);
     }
 
-    public function ipsecPoliciesPatch(array $parameters = []): NetBoxResult|null
+    public function ipsecPoliciesPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::IPSEC_POLICIES, $parameters);
+        return $this->doCall('patch', self::IPSEC_POLICIES, $parameters);
     }
 
-    public function ipsecPoliciesDelete(array $parameters = []): NetBoxResult|null
+    public function ipsecPoliciesDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::IPSEC_POLICIES, $parameters);
+        return $this->doCall('delete', self::IPSEC_POLICIES, $parameters);
     }
 
-    public function ipsecPoliciesById(int $id, array $parameters = []): NetBoxResult|null
+    public function ipsecPoliciesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::IPSEC_POLICIES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::IPSEC_POLICIES, $parameters, $id);
     }
 
-    public function ipsecPoliciesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function ipsecPoliciesByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::IPSEC_POLICIES, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::IPSEC_POLICIES, $parameters, $id);
     }
 
-    public function ipsecPoliciesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function ipsecPoliciesByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::IPSEC_POLICIES, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::IPSEC_POLICIES, $parameters, $id);
     }
 
-    public function ipsecPoliciesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function ipsecPoliciesByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::IPSEC_POLICIES, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::IPSEC_POLICIES, $parameters, $id);
     }
     #endregion ipsecPolicies
 
     #region ipsecProfiles
-    public function ipsecProfiles(array $parameters = []): NetBoxResult|null
+    public function ipsecProfiles(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::IPSEC_PROFILES, $parameters);
+        return $this->doCall('get', self::IPSEC_PROFILES, $parameters);
     }
 
-    public function ipsecProfilesCreate(array $parameters = []): NetBoxResult|null
+    public function ipsecProfilesCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::IPSEC_PROFILES, $parameters);
+        return $this->doCall('post', self::IPSEC_PROFILES, $parameters);
     }
 
-    public function ipsecProfilesPut(array $parameters = []): NetBoxResult|null
+    public function ipsecProfilesPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::IPSEC_PROFILES, $parameters);
+        return $this->doCall('put', self::IPSEC_PROFILES, $parameters);
     }
 
-    public function ipsecProfilesPatch(array $parameters = []): NetBoxResult|null
+    public function ipsecProfilesPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::IPSEC_PROFILES, $parameters);
+        return $this->doCall('patch', self::IPSEC_PROFILES, $parameters);
     }
 
-    public function ipsecProfilesDelete(array $parameters = []): NetBoxResult|null
+    public function ipsecProfilesDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::IPSEC_PROFILES, $parameters);
+        return $this->doCall('delete', self::IPSEC_PROFILES, $parameters);
     }
 
-    public function ipsecProfilesById(int $id, array $parameters = []): NetBoxResult|null
+    public function ipsecProfilesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::IPSEC_PROFILES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::IPSEC_PROFILES, $parameters, $id);
     }
 
-    public function ipsecProfilesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function ipsecProfilesByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::IPSEC_PROFILES, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::IPSEC_PROFILES, $parameters, $id);
     }
 
-    public function ipsecProfilesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function ipsecProfilesByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::IPSEC_PROFILES, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::IPSEC_PROFILES, $parameters, $id);
     }
 
-    public function ipsecProfilesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function ipsecProfilesByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::IPSEC_PROFILES, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::IPSEC_PROFILES, $parameters, $id);
     }
     #endregion ipsecProfiles
 
     #region ipsecProposals
-    public function ipsecProposals(array $parameters = []): NetBoxResult|null
+    public function ipsecProposals(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::IPSEC_PROPOSALS, $parameters);
+        return $this->doCall('get', self::IPSEC_PROPOSALS, $parameters);
     }
 
-    public function ipsecProposalsCreate(array $parameters = []): NetBoxResult|null
+    public function ipsecProposalsCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::IPSEC_PROPOSALS, $parameters);
+        return $this->doCall('post', self::IPSEC_PROPOSALS, $parameters);
     }
 
-    public function ipsecProposalsPut(array $parameters = []): NetBoxResult|null
+    public function ipsecProposalsPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::IPSEC_PROPOSALS, $parameters);
+        return $this->doCall('put', self::IPSEC_PROPOSALS, $parameters);
     }
 
-    public function ipsecProposalsPatch(array $parameters = []): NetBoxResult|null
+    public function ipsecProposalsPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::IPSEC_PROPOSALS, $parameters);
+        return $this->doCall('patch', self::IPSEC_PROPOSALS, $parameters);
     }
 
-    public function ipsecProposalsDelete(array $parameters = []): NetBoxResult|null
+    public function ipsecProposalsDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::IPSEC_PROPOSALS, $parameters);
+        return $this->doCall('delete', self::IPSEC_PROPOSALS, $parameters);
     }
 
-    public function ipsecProposalsById(int $id, array $parameters = []): NetBoxResult|null
+    public function ipsecProposalsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::IPSEC_PROPOSALS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::IPSEC_PROPOSALS, $parameters, $id);
     }
 
-    public function ipsecProposalsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function ipsecProposalsByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::IPSEC_PROPOSALS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::IPSEC_PROPOSALS, $parameters, $id);
     }
 
-    public function ipsecProposalsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function ipsecProposalsByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::IPSEC_PROPOSALS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::IPSEC_PROPOSALS, $parameters, $id);
     }
 
-    public function ipsecProposalsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function ipsecProposalsByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::IPSEC_PROPOSALS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::IPSEC_PROPOSALS, $parameters, $id);
     }
     #endregion ipsecProposals
 
     #region l2vpnTerminations
-    public function l2vpnTerminations(array $parameters = []): NetBoxResult|null
+    public function l2vpnTerminations(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::L2VPN_TERMINATIONS, $parameters);
+        return $this->doCall('get', self::L2VPN_TERMINATIONS, $parameters);
     }
 
-    public function l2vpnTerminationsCreate(array $parameters = []): NetBoxResult|null
+    public function l2vpnTerminationsCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::L2VPN_TERMINATIONS, $parameters);
+        return $this->doCall('post', self::L2VPN_TERMINATIONS, $parameters);
     }
 
-    public function l2vpnTerminationsPut(array $parameters = []): NetBoxResult|null
+    public function l2vpnTerminationsPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::L2VPN_TERMINATIONS, $parameters);
+        return $this->doCall('put', self::L2VPN_TERMINATIONS, $parameters);
     }
 
-    public function l2vpnTerminationsPatch(array $parameters = []): NetBoxResult|null
+    public function l2vpnTerminationsPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::L2VPN_TERMINATIONS, $parameters);
+        return $this->doCall('patch', self::L2VPN_TERMINATIONS, $parameters);
     }
 
-    public function l2vpnTerminationsDelete(array $parameters = []): NetBoxResult|null
+    public function l2vpnTerminationsDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::L2VPN_TERMINATIONS, $parameters);
+        return $this->doCall('delete', self::L2VPN_TERMINATIONS, $parameters);
     }
 
-    public function l2vpnTerminationsById(int $id, array $parameters = []): NetBoxResult|null
+    public function l2vpnTerminationsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::L2VPN_TERMINATIONS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::L2VPN_TERMINATIONS, $parameters, $id);
     }
 
-    public function l2vpnTerminationsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function l2vpnTerminationsByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::L2VPN_TERMINATIONS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::L2VPN_TERMINATIONS, $parameters, $id);
     }
 
-    public function l2vpnTerminationsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function l2vpnTerminationsByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::L2VPN_TERMINATIONS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::L2VPN_TERMINATIONS, $parameters, $id);
     }
 
-    public function l2vpnTerminationsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function l2vpnTerminationsByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::L2VPN_TERMINATIONS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::L2VPN_TERMINATIONS, $parameters, $id);
     }
     #endregion l2vpnTerminations
 
     #region l2vpns
-    public function l2vpns(array $parameters = []): NetBoxResult|null
+    public function l2vpns(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::L2VPNS, $parameters);
+        return $this->doCall('get', self::L2VPNS, $parameters);
     }
 
-    public function l2vpnsCreate(array $parameters = []): NetBoxResult|null
+    public function l2vpnsCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::L2VPNS, $parameters);
+        return $this->doCall('post', self::L2VPNS, $parameters);
     }
 
-    public function l2vpnsPut(array $parameters = []): NetBoxResult|null
+    public function l2vpnsPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::L2VPNS, $parameters);
+        return $this->doCall('put', self::L2VPNS, $parameters);
     }
 
-    public function l2vpnsPatch(array $parameters = []): NetBoxResult|null
+    public function l2vpnsPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::L2VPNS, $parameters);
+        return $this->doCall('patch', self::L2VPNS, $parameters);
     }
 
-    public function l2vpnsDelete(array $parameters = []): NetBoxResult|null
+    public function l2vpnsDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::L2VPNS, $parameters);
+        return $this->doCall('delete', self::L2VPNS, $parameters);
     }
 
-    public function l2vpnsById(int $id, array $parameters = []): NetBoxResult|null
+    public function l2vpnsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::L2VPNS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::L2VPNS, $parameters, $id);
     }
 
-    public function l2vpnsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function l2vpnsByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::L2VPNS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::L2VPNS, $parameters, $id);
     }
 
-    public function l2vpnsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function l2vpnsByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::L2VPNS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::L2VPNS, $parameters, $id);
     }
 
-    public function l2vpnsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function l2vpnsByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::L2VPNS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::L2VPNS, $parameters, $id);
     }
     #endregion l2vpns
 
     #region tunnelGroups
-    public function tunnelGroups(array $parameters = []): NetBoxResult|null
+    public function tunnelGroups(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::TUNNEL_GROUPS, $parameters);
+        return $this->doCall('get', self::TUNNEL_GROUPS, $parameters);
     }
 
-    public function tunnelGroupsCreate(array $parameters = []): NetBoxResult|null
+    public function tunnelGroupsCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::TUNNEL_GROUPS, $parameters);
+        return $this->doCall('post', self::TUNNEL_GROUPS, $parameters);
     }
 
-    public function tunnelGroupsPut(array $parameters = []): NetBoxResult|null
+    public function tunnelGroupsPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::TUNNEL_GROUPS, $parameters);
+        return $this->doCall('put', self::TUNNEL_GROUPS, $parameters);
     }
 
-    public function tunnelGroupsPatch(array $parameters = []): NetBoxResult|null
+    public function tunnelGroupsPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::TUNNEL_GROUPS, $parameters);
+        return $this->doCall('patch', self::TUNNEL_GROUPS, $parameters);
     }
 
-    public function tunnelGroupsDelete(array $parameters = []): NetBoxResult|null
+    public function tunnelGroupsDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::TUNNEL_GROUPS, $parameters);
+        return $this->doCall('delete', self::TUNNEL_GROUPS, $parameters);
     }
 
-    public function tunnelGroupsById(int $id, array $parameters = []): NetBoxResult|null
+    public function tunnelGroupsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::TUNNEL_GROUPS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::TUNNEL_GROUPS, $parameters, $id);
     }
 
-    public function tunnelGroupsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function tunnelGroupsByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::TUNNEL_GROUPS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::TUNNEL_GROUPS, $parameters, $id);
     }
 
-    public function tunnelGroupsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function tunnelGroupsByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::TUNNEL_GROUPS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::TUNNEL_GROUPS, $parameters, $id);
     }
 
-    public function tunnelGroupsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function tunnelGroupsByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::TUNNEL_GROUPS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::TUNNEL_GROUPS, $parameters, $id);
     }
     #endregion tunnelGroups
 
     #region tunnelTerminations
-    public function tunnelTerminations(array $parameters = []): NetBoxResult|null
+    public function tunnelTerminations(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::TUNNEL_TERMINATIONS, $parameters);
+        return $this->doCall('get', self::TUNNEL_TERMINATIONS, $parameters);
     }
 
-    public function tunnelTerminationsCreate(array $parameters = []): NetBoxResult|null
+    public function tunnelTerminationsCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::TUNNEL_TERMINATIONS, $parameters);
+        return $this->doCall('post', self::TUNNEL_TERMINATIONS, $parameters);
     }
 
-    public function tunnelTerminationsPut(array $parameters = []): NetBoxResult|null
+    public function tunnelTerminationsPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::TUNNEL_TERMINATIONS, $parameters);
+        return $this->doCall('put', self::TUNNEL_TERMINATIONS, $parameters);
     }
 
-    public function tunnelTerminationsPatch(array $parameters = []): NetBoxResult|null
+    public function tunnelTerminationsPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::TUNNEL_TERMINATIONS, $parameters);
+        return $this->doCall('patch', self::TUNNEL_TERMINATIONS, $parameters);
     }
 
-    public function tunnelTerminationsDelete(array $parameters = []): NetBoxResult|null
+    public function tunnelTerminationsDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::TUNNEL_TERMINATIONS, $parameters);
+        return $this->doCall('delete', self::TUNNEL_TERMINATIONS, $parameters);
     }
 
-    public function tunnelTerminationsById(int $id, array $parameters = []): NetBoxResult|null
+    public function tunnelTerminationsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::TUNNEL_TERMINATIONS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::TUNNEL_TERMINATIONS, $parameters, $id);
     }
 
-    public function tunnelTerminationsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function tunnelTerminationsByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::TUNNEL_TERMINATIONS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::TUNNEL_TERMINATIONS, $parameters, $id);
     }
 
-    public function tunnelTerminationsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function tunnelTerminationsByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::TUNNEL_TERMINATIONS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::TUNNEL_TERMINATIONS, $parameters, $id);
     }
 
-    public function tunnelTerminationsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function tunnelTerminationsByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::TUNNEL_TERMINATIONS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::TUNNEL_TERMINATIONS, $parameters, $id);
     }
     #endregion tunnelTerminations
 
     #region tunnels
-    public function tunnels(array $parameters = []): NetBoxResult|null
+    public function tunnels(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::TUNNELS, $parameters);
+        return $this->doCall('get', self::TUNNELS, $parameters);
     }
 
-    public function tunnelsCreate(array $parameters = []): NetBoxResult|null
+    public function tunnelsCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::TUNNELS, $parameters);
+        return $this->doCall('post', self::TUNNELS, $parameters);
     }
 
-    public function tunnelsPut(array $parameters = []): NetBoxResult|null
+    public function tunnelsPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::TUNNELS, $parameters);
+        return $this->doCall('put', self::TUNNELS, $parameters);
     }
 
-    public function tunnelsPatch(array $parameters = []): NetBoxResult|null
+    public function tunnelsPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::TUNNELS, $parameters);
+        return $this->doCall('patch', self::TUNNELS, $parameters);
     }
 
-    public function tunnelsDelete(array $parameters = []): NetBoxResult|null
+    public function tunnelsDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::TUNNELS, $parameters);
+        return $this->doCall('delete', self::TUNNELS, $parameters);
     }
 
-    public function tunnelsById(int $id, array $parameters = []): NetBoxResult|null
+    public function tunnelsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::TUNNELS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::TUNNELS, $parameters, $id);
     }
 
-    public function tunnelsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function tunnelsByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::TUNNELS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::TUNNELS, $parameters, $id);
     }
 
-    public function tunnelsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function tunnelsByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::TUNNELS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::TUNNELS, $parameters, $id);
     }
 
-    public function tunnelsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function tunnelsByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::TUNNELS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::TUNNELS, $parameters, $id);
     }
     #endregion tunnels
 }

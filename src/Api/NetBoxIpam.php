@@ -25,779 +25,779 @@ class NetBoxIpam extends NetBoxApiAbstract
     private const string VRFS = 'ipam/vrfs';
 
     #region aggregates
-    public function aggregates(array $parameters = []): NetBoxResult|null
+    public function aggregates(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::AGGREGATES, $parameters);
+        return $this->doCall('get', self::AGGREGATES, $parameters);
     }
 
-    public function aggregatesCreate(array $parameters = []): NetBoxResult|null
+    public function aggregatesCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::AGGREGATES, $parameters);
+        return $this->doCall('post', self::AGGREGATES, $parameters);
     }
 
-    public function aggregatesPut(array $parameters = []): NetBoxResult|null
+    public function aggregatesPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::AGGREGATES, $parameters);
+        return $this->doCall('put', self::AGGREGATES, $parameters);
     }
 
-    public function aggregatesPatch(array $parameters = []): NetBoxResult|null
+    public function aggregatesPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::AGGREGATES, $parameters);
+        return $this->doCall('patch', self::AGGREGATES, $parameters);
     }
 
-    public function aggregatesDelete(array $parameters = []): NetBoxResult|null
+    public function aggregatesDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::AGGREGATES, $parameters);
+        return $this->doCall('delete', self::AGGREGATES, $parameters);
     }
 
-    public function aggregatesById(int $id, array $parameters = []): NetBoxResult|null
+    public function aggregatesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::AGGREGATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::AGGREGATES, $parameters, $id);
     }
 
-    public function aggregatesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function aggregatesByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::AGGREGATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::AGGREGATES, $parameters, $id);
     }
 
-    public function aggregatesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function aggregatesByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::AGGREGATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::AGGREGATES, $parameters, $id);
     }
 
-    public function aggregatesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function aggregatesByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::AGGREGATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::AGGREGATES, $parameters, $id);
     }
     #endregion aggregates
 
     #region asnRanges
-    public function asnRanges(array $parameters = []): NetBoxResult|null
+    public function asnRanges(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::ASN_RANGES, $parameters);
+        return $this->doCall('get', self::ASN_RANGES, $parameters);
     }
 
-    public function asnRangesCreate(array $parameters = []): NetBoxResult|null
+    public function asnRangesCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::ASN_RANGES, $parameters);
+        return $this->doCall('post', self::ASN_RANGES, $parameters);
     }
 
-    public function asnRangesPut(array $parameters = []): NetBoxResult|null
+    public function asnRangesPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::ASN_RANGES, $parameters);
+        return $this->doCall('put', self::ASN_RANGES, $parameters);
     }
 
-    public function asnRangesPatch(array $parameters = []): NetBoxResult|null
+    public function asnRangesPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::ASN_RANGES, $parameters);
+        return $this->doCall('patch', self::ASN_RANGES, $parameters);
     }
 
-    public function asnRangesDelete(array $parameters = []): NetBoxResult|null
+    public function asnRangesDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::ASN_RANGES, $parameters);
+        return $this->doCall('delete', self::ASN_RANGES, $parameters);
     }
 
-    public function asnRangesById(int $id, array $parameters = []): NetBoxResult|null
+    public function asnRangesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::ASN_RANGES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::ASN_RANGES, $parameters, $id);
     }
 
-    public function asnRangesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function asnRangesByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::ASN_RANGES, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::ASN_RANGES, $parameters, $id);
     }
 
-    public function asnRangesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function asnRangesByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::ASN_RANGES, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::ASN_RANGES, $parameters, $id);
     }
 
-    public function asnRangesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function asnRangesByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::ASN_RANGES, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::ASN_RANGES, $parameters, $id);
     }
 
-    public function asnRangesByIdAvailableAsns(int $id, array $parameters = []): NetBoxResult|null
+    public function asnRangesByIdAvailableAsns(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::ASN_RANGES, ['id' => $id, 'submodule' => 'available-asns', ...$parameters]);
+        return $this->doCall('get', self::ASN_RANGES, $parameters, $id, 'available-asns');
     }
     #endregion asnRanges
 
     #region asns
-    public function asns(array $parameters = []): NetBoxResult|null
+    public function asns(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::ASNS, $parameters);
+        return $this->doCall('get', self::ASNS, $parameters);
     }
 
-    public function asnsCreate(array $parameters = []): NetBoxResult|null
+    public function asnsCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::ASNS, $parameters);
+        return $this->doCall('post', self::ASNS, $parameters);
     }
 
-    public function asnsPut(array $parameters = []): NetBoxResult|null
+    public function asnsPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::ASNS, $parameters);
+        return $this->doCall('put', self::ASNS, $parameters);
     }
 
-    public function asnsPatch(array $parameters = []): NetBoxResult|null
+    public function asnsPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::ASNS, $parameters);
+        return $this->doCall('patch', self::ASNS, $parameters);
     }
 
-    public function asnsDelete(array $parameters = []): NetBoxResult|null
+    public function asnsDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::ASNS, $parameters);
+        return $this->doCall('delete', self::ASNS, $parameters);
     }
 
-    public function asnsById(int $id, array $parameters = []): NetBoxResult|null
+    public function asnsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::ASNS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::ASNS, $parameters, $id);
     }
 
-    public function asnsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function asnsByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::ASNS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::ASNS, $parameters, $id);
     }
 
-    public function asnsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function asnsByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::ASNS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::ASNS, $parameters, $id);
     }
 
-    public function asnsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function asnsByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::ASNS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::ASNS, $parameters, $id);
     }
     #endregion asns
 
     #region fhrpGroupAssignments
-    public function fhrpGroupAssignments(array $parameters = []): NetBoxResult|null
+    public function fhrpGroupAssignments(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::FHRP_GROUP_ASSIGNMENTS, $parameters);
+        return $this->doCall('get', self::FHRP_GROUP_ASSIGNMENTS, $parameters);
     }
 
-    public function fhrpGroupAssignmentsCreate(array $parameters = []): NetBoxResult|null
+    public function fhrpGroupAssignmentsCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::FHRP_GROUP_ASSIGNMENTS, $parameters);
+        return $this->doCall('post', self::FHRP_GROUP_ASSIGNMENTS, $parameters);
     }
 
-    public function fhrpGroupAssignmentsPut(array $parameters = []): NetBoxResult|null
+    public function fhrpGroupAssignmentsPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::FHRP_GROUP_ASSIGNMENTS, $parameters);
+        return $this->doCall('put', self::FHRP_GROUP_ASSIGNMENTS, $parameters);
     }
 
-    public function fhrpGroupAssignmentsPatch(array $parameters = []): NetBoxResult|null
+    public function fhrpGroupAssignmentsPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::FHRP_GROUP_ASSIGNMENTS, $parameters);
+        return $this->doCall('patch', self::FHRP_GROUP_ASSIGNMENTS, $parameters);
     }
 
-    public function fhrpGroupAssignmentsDelete(array $parameters = []): NetBoxResult|null
+    public function fhrpGroupAssignmentsDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::FHRP_GROUP_ASSIGNMENTS, $parameters);
+        return $this->doCall('delete', self::FHRP_GROUP_ASSIGNMENTS, $parameters);
     }
 
-    public function fhrpGroupAssignmentsById(int $id, array $parameters = []): NetBoxResult|null
+    public function fhrpGroupAssignmentsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::FHRP_GROUP_ASSIGNMENTS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::FHRP_GROUP_ASSIGNMENTS, $parameters, $id);
     }
 
-    public function fhrpGroupAssignmentsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function fhrpGroupAssignmentsByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::FHRP_GROUP_ASSIGNMENTS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::FHRP_GROUP_ASSIGNMENTS, $parameters, $id);
     }
 
-    public function fhrpGroupAssignmentsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function fhrpGroupAssignmentsByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::FHRP_GROUP_ASSIGNMENTS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::FHRP_GROUP_ASSIGNMENTS, $parameters, $id);
     }
 
-    public function fhrpGroupAssignmentsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function fhrpGroupAssignmentsByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::FHRP_GROUP_ASSIGNMENTS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::FHRP_GROUP_ASSIGNMENTS, $parameters, $id);
     }
     #endregion fhrpGroupAssignments
 
     #region fhrpGroups
-    public function fhrpGroups(array $parameters = []): NetBoxResult|null
+    public function fhrpGroups(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::FHRP_GROUPS, $parameters);
+        return $this->doCall('get', self::FHRP_GROUPS, $parameters);
     }
 
-    public function fhrpGroupsCreate(array $parameters = []): NetBoxResult|null
+    public function fhrpGroupsCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::FHRP_GROUPS, $parameters);
+        return $this->doCall('post', self::FHRP_GROUPS, $parameters);
     }
 
-    public function fhrpGroupsPut(array $parameters = []): NetBoxResult|null
+    public function fhrpGroupsPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::FHRP_GROUPS, $parameters);
+        return $this->doCall('put', self::FHRP_GROUPS, $parameters);
     }
 
-    public function fhrpGroupsPatch(array $parameters = []): NetBoxResult|null
+    public function fhrpGroupsPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::FHRP_GROUPS, $parameters);
+        return $this->doCall('patch', self::FHRP_GROUPS, $parameters);
     }
 
-    public function fhrpGroupsDelete(array $parameters = []): NetBoxResult|null
+    public function fhrpGroupsDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::FHRP_GROUPS, $parameters);
+        return $this->doCall('delete', self::FHRP_GROUPS, $parameters);
     }
 
-    public function fhrpGroupsById(int $id, array $parameters = []): NetBoxResult|null
+    public function fhrpGroupsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::FHRP_GROUPS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::FHRP_GROUPS, $parameters, $id);
     }
 
-    public function fhrpGroupsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function fhrpGroupsByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::FHRP_GROUPS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::FHRP_GROUPS, $parameters, $id);
     }
 
-    public function fhrpGroupsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function fhrpGroupsByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::FHRP_GROUPS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::FHRP_GROUPS, $parameters, $id);
     }
 
-    public function fhrpGroupsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function fhrpGroupsByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::FHRP_GROUPS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::FHRP_GROUPS, $parameters, $id);
     }
     #endregion fhrpGroups
 
     #region ipAddresses
-    public function ipAddresses(array $parameters = []): NetBoxResult|null
+    public function ipAddresses(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::IP_ADDRESSES, $parameters);
+        return $this->doCall('get', self::IP_ADDRESSES, $parameters);
     }
 
-    public function ipAddressesCreate(array $parameters = []): NetBoxResult|null
+    public function ipAddressesCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::IP_ADDRESSES, $parameters);
+        return $this->doCall('post', self::IP_ADDRESSES, $parameters);
     }
 
-    public function ipAddressesPut(array $parameters = []): NetBoxResult|null
+    public function ipAddressesPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::IP_ADDRESSES, $parameters);
+        return $this->doCall('put', self::IP_ADDRESSES, $parameters);
     }
 
-    public function ipAddressesPatch(array $parameters = []): NetBoxResult|null
+    public function ipAddressesPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::IP_ADDRESSES, $parameters);
+        return $this->doCall('patch', self::IP_ADDRESSES, $parameters);
     }
 
-    public function ipAddressesDelete(array $parameters = []): NetBoxResult|null
+    public function ipAddressesDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::IP_ADDRESSES, $parameters);
+        return $this->doCall('delete', self::IP_ADDRESSES, $parameters);
     }
 
-    public function ipAddressesById(int $id, array $parameters = []): NetBoxResult|null
+    public function ipAddressesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::IP_ADDRESSES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::IP_ADDRESSES, $parameters, $id);
     }
 
-    public function ipAddressesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function ipAddressesByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::IP_ADDRESSES, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::IP_ADDRESSES, $parameters, $id);
     }
 
-    public function ipAddressesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function ipAddressesByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::IP_ADDRESSES, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::IP_ADDRESSES, $parameters, $id);
     }
 
-    public function ipAddressesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function ipAddressesByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::IP_ADDRESSES, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::IP_ADDRESSES, $parameters, $id);
     }
     #endregion ipAddresses
 
     #region ipRanges
-    public function ipRanges(array $parameters = []): NetBoxResult|null
+    public function ipRanges(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::IP_RANGES, $parameters);
+        return $this->doCall('get', self::IP_RANGES, $parameters);
     }
 
-    public function ipRangesCreate(array $parameters = []): NetBoxResult|null
+    public function ipRangesCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::IP_RANGES, $parameters);
+        return $this->doCall('post', self::IP_RANGES, $parameters);
     }
 
-    public function ipRangesPut(array $parameters = []): NetBoxResult|null
+    public function ipRangesPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::IP_RANGES, $parameters);
+        return $this->doCall('put', self::IP_RANGES, $parameters);
     }
 
-    public function ipRangesPatch(array $parameters = []): NetBoxResult|null
+    public function ipRangesPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::IP_RANGES, $parameters);
+        return $this->doCall('patch', self::IP_RANGES, $parameters);
     }
 
-    public function ipRangesDelete(array $parameters = []): NetBoxResult|null
+    public function ipRangesDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::IP_RANGES, $parameters);
+        return $this->doCall('delete', self::IP_RANGES, $parameters);
     }
 
-    public function ipRangesById(int $id, array $parameters = []): NetBoxResult|null
+    public function ipRangesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::IP_RANGES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::IP_RANGES, $parameters, $id);
     }
 
-    public function ipRangesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function ipRangesByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::IP_RANGES, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::IP_RANGES, $parameters, $id);
     }
 
-    public function ipRangesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function ipRangesByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::IP_RANGES, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::IP_RANGES, $parameters, $id);
     }
 
-    public function ipRangesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function ipRangesByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::IP_RANGES, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::IP_RANGES, $parameters, $id);
     }
 
-    public function ipRangesByIdAvailableIps(int $id, array $parameters = []): NetBoxResult|null
+    public function ipRangesByIdAvailableIps(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::IP_RANGES, ['id' => $id, 'submodule' => 'available-ips', ...$parameters]);
+        return $this->doCall('get', self::IP_RANGES, $parameters, $id, 'available-ips');
     }
     #endregion ipRanges
 
     #region prefixes
-    public function prefixes(array $parameters = []): NetBoxResult|null
+    public function prefixes(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::PREFIXES, $parameters);
+        return $this->doCall('get', self::PREFIXES, $parameters);
     }
 
-    public function prefixesCreate(array $parameters = []): NetBoxResult|null
+    public function prefixesCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::PREFIXES, $parameters);
+        return $this->doCall('post', self::PREFIXES, $parameters);
     }
 
-    public function prefixesPut(array $parameters = []): NetBoxResult|null
+    public function prefixesPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::PREFIXES, $parameters);
+        return $this->doCall('put', self::PREFIXES, $parameters);
     }
 
-    public function prefixesPatch(array $parameters = []): NetBoxResult|null
+    public function prefixesPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::PREFIXES, $parameters);
+        return $this->doCall('patch', self::PREFIXES, $parameters);
     }
 
-    public function prefixesDelete(array $parameters = []): NetBoxResult|null
+    public function prefixesDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::PREFIXES, $parameters);
+        return $this->doCall('delete', self::PREFIXES, $parameters);
     }
 
-    public function prefixesById(int $id, array $parameters = []): NetBoxResult|null
+    public function prefixesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::PREFIXES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::PREFIXES, $parameters, $id);
     }
 
-    public function prefixesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function prefixesByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::PREFIXES, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::PREFIXES, $parameters, $id);
     }
 
-    public function prefixesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function prefixesByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::PREFIXES, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::PREFIXES, $parameters, $id);
     }
 
-    public function prefixesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function prefixesByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::PREFIXES, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::PREFIXES, $parameters, $id);
     }
 
-    public function prefixesByIdAvailableIps(int $id, array $parameters = []): NetBoxResult|null
+    public function prefixesByIdAvailableIps(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::PREFIXES, ['id' => $id, 'submodule' => 'available-ips', ...$parameters]);
+        return $this->doCall('get', self::PREFIXES, $parameters, $id, 'available-ips');
     }
 
-    public function prefixesByIdAvailablePrefixes(int $id, array $parameters = []): NetBoxResult|null
+    public function prefixesByIdAvailablePrefixes(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::PREFIXES, ['id' => $id, 'submodule' => 'available-prefixes', ...$parameters]);
+        return $this->doCall('get', self::PREFIXES, $parameters, $id, 'available-prefixes');
     }
     #endregion prefixes
 
     #region rirs
-    public function rirs(array $parameters = []): NetBoxResult|null
+    public function rirs(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::RIRS, $parameters);
+        return $this->doCall('get', self::RIRS, $parameters);
     }
 
-    public function rirsCreate(array $parameters = []): NetBoxResult|null
+    public function rirsCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::RIRS, $parameters);
+        return $this->doCall('post', self::RIRS, $parameters);
     }
 
-    public function rirsPut(array $parameters = []): NetBoxResult|null
+    public function rirsPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::RIRS, $parameters);
+        return $this->doCall('put', self::RIRS, $parameters);
     }
 
-    public function rirsPatch(array $parameters = []): NetBoxResult|null
+    public function rirsPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::RIRS, $parameters);
+        return $this->doCall('patch', self::RIRS, $parameters);
     }
 
-    public function rirsDelete(array $parameters = []): NetBoxResult|null
+    public function rirsDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::RIRS, $parameters);
+        return $this->doCall('delete', self::RIRS, $parameters);
     }
 
-    public function rirsById(int $id, array $parameters = []): NetBoxResult|null
+    public function rirsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::RIRS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::RIRS, $parameters, $id);
     }
 
-    public function rirsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function rirsByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::RIRS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::RIRS, $parameters, $id);
     }
 
-    public function rirsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function rirsByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::RIRS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::RIRS, $parameters, $id);
     }
 
-    public function rirsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function rirsByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::RIRS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::RIRS, $parameters, $id);
     }
     #endregion rirs
 
     #region roles
-    public function roles(array $parameters = []): NetBoxResult|null
+    public function roles(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::ROLES, $parameters);
+        return $this->doCall('get', self::ROLES, $parameters);
     }
 
-    public function rolesCreate(array $parameters = []): NetBoxResult|null
+    public function rolesCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::ROLES, $parameters);
+        return $this->doCall('post', self::ROLES, $parameters);
     }
 
-    public function rolesPut(array $parameters = []): NetBoxResult|null
+    public function rolesPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::ROLES, $parameters);
+        return $this->doCall('put', self::ROLES, $parameters);
     }
 
-    public function rolesPatch(array $parameters = []): NetBoxResult|null
+    public function rolesPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::ROLES, $parameters);
+        return $this->doCall('patch', self::ROLES, $parameters);
     }
 
-    public function rolesDelete(array $parameters = []): NetBoxResult|null
+    public function rolesDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::ROLES, $parameters);
+        return $this->doCall('delete', self::ROLES, $parameters);
     }
 
-    public function rolesById(int $id, array $parameters = []): NetBoxResult|null
+    public function rolesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::ROLES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::ROLES, $parameters, $id);
     }
 
-    public function rolesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function rolesByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::ROLES, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::ROLES, $parameters, $id);
     }
 
-    public function rolesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function rolesByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::ROLES, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::ROLES, $parameters, $id);
     }
 
-    public function rolesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function rolesByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::ROLES, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::ROLES, $parameters, $id);
     }
     #endregion roles
 
     #region routeTargets
-    public function routeTargets(array $parameters = []): NetBoxResult|null
+    public function routeTargets(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::ROUTE_TARGETS, $parameters);
+        return $this->doCall('get', self::ROUTE_TARGETS, $parameters);
     }
 
-    public function routeTargetsCreate(array $parameters = []): NetBoxResult|null
+    public function routeTargetsCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::ROUTE_TARGETS, $parameters);
+        return $this->doCall('post', self::ROUTE_TARGETS, $parameters);
     }
 
-    public function routeTargetsPut(array $parameters = []): NetBoxResult|null
+    public function routeTargetsPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::ROUTE_TARGETS, $parameters);
+        return $this->doCall('put', self::ROUTE_TARGETS, $parameters);
     }
 
-    public function routeTargetsPatch(array $parameters = []): NetBoxResult|null
+    public function routeTargetsPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::ROUTE_TARGETS, $parameters);
+        return $this->doCall('patch', self::ROUTE_TARGETS, $parameters);
     }
 
-    public function routeTargetsDelete(array $parameters = []): NetBoxResult|null
+    public function routeTargetsDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::ROUTE_TARGETS, $parameters);
+        return $this->doCall('delete', self::ROUTE_TARGETS, $parameters);
     }
 
-    public function routeTargetsById(int $id, array $parameters = []): NetBoxResult|null
+    public function routeTargetsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::ROUTE_TARGETS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::ROUTE_TARGETS, $parameters, $id);
     }
 
-    public function routeTargetsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function routeTargetsByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::ROUTE_TARGETS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::ROUTE_TARGETS, $parameters, $id);
     }
 
-    public function routeTargetsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function routeTargetsByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::ROUTE_TARGETS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::ROUTE_TARGETS, $parameters, $id);
     }
 
-    public function routeTargetsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function routeTargetsByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::ROUTE_TARGETS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::ROUTE_TARGETS, $parameters, $id);
     }
     #endregion routeTargets
 
     #region serviceTemplates
-    public function serviceTemplates(array $parameters = []): NetBoxResult|null
+    public function serviceTemplates(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::SERVICE_TEMPLATES, $parameters);
+        return $this->doCall('get', self::SERVICE_TEMPLATES, $parameters);
     }
 
-    public function serviceTemplatesCreate(array $parameters = []): NetBoxResult|null
+    public function serviceTemplatesCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::SERVICE_TEMPLATES, $parameters);
+        return $this->doCall('post', self::SERVICE_TEMPLATES, $parameters);
     }
 
-    public function serviceTemplatesPut(array $parameters = []): NetBoxResult|null
+    public function serviceTemplatesPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::SERVICE_TEMPLATES, $parameters);
+        return $this->doCall('put', self::SERVICE_TEMPLATES, $parameters);
     }
 
-    public function serviceTemplatesPatch(array $parameters = []): NetBoxResult|null
+    public function serviceTemplatesPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::SERVICE_TEMPLATES, $parameters);
+        return $this->doCall('patch', self::SERVICE_TEMPLATES, $parameters);
     }
 
-    public function serviceTemplatesDelete(array $parameters = []): NetBoxResult|null
+    public function serviceTemplatesDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::SERVICE_TEMPLATES, $parameters);
+        return $this->doCall('delete', self::SERVICE_TEMPLATES, $parameters);
     }
 
-    public function serviceTemplatesById(int $id, array $parameters = []): NetBoxResult|null
+    public function serviceTemplatesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::SERVICE_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::SERVICE_TEMPLATES, $parameters, $id);
     }
 
-    public function serviceTemplatesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function serviceTemplatesByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::SERVICE_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::SERVICE_TEMPLATES, $parameters, $id);
     }
 
-    public function serviceTemplatesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function serviceTemplatesByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::SERVICE_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::SERVICE_TEMPLATES, $parameters, $id);
     }
 
-    public function serviceTemplatesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function serviceTemplatesByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::SERVICE_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::SERVICE_TEMPLATES, $parameters, $id);
     }
     #endregion serviceTemplates
 
     #region services
-    public function services(array $parameters = []): NetBoxResult|null
+    public function services(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::SERVICES, $parameters);
+        return $this->doCall('get', self::SERVICES, $parameters);
     }
 
-    public function servicesCreate(array $parameters = []): NetBoxResult|null
+    public function servicesCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::SERVICES, $parameters);
+        return $this->doCall('post', self::SERVICES, $parameters);
     }
 
-    public function servicesPut(array $parameters = []): NetBoxResult|null
+    public function servicesPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::SERVICES, $parameters);
+        return $this->doCall('put', self::SERVICES, $parameters);
     }
 
-    public function servicesPatch(array $parameters = []): NetBoxResult|null
+    public function servicesPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::SERVICES, $parameters);
+        return $this->doCall('patch', self::SERVICES, $parameters);
     }
 
-    public function servicesDelete(array $parameters = []): NetBoxResult|null
+    public function servicesDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::SERVICES, $parameters);
+        return $this->doCall('delete', self::SERVICES, $parameters);
     }
 
-    public function servicesById(int $id, array $parameters = []): NetBoxResult|null
+    public function servicesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::SERVICES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::SERVICES, $parameters, $id);
     }
 
-    public function servicesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function servicesByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::SERVICES, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::SERVICES, $parameters, $id);
     }
 
-    public function servicesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function servicesByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::SERVICES, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::SERVICES, $parameters, $id);
     }
 
-    public function servicesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function servicesByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::SERVICES, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::SERVICES, $parameters, $id);
     }
     #endregion services
 
     #region vlanGroups
-    public function vlanGroups(array $parameters = []): NetBoxResult|null
+    public function vlanGroups(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::VLAN_GROUPS, $parameters);
+        return $this->doCall('get', self::VLAN_GROUPS, $parameters);
     }
 
-    public function vlanGroupsCreate(array $parameters = []): NetBoxResult|null
+    public function vlanGroupsCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::VLAN_GROUPS, $parameters);
+        return $this->doCall('post', self::VLAN_GROUPS, $parameters);
     }
 
-    public function vlanGroupsPut(array $parameters = []): NetBoxResult|null
+    public function vlanGroupsPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::VLAN_GROUPS, $parameters);
+        return $this->doCall('put', self::VLAN_GROUPS, $parameters);
     }
 
-    public function vlanGroupsPatch(array $parameters = []): NetBoxResult|null
+    public function vlanGroupsPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::VLAN_GROUPS, $parameters);
+        return $this->doCall('patch', self::VLAN_GROUPS, $parameters);
     }
 
-    public function vlanGroupsDelete(array $parameters = []): NetBoxResult|null
+    public function vlanGroupsDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::VLAN_GROUPS, $parameters);
+        return $this->doCall('delete', self::VLAN_GROUPS, $parameters);
     }
 
-    public function vlanGroupsById(int $id, array $parameters = []): NetBoxResult|null
+    public function vlanGroupsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::VLAN_GROUPS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::VLAN_GROUPS, $parameters, $id);
     }
 
-    public function vlanGroupsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function vlanGroupsByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::VLAN_GROUPS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::VLAN_GROUPS, $parameters, $id);
     }
 
-    public function vlanGroupsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function vlanGroupsByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::VLAN_GROUPS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::VLAN_GROUPS, $parameters, $id);
     }
 
-    public function vlanGroupsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function vlanGroupsByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::VLAN_GROUPS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::VLAN_GROUPS, $parameters, $id);
     }
 
-    public function vlanGroupsByIdAvailableVlans(int $id, array $parameters = []): NetBoxResult|null
+    public function vlanGroupsByIdAvailableVlans(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::VLAN_GROUPS, ['id' => $id, 'submodule' => 'available-vlans', ...$parameters]);
+        return $this->doCall('get', self::VLAN_GROUPS, $parameters, $id, 'available-vlans');
     }
     #endregion vlanGroups
 
     #region vlans
-    public function vlans(array $parameters = []): NetBoxResult|null
+    public function vlans(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::VLANS, $parameters);
+        return $this->doCall('get', self::VLANS, $parameters);
     }
 
-    public function vlansCreate(array $parameters = []): NetBoxResult|null
+    public function vlansCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::VLANS, $parameters);
+        return $this->doCall('post', self::VLANS, $parameters);
     }
 
-    public function vlansPut(array $parameters = []): NetBoxResult|null
+    public function vlansPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::VLANS, $parameters);
+        return $this->doCall('put', self::VLANS, $parameters);
     }
 
-    public function vlansPatch(array $parameters = []): NetBoxResult|null
+    public function vlansPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::VLANS, $parameters);
+        return $this->doCall('patch', self::VLANS, $parameters);
     }
 
-    public function vlansDelete(array $parameters = []): NetBoxResult|null
+    public function vlansDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::VLANS, $parameters);
+        return $this->doCall('delete', self::VLANS, $parameters);
     }
 
-    public function vlansById(int $id, array $parameters = []): NetBoxResult|null
+    public function vlansById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::VLANS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::VLANS, $parameters, $id);
     }
 
-    public function vlansByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function vlansByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::VLANS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::VLANS, $parameters, $id);
     }
 
-    public function vlansByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function vlansByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::VLANS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::VLANS, $parameters, $id);
     }
 
-    public function vlansByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function vlansByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::VLANS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::VLANS, $parameters, $id);
     }
     #endregion vlans
 
     #region vrfs
-    public function vrfs(array $parameters = []): NetBoxResult|null
+    public function vrfs(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::VRFS, $parameters);
+        return $this->doCall('get', self::VRFS, $parameters);
     }
 
-    public function vrfsCreate(array $parameters = []): NetBoxResult|null
+    public function vrfsCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::VRFS, $parameters);
+        return $this->doCall('post', self::VRFS, $parameters);
     }
 
-    public function vrfsPut(array $parameters = []): NetBoxResult|null
+    public function vrfsPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::VRFS, $parameters);
+        return $this->doCall('put', self::VRFS, $parameters);
     }
 
-    public function vrfsPatch(array $parameters = []): NetBoxResult|null
+    public function vrfsPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::VRFS, $parameters);
+        return $this->doCall('patch', self::VRFS, $parameters);
     }
 
-    public function vrfsDelete(array $parameters = []): NetBoxResult|null
+    public function vrfsDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::VRFS, $parameters);
+        return $this->doCall('delete', self::VRFS, $parameters);
     }
 
-    public function vrfsById(int $id, array $parameters = []): NetBoxResult|null
+    public function vrfsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::VRFS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::VRFS, $parameters, $id);
     }
 
-    public function vrfsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function vrfsByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::VRFS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::VRFS, $parameters, $id);
     }
 
-    public function vrfsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function vrfsByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::VRFS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::VRFS, $parameters, $id);
     }
 
-    public function vrfsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function vrfsByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::VRFS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::VRFS, $parameters, $id);
     }
     #endregion vrfs
 }

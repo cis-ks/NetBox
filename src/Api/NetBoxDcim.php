@@ -52,2033 +52,2033 @@ class NetBoxDcim extends NetBoxApiAbstract
     private const string VIRTUAL_DEVICE_CONTEXTS = 'dcim/virtual-device-contexts';
 
     #region cableTerminations
-    public function cableTerminations(array $parameters = []): NetBoxResult|null
+    public function cableTerminations(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::CABLE_TERMINATIONS, $parameters);
+        return $this->doCall('get', self::CABLE_TERMINATIONS, $parameters);
     }
 
-    public function cableTerminationsCreate(array $parameters = []): NetBoxResult|null
+    public function cableTerminationsCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::CABLE_TERMINATIONS, $parameters);
+        return $this->doCall('post', self::CABLE_TERMINATIONS, $parameters);
     }
 
-    public function cableTerminationsPut(array $parameters = []): NetBoxResult|null
+    public function cableTerminationsPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::CABLE_TERMINATIONS, $parameters);
+        return $this->doCall('put', self::CABLE_TERMINATIONS, $parameters);
     }
 
-    public function cableTerminationsPatch(array $parameters = []): NetBoxResult|null
+    public function cableTerminationsPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::CABLE_TERMINATIONS, $parameters);
+        return $this->doCall('patch', self::CABLE_TERMINATIONS, $parameters);
     }
 
-    public function cableTerminationsDelete(array $parameters = []): NetBoxResult|null
+    public function cableTerminationsDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::CABLE_TERMINATIONS, $parameters);
+        return $this->doCall('delete', self::CABLE_TERMINATIONS, $parameters);
     }
 
-    public function cableTerminationsById(int $id, array $parameters = []): NetBoxResult|null
+    public function cableTerminationsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::CABLE_TERMINATIONS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::CABLE_TERMINATIONS, $parameters, $id);
     }
 
-    public function cableTerminationsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function cableTerminationsByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::CABLE_TERMINATIONS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::CABLE_TERMINATIONS, $parameters, $id);
     }
 
-    public function cableTerminationsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function cableTerminationsByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::CABLE_TERMINATIONS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::CABLE_TERMINATIONS, $parameters, $id);
     }
 
-    public function cableTerminationsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function cableTerminationsByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::CABLE_TERMINATIONS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::CABLE_TERMINATIONS, $parameters, $id);
     }
     #endregion cableTerminations
 
     #region cables
-    public function cables(array $parameters = []): NetBoxResult|null
+    public function cables(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::CABLES, $parameters);
+        return $this->doCall('get', self::CABLES, $parameters);
     }
 
-    public function cablesCreate(array $parameters = []): NetBoxResult|null
+    public function cablesCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::CABLES, $parameters);
+        return $this->doCall('post', self::CABLES, $parameters);
     }
 
-    public function cablesPut(array $parameters = []): NetBoxResult|null
+    public function cablesPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::CABLES, $parameters);
+        return $this->doCall('put', self::CABLES, $parameters);
     }
 
-    public function cablesPatch(array $parameters = []): NetBoxResult|null
+    public function cablesPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::CABLES, $parameters);
+        return $this->doCall('patch', self::CABLES, $parameters);
     }
 
-    public function cablesDelete(array $parameters = []): NetBoxResult|null
+    public function cablesDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::CABLES, $parameters);
+        return $this->doCall('delete', self::CABLES, $parameters);
     }
 
-    public function cablesById(int $id, array $parameters = []): NetBoxResult|null
+    public function cablesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::CABLES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::CABLES, $parameters, $id);
     }
 
-    public function cablesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function cablesByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::CABLES, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::CABLES, $parameters, $id);
     }
 
-    public function cablesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function cablesByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::CABLES, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::CABLES, $parameters, $id);
     }
 
-    public function cablesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function cablesByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::CABLES, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::CABLES, $parameters, $id);
     }
     #endregion cables
 
     #region connectedDevice
-    public function connectedDevice(array $parameters = []): NetBoxResult|null
+    public function connectedDevice(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::CONNECTED_DEVICE, $parameters);
+        return $this->doCall('get', self::CONNECTED_DEVICE, $parameters);
     }
     #endregion connectedDevice
 
     #region consolePortTemplates
-    public function consolePortTemplates(array $parameters = []): NetBoxResult|null
+    public function consolePortTemplates(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::CONSOLE_PORT_TEMPLATES, $parameters);
+        return $this->doCall('get', self::CONSOLE_PORT_TEMPLATES, $parameters);
     }
 
-    public function consolePortTemplatesCreate(array $parameters = []): NetBoxResult|null
+    public function consolePortTemplatesCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::CONSOLE_PORT_TEMPLATES, $parameters);
+        return $this->doCall('post', self::CONSOLE_PORT_TEMPLATES, $parameters);
     }
 
-    public function consolePortTemplatesPut(array $parameters = []): NetBoxResult|null
+    public function consolePortTemplatesPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::CONSOLE_PORT_TEMPLATES, $parameters);
+        return $this->doCall('put', self::CONSOLE_PORT_TEMPLATES, $parameters);
     }
 
-    public function consolePortTemplatesPatch(array $parameters = []): NetBoxResult|null
+    public function consolePortTemplatesPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::CONSOLE_PORT_TEMPLATES, $parameters);
+        return $this->doCall('patch', self::CONSOLE_PORT_TEMPLATES, $parameters);
     }
 
-    public function consolePortTemplatesDelete(array $parameters = []): NetBoxResult|null
+    public function consolePortTemplatesDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::CONSOLE_PORT_TEMPLATES, $parameters);
+        return $this->doCall('delete', self::CONSOLE_PORT_TEMPLATES, $parameters);
     }
 
-    public function consolePortTemplatesById(int $id, array $parameters = []): NetBoxResult|null
+    public function consolePortTemplatesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::CONSOLE_PORT_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::CONSOLE_PORT_TEMPLATES, $parameters, $id);
     }
 
-    public function consolePortTemplatesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function consolePortTemplatesByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::CONSOLE_PORT_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::CONSOLE_PORT_TEMPLATES, $parameters, $id);
     }
 
-    public function consolePortTemplatesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function consolePortTemplatesByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::CONSOLE_PORT_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::CONSOLE_PORT_TEMPLATES, $parameters, $id);
     }
 
-    public function consolePortTemplatesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function consolePortTemplatesByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::CONSOLE_PORT_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::CONSOLE_PORT_TEMPLATES, $parameters, $id);
     }
     #endregion consolePortTemplates
 
     #region consolePorts
-    public function consolePorts(array $parameters = []): NetBoxResult|null
+    public function consolePorts(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::CONSOLE_PORTS, $parameters);
+        return $this->doCall('get', self::CONSOLE_PORTS, $parameters);
     }
 
-    public function consolePortsCreate(array $parameters = []): NetBoxResult|null
+    public function consolePortsCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::CONSOLE_PORTS, $parameters);
+        return $this->doCall('post', self::CONSOLE_PORTS, $parameters);
     }
 
-    public function consolePortsPut(array $parameters = []): NetBoxResult|null
+    public function consolePortsPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::CONSOLE_PORTS, $parameters);
+        return $this->doCall('put', self::CONSOLE_PORTS, $parameters);
     }
 
-    public function consolePortsPatch(array $parameters = []): NetBoxResult|null
+    public function consolePortsPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::CONSOLE_PORTS, $parameters);
+        return $this->doCall('patch', self::CONSOLE_PORTS, $parameters);
     }
 
-    public function consolePortsDelete(array $parameters = []): NetBoxResult|null
+    public function consolePortsDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::CONSOLE_PORTS, $parameters);
+        return $this->doCall('delete', self::CONSOLE_PORTS, $parameters);
     }
 
-    public function consolePortsById(int $id, array $parameters = []): NetBoxResult|null
+    public function consolePortsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::CONSOLE_PORTS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::CONSOLE_PORTS, $parameters, $id);
     }
 
-    public function consolePortsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function consolePortsByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::CONSOLE_PORTS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::CONSOLE_PORTS, $parameters, $id);
     }
 
-    public function consolePortsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function consolePortsByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::CONSOLE_PORTS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::CONSOLE_PORTS, $parameters, $id);
     }
 
-    public function consolePortsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function consolePortsByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::CONSOLE_PORTS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::CONSOLE_PORTS, $parameters, $id);
     }
 
-    public function consolePortsByIdTrace(int $id, array $parameters = []): NetBoxResult|null
+    public function consolePortsByIdTrace(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::CONSOLE_PORTS, ['id' => $id, 'submodule' => 'trace', ...$parameters]);
+        return $this->doCall('get', self::CONSOLE_PORTS, $parameters, $id, 'trace');
     }
     #endregion consolePorts
 
     #region consoleServerPortTemplates
-    public function consoleServerPortTemplates(array $parameters = []): NetBoxResult|null
+    public function consoleServerPortTemplates(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::CONSOLE_SERVER_PORT_TEMPLATES, $parameters);
+        return $this->doCall('get', self::CONSOLE_SERVER_PORT_TEMPLATES, $parameters);
     }
 
-    public function consoleServerPortTemplatesCreate(array $parameters = []): NetBoxResult|null
+    public function consoleServerPortTemplatesCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::CONSOLE_SERVER_PORT_TEMPLATES, $parameters);
+        return $this->doCall('post', self::CONSOLE_SERVER_PORT_TEMPLATES, $parameters);
     }
 
-    public function consoleServerPortTemplatesPut(array $parameters = []): NetBoxResult|null
+    public function consoleServerPortTemplatesPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::CONSOLE_SERVER_PORT_TEMPLATES, $parameters);
+        return $this->doCall('put', self::CONSOLE_SERVER_PORT_TEMPLATES, $parameters);
     }
 
-    public function consoleServerPortTemplatesPatch(array $parameters = []): NetBoxResult|null
+    public function consoleServerPortTemplatesPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::CONSOLE_SERVER_PORT_TEMPLATES, $parameters);
+        return $this->doCall('patch', self::CONSOLE_SERVER_PORT_TEMPLATES, $parameters);
     }
 
-    public function consoleServerPortTemplatesDelete(array $parameters = []): NetBoxResult|null
+    public function consoleServerPortTemplatesDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::CONSOLE_SERVER_PORT_TEMPLATES, $parameters);
+        return $this->doCall('delete', self::CONSOLE_SERVER_PORT_TEMPLATES, $parameters);
     }
 
-    public function consoleServerPortTemplatesById(int $id, array $parameters = []): NetBoxResult|null
+    public function consoleServerPortTemplatesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::CONSOLE_SERVER_PORT_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::CONSOLE_SERVER_PORT_TEMPLATES, $parameters, $id);
     }
 
-    public function consoleServerPortTemplatesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function consoleServerPortTemplatesByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::CONSOLE_SERVER_PORT_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::CONSOLE_SERVER_PORT_TEMPLATES, $parameters, $id);
     }
 
-    public function consoleServerPortTemplatesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function consoleServerPortTemplatesByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::CONSOLE_SERVER_PORT_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::CONSOLE_SERVER_PORT_TEMPLATES, $parameters, $id);
     }
 
-    public function consoleServerPortTemplatesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function consoleServerPortTemplatesByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::CONSOLE_SERVER_PORT_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::CONSOLE_SERVER_PORT_TEMPLATES, $parameters, $id);
     }
     #endregion consoleServerPortTemplates
 
     #region consoleServerPorts
-    public function consoleServerPorts(array $parameters = []): NetBoxResult|null
+    public function consoleServerPorts(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::CONSOLE_SERVER_PORTS, $parameters);
+        return $this->doCall('get', self::CONSOLE_SERVER_PORTS, $parameters);
     }
 
-    public function consoleServerPortsCreate(array $parameters = []): NetBoxResult|null
+    public function consoleServerPortsCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::CONSOLE_SERVER_PORTS, $parameters);
+        return $this->doCall('post', self::CONSOLE_SERVER_PORTS, $parameters);
     }
 
-    public function consoleServerPortsPut(array $parameters = []): NetBoxResult|null
+    public function consoleServerPortsPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::CONSOLE_SERVER_PORTS, $parameters);
+        return $this->doCall('put', self::CONSOLE_SERVER_PORTS, $parameters);
     }
 
-    public function consoleServerPortsPatch(array $parameters = []): NetBoxResult|null
+    public function consoleServerPortsPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::CONSOLE_SERVER_PORTS, $parameters);
+        return $this->doCall('patch', self::CONSOLE_SERVER_PORTS, $parameters);
     }
 
-    public function consoleServerPortsDelete(array $parameters = []): NetBoxResult|null
+    public function consoleServerPortsDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::CONSOLE_SERVER_PORTS, $parameters);
+        return $this->doCall('delete', self::CONSOLE_SERVER_PORTS, $parameters);
     }
 
-    public function consoleServerPortsById(int $id, array $parameters = []): NetBoxResult|null
+    public function consoleServerPortsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::CONSOLE_SERVER_PORTS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::CONSOLE_SERVER_PORTS, $parameters, $id);
     }
 
-    public function consoleServerPortsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function consoleServerPortsByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::CONSOLE_SERVER_PORTS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::CONSOLE_SERVER_PORTS, $parameters, $id);
     }
 
-    public function consoleServerPortsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function consoleServerPortsByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::CONSOLE_SERVER_PORTS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::CONSOLE_SERVER_PORTS, $parameters, $id);
     }
 
-    public function consoleServerPortsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function consoleServerPortsByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::CONSOLE_SERVER_PORTS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::CONSOLE_SERVER_PORTS, $parameters, $id);
     }
 
-    public function consoleServerPortsByIdTrace(int $id, array $parameters = []): NetBoxResult|null
+    public function consoleServerPortsByIdTrace(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::CONSOLE_SERVER_PORTS, ['id' => $id, 'submodule' => 'trace', ...$parameters]);
+        return $this->doCall('get', self::CONSOLE_SERVER_PORTS, $parameters, $id, 'trace');
     }
     #endregion consoleServerPorts
 
     #region deviceBayTemplates
-    public function deviceBayTemplates(array $parameters = []): NetBoxResult|null
+    public function deviceBayTemplates(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::DEVICE_BAY_TEMPLATES, $parameters);
+        return $this->doCall('get', self::DEVICE_BAY_TEMPLATES, $parameters);
     }
 
-    public function deviceBayTemplatesCreate(array $parameters = []): NetBoxResult|null
+    public function deviceBayTemplatesCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::DEVICE_BAY_TEMPLATES, $parameters);
+        return $this->doCall('post', self::DEVICE_BAY_TEMPLATES, $parameters);
     }
 
-    public function deviceBayTemplatesPut(array $parameters = []): NetBoxResult|null
+    public function deviceBayTemplatesPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::DEVICE_BAY_TEMPLATES, $parameters);
+        return $this->doCall('put', self::DEVICE_BAY_TEMPLATES, $parameters);
     }
 
-    public function deviceBayTemplatesPatch(array $parameters = []): NetBoxResult|null
+    public function deviceBayTemplatesPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::DEVICE_BAY_TEMPLATES, $parameters);
+        return $this->doCall('patch', self::DEVICE_BAY_TEMPLATES, $parameters);
     }
 
-    public function deviceBayTemplatesDelete(array $parameters = []): NetBoxResult|null
+    public function deviceBayTemplatesDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::DEVICE_BAY_TEMPLATES, $parameters);
+        return $this->doCall('delete', self::DEVICE_BAY_TEMPLATES, $parameters);
     }
 
-    public function deviceBayTemplatesById(int $id, array $parameters = []): NetBoxResult|null
+    public function deviceBayTemplatesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::DEVICE_BAY_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::DEVICE_BAY_TEMPLATES, $parameters, $id);
     }
 
-    public function deviceBayTemplatesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function deviceBayTemplatesByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::DEVICE_BAY_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::DEVICE_BAY_TEMPLATES, $parameters, $id);
     }
 
-    public function deviceBayTemplatesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function deviceBayTemplatesByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::DEVICE_BAY_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::DEVICE_BAY_TEMPLATES, $parameters, $id);
     }
 
-    public function deviceBayTemplatesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function deviceBayTemplatesByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::DEVICE_BAY_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::DEVICE_BAY_TEMPLATES, $parameters, $id);
     }
     #endregion deviceBayTemplates
 
     #region deviceBays
-    public function deviceBays(array $parameters = []): NetBoxResult|null
+    public function deviceBays(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::DEVICE_BAYS, $parameters);
+        return $this->doCall('get', self::DEVICE_BAYS, $parameters);
     }
 
-    public function deviceBaysCreate(array $parameters = []): NetBoxResult|null
+    public function deviceBaysCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::DEVICE_BAYS, $parameters);
+        return $this->doCall('post', self::DEVICE_BAYS, $parameters);
     }
 
-    public function deviceBaysPut(array $parameters = []): NetBoxResult|null
+    public function deviceBaysPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::DEVICE_BAYS, $parameters);
+        return $this->doCall('put', self::DEVICE_BAYS, $parameters);
     }
 
-    public function deviceBaysPatch(array $parameters = []): NetBoxResult|null
+    public function deviceBaysPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::DEVICE_BAYS, $parameters);
+        return $this->doCall('patch', self::DEVICE_BAYS, $parameters);
     }
 
-    public function deviceBaysDelete(array $parameters = []): NetBoxResult|null
+    public function deviceBaysDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::DEVICE_BAYS, $parameters);
+        return $this->doCall('delete', self::DEVICE_BAYS, $parameters);
     }
 
-    public function deviceBaysById(int $id, array $parameters = []): NetBoxResult|null
+    public function deviceBaysById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::DEVICE_BAYS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::DEVICE_BAYS, $parameters, $id);
     }
 
-    public function deviceBaysByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function deviceBaysByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::DEVICE_BAYS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::DEVICE_BAYS, $parameters, $id);
     }
 
-    public function deviceBaysByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function deviceBaysByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::DEVICE_BAYS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::DEVICE_BAYS, $parameters, $id);
     }
 
-    public function deviceBaysByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function deviceBaysByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::DEVICE_BAYS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::DEVICE_BAYS, $parameters, $id);
     }
     #endregion deviceBays
 
     #region deviceRoles
-    public function deviceRoles(array $parameters = []): NetBoxResult|null
+    public function deviceRoles(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::DEVICE_ROLES, $parameters);
+        return $this->doCall('get', self::DEVICE_ROLES, $parameters);
     }
 
-    public function deviceRolesCreate(array $parameters = []): NetBoxResult|null
+    public function deviceRolesCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::DEVICE_ROLES, $parameters);
+        return $this->doCall('post', self::DEVICE_ROLES, $parameters);
     }
 
-    public function deviceRolesPut(array $parameters = []): NetBoxResult|null
+    public function deviceRolesPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::DEVICE_ROLES, $parameters);
+        return $this->doCall('put', self::DEVICE_ROLES, $parameters);
     }
 
-    public function deviceRolesPatch(array $parameters = []): NetBoxResult|null
+    public function deviceRolesPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::DEVICE_ROLES, $parameters);
+        return $this->doCall('patch', self::DEVICE_ROLES, $parameters);
     }
 
-    public function deviceRolesDelete(array $parameters = []): NetBoxResult|null
+    public function deviceRolesDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::DEVICE_ROLES, $parameters);
+        return $this->doCall('delete', self::DEVICE_ROLES, $parameters);
     }
 
-    public function deviceRolesById(int $id, array $parameters = []): NetBoxResult|null
+    public function deviceRolesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::DEVICE_ROLES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::DEVICE_ROLES, $parameters, $id);
     }
 
-    public function deviceRolesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function deviceRolesByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::DEVICE_ROLES, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::DEVICE_ROLES, $parameters, $id);
     }
 
-    public function deviceRolesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function deviceRolesByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::DEVICE_ROLES, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::DEVICE_ROLES, $parameters, $id);
     }
 
-    public function deviceRolesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function deviceRolesByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::DEVICE_ROLES, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::DEVICE_ROLES, $parameters, $id);
     }
     #endregion deviceRoles
 
     #region deviceTypes
-    public function deviceTypes(array $parameters = []): NetBoxResult|null
+    public function deviceTypes(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::DEVICE_TYPES, $parameters);
+        return $this->doCall('get', self::DEVICE_TYPES, $parameters);
     }
 
-    public function deviceTypesCreate(array $parameters = []): NetBoxResult|null
+    public function deviceTypesCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::DEVICE_TYPES, $parameters);
+        return $this->doCall('post', self::DEVICE_TYPES, $parameters);
     }
 
-    public function deviceTypesPut(array $parameters = []): NetBoxResult|null
+    public function deviceTypesPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::DEVICE_TYPES, $parameters);
+        return $this->doCall('put', self::DEVICE_TYPES, $parameters);
     }
 
-    public function deviceTypesPatch(array $parameters = []): NetBoxResult|null
+    public function deviceTypesPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::DEVICE_TYPES, $parameters);
+        return $this->doCall('patch', self::DEVICE_TYPES, $parameters);
     }
 
-    public function deviceTypesDelete(array $parameters = []): NetBoxResult|null
+    public function deviceTypesDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::DEVICE_TYPES, $parameters);
+        return $this->doCall('delete', self::DEVICE_TYPES, $parameters);
     }
 
-    public function deviceTypesById(int $id, array $parameters = []): NetBoxResult|null
+    public function deviceTypesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::DEVICE_TYPES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::DEVICE_TYPES, $parameters, $id);
     }
 
-    public function deviceTypesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function deviceTypesByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::DEVICE_TYPES, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::DEVICE_TYPES, $parameters, $id);
     }
 
-    public function deviceTypesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function deviceTypesByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::DEVICE_TYPES, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::DEVICE_TYPES, $parameters, $id);
     }
 
-    public function deviceTypesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function deviceTypesByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::DEVICE_TYPES, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::DEVICE_TYPES, $parameters, $id);
     }
     #endregion deviceTypes
 
     #region devices
-    public function devices(array $parameters = []): NetBoxResult|null
+    public function devices(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::DEVICES, $parameters);
+        return $this->doCall('get', self::DEVICES, $parameters);
     }
 
-    public function devicesCreate(array $parameters = []): NetBoxResult|null
+    public function devicesCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::DEVICES, $parameters);
+        return $this->doCall('post', self::DEVICES, $parameters);
     }
 
-    public function devicesPut(array $parameters = []): NetBoxResult|null
+    public function devicesPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::DEVICES, $parameters);
+        return $this->doCall('put', self::DEVICES, $parameters);
     }
 
-    public function devicesPatch(array $parameters = []): NetBoxResult|null
+    public function devicesPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::DEVICES, $parameters);
+        return $this->doCall('patch', self::DEVICES, $parameters);
     }
 
-    public function devicesDelete(array $parameters = []): NetBoxResult|null
+    public function devicesDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::DEVICES, $parameters);
+        return $this->doCall('delete', self::DEVICES, $parameters);
     }
 
-    public function devicesById(int $id, array $parameters = []): NetBoxResult|null
+    public function devicesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::DEVICES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::DEVICES, $parameters, $id);
     }
 
-    public function devicesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function devicesByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::DEVICES, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::DEVICES, $parameters, $id);
     }
 
-    public function devicesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function devicesByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::DEVICES, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::DEVICES, $parameters, $id);
     }
 
-    public function devicesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function devicesByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::DEVICES, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::DEVICES, $parameters, $id);
     }
 
-    public function devicesByIdRenderConfig(int $id, array $parameters = []): NetBoxResult|null
+    public function devicesByIdRenderConfig(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::DEVICES, ['id' => $id, 'submodule' => 'render-config', ...$parameters]);
+        return $this->doCall('get', self::DEVICES, $parameters, $id, 'render-config');
     }
     #endregion devices
 
     #region frontPortTemplates
-    public function frontPortTemplates(array $parameters = []): NetBoxResult|null
+    public function frontPortTemplates(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::FRONT_PORT_TEMPLATES, $parameters);
+        return $this->doCall('get', self::FRONT_PORT_TEMPLATES, $parameters);
     }
 
-    public function frontPortTemplatesCreate(array $parameters = []): NetBoxResult|null
+    public function frontPortTemplatesCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::FRONT_PORT_TEMPLATES, $parameters);
+        return $this->doCall('post', self::FRONT_PORT_TEMPLATES, $parameters);
     }
 
-    public function frontPortTemplatesPut(array $parameters = []): NetBoxResult|null
+    public function frontPortTemplatesPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::FRONT_PORT_TEMPLATES, $parameters);
+        return $this->doCall('put', self::FRONT_PORT_TEMPLATES, $parameters);
     }
 
-    public function frontPortTemplatesPatch(array $parameters = []): NetBoxResult|null
+    public function frontPortTemplatesPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::FRONT_PORT_TEMPLATES, $parameters);
+        return $this->doCall('patch', self::FRONT_PORT_TEMPLATES, $parameters);
     }
 
-    public function frontPortTemplatesDelete(array $parameters = []): NetBoxResult|null
+    public function frontPortTemplatesDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::FRONT_PORT_TEMPLATES, $parameters);
+        return $this->doCall('delete', self::FRONT_PORT_TEMPLATES, $parameters);
     }
 
-    public function frontPortTemplatesById(int $id, array $parameters = []): NetBoxResult|null
+    public function frontPortTemplatesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::FRONT_PORT_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::FRONT_PORT_TEMPLATES, $parameters, $id);
     }
 
-    public function frontPortTemplatesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function frontPortTemplatesByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::FRONT_PORT_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::FRONT_PORT_TEMPLATES, $parameters, $id);
     }
 
-    public function frontPortTemplatesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function frontPortTemplatesByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::FRONT_PORT_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::FRONT_PORT_TEMPLATES, $parameters, $id);
     }
 
-    public function frontPortTemplatesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function frontPortTemplatesByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::FRONT_PORT_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::FRONT_PORT_TEMPLATES, $parameters, $id);
     }
     #endregion frontPortTemplates
 
     #region frontPorts
-    public function frontPorts(array $parameters = []): NetBoxResult|null
+    public function frontPorts(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::FRONT_PORTS, $parameters);
+        return $this->doCall('get', self::FRONT_PORTS, $parameters);
     }
 
-    public function frontPortsCreate(array $parameters = []): NetBoxResult|null
+    public function frontPortsCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::FRONT_PORTS, $parameters);
+        return $this->doCall('post', self::FRONT_PORTS, $parameters);
     }
 
-    public function frontPortsPut(array $parameters = []): NetBoxResult|null
+    public function frontPortsPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::FRONT_PORTS, $parameters);
+        return $this->doCall('put', self::FRONT_PORTS, $parameters);
     }
 
-    public function frontPortsPatch(array $parameters = []): NetBoxResult|null
+    public function frontPortsPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::FRONT_PORTS, $parameters);
+        return $this->doCall('patch', self::FRONT_PORTS, $parameters);
     }
 
-    public function frontPortsDelete(array $parameters = []): NetBoxResult|null
+    public function frontPortsDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::FRONT_PORTS, $parameters);
+        return $this->doCall('delete', self::FRONT_PORTS, $parameters);
     }
 
-    public function frontPortsById(int $id, array $parameters = []): NetBoxResult|null
+    public function frontPortsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::FRONT_PORTS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::FRONT_PORTS, $parameters, $id);
     }
 
-    public function frontPortsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function frontPortsByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::FRONT_PORTS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::FRONT_PORTS, $parameters, $id);
     }
 
-    public function frontPortsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function frontPortsByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::FRONT_PORTS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::FRONT_PORTS, $parameters, $id);
     }
 
-    public function frontPortsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function frontPortsByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::FRONT_PORTS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::FRONT_PORTS, $parameters, $id);
     }
 
-    public function frontPortsByIdPaths(int $id, array $parameters = []): NetBoxResult|null
+    public function frontPortsByIdPaths(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::FRONT_PORTS, ['id' => $id, 'submodule' => 'paths', ...$parameters]);
+        return $this->doCall('get', self::FRONT_PORTS, $parameters, $id, 'paths');
     }
     #endregion frontPorts
 
     #region interfaceTemplates
-    public function interfaceTemplates(array $parameters = []): NetBoxResult|null
+    public function interfaceTemplates(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::INTERFACE_TEMPLATES, $parameters);
+        return $this->doCall('get', self::INTERFACE_TEMPLATES, $parameters);
     }
 
-    public function interfaceTemplatesCreate(array $parameters = []): NetBoxResult|null
+    public function interfaceTemplatesCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::INTERFACE_TEMPLATES, $parameters);
+        return $this->doCall('post', self::INTERFACE_TEMPLATES, $parameters);
     }
 
-    public function interfaceTemplatesPut(array $parameters = []): NetBoxResult|null
+    public function interfaceTemplatesPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::INTERFACE_TEMPLATES, $parameters);
+        return $this->doCall('put', self::INTERFACE_TEMPLATES, $parameters);
     }
 
-    public function interfaceTemplatesPatch(array $parameters = []): NetBoxResult|null
+    public function interfaceTemplatesPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::INTERFACE_TEMPLATES, $parameters);
+        return $this->doCall('patch', self::INTERFACE_TEMPLATES, $parameters);
     }
 
-    public function interfaceTemplatesDelete(array $parameters = []): NetBoxResult|null
+    public function interfaceTemplatesDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::INTERFACE_TEMPLATES, $parameters);
+        return $this->doCall('delete', self::INTERFACE_TEMPLATES, $parameters);
     }
 
-    public function interfaceTemplatesById(int $id, array $parameters = []): NetBoxResult|null
+    public function interfaceTemplatesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::INTERFACE_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::INTERFACE_TEMPLATES, $parameters, $id);
     }
 
-    public function interfaceTemplatesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function interfaceTemplatesByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::INTERFACE_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::INTERFACE_TEMPLATES, $parameters, $id);
     }
 
-    public function interfaceTemplatesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function interfaceTemplatesByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::INTERFACE_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::INTERFACE_TEMPLATES, $parameters, $id);
     }
 
-    public function interfaceTemplatesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function interfaceTemplatesByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::INTERFACE_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::INTERFACE_TEMPLATES, $parameters, $id);
     }
     #endregion interfaceTemplates
 
     #region interfaces
-    public function interfaces(array $parameters = []): NetBoxResult|null
+    public function interfaces(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::INTERFACES, $parameters);
+        return $this->doCall('get', self::INTERFACES, $parameters);
     }
 
-    public function interfacesCreate(array $parameters = []): NetBoxResult|null
+    public function interfacesCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::INTERFACES, $parameters);
+        return $this->doCall('post', self::INTERFACES, $parameters);
     }
 
-    public function interfacesPut(array $parameters = []): NetBoxResult|null
+    public function interfacesPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::INTERFACES, $parameters);
+        return $this->doCall('put', self::INTERFACES, $parameters);
     }
 
-    public function interfacesPatch(array $parameters = []): NetBoxResult|null
+    public function interfacesPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::INTERFACES, $parameters);
+        return $this->doCall('patch', self::INTERFACES, $parameters);
     }
 
-    public function interfacesDelete(array $parameters = []): NetBoxResult|null
+    public function interfacesDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::INTERFACES, $parameters);
+        return $this->doCall('delete', self::INTERFACES, $parameters);
     }
 
-    public function interfacesById(int $id, array $parameters = []): NetBoxResult|null
+    public function interfacesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::INTERFACES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::INTERFACES, $parameters, $id);
     }
 
-    public function interfacesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function interfacesByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::INTERFACES, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::INTERFACES, $parameters, $id);
     }
 
-    public function interfacesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function interfacesByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::INTERFACES, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::INTERFACES, $parameters, $id);
     }
 
-    public function interfacesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function interfacesByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::INTERFACES, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::INTERFACES, $parameters, $id);
     }
 
-    public function interfacesByIdTrace(int $id, array $parameters = []): NetBoxResult|null
+    public function interfacesByIdTrace(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::INTERFACES, ['id' => $id, 'submodule' => 'trace', ...$parameters]);
+        return $this->doCall('get', self::INTERFACES, $parameters, $id, 'trace');
     }
     #endregion interfaces
 
     #region inventoryItemRoles
-    public function inventoryItemRoles(array $parameters = []): NetBoxResult|null
+    public function inventoryItemRoles(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::INVENTORY_ITEM_ROLES, $parameters);
+        return $this->doCall('get', self::INVENTORY_ITEM_ROLES, $parameters);
     }
 
-    public function inventoryItemRolesCreate(array $parameters = []): NetBoxResult|null
+    public function inventoryItemRolesCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::INVENTORY_ITEM_ROLES, $parameters);
+        return $this->doCall('post', self::INVENTORY_ITEM_ROLES, $parameters);
     }
 
-    public function inventoryItemRolesPut(array $parameters = []): NetBoxResult|null
+    public function inventoryItemRolesPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::INVENTORY_ITEM_ROLES, $parameters);
+        return $this->doCall('put', self::INVENTORY_ITEM_ROLES, $parameters);
     }
 
-    public function inventoryItemRolesPatch(array $parameters = []): NetBoxResult|null
+    public function inventoryItemRolesPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::INVENTORY_ITEM_ROLES, $parameters);
+        return $this->doCall('patch', self::INVENTORY_ITEM_ROLES, $parameters);
     }
 
-    public function inventoryItemRolesDelete(array $parameters = []): NetBoxResult|null
+    public function inventoryItemRolesDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::INVENTORY_ITEM_ROLES, $parameters);
+        return $this->doCall('delete', self::INVENTORY_ITEM_ROLES, $parameters);
     }
 
-    public function inventoryItemRolesById(int $id, array $parameters = []): NetBoxResult|null
+    public function inventoryItemRolesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::INVENTORY_ITEM_ROLES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::INVENTORY_ITEM_ROLES, $parameters, $id);
     }
 
-    public function inventoryItemRolesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function inventoryItemRolesByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::INVENTORY_ITEM_ROLES, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::INVENTORY_ITEM_ROLES, $parameters, $id);
     }
 
-    public function inventoryItemRolesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function inventoryItemRolesByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::INVENTORY_ITEM_ROLES, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::INVENTORY_ITEM_ROLES, $parameters, $id);
     }
 
-    public function inventoryItemRolesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function inventoryItemRolesByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::INVENTORY_ITEM_ROLES, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::INVENTORY_ITEM_ROLES, $parameters, $id);
     }
     #endregion inventoryItemRoles
 
     #region inventoryItemTemplates
-    public function inventoryItemTemplates(array $parameters = []): NetBoxResult|null
+    public function inventoryItemTemplates(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::INVENTORY_ITEM_TEMPLATES, $parameters);
+        return $this->doCall('get', self::INVENTORY_ITEM_TEMPLATES, $parameters);
     }
 
-    public function inventoryItemTemplatesCreate(array $parameters = []): NetBoxResult|null
+    public function inventoryItemTemplatesCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::INVENTORY_ITEM_TEMPLATES, $parameters);
+        return $this->doCall('post', self::INVENTORY_ITEM_TEMPLATES, $parameters);
     }
 
-    public function inventoryItemTemplatesPut(array $parameters = []): NetBoxResult|null
+    public function inventoryItemTemplatesPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::INVENTORY_ITEM_TEMPLATES, $parameters);
+        return $this->doCall('put', self::INVENTORY_ITEM_TEMPLATES, $parameters);
     }
 
-    public function inventoryItemTemplatesPatch(array $parameters = []): NetBoxResult|null
+    public function inventoryItemTemplatesPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::INVENTORY_ITEM_TEMPLATES, $parameters);
+        return $this->doCall('patch', self::INVENTORY_ITEM_TEMPLATES, $parameters);
     }
 
-    public function inventoryItemTemplatesDelete(array $parameters = []): NetBoxResult|null
+    public function inventoryItemTemplatesDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::INVENTORY_ITEM_TEMPLATES, $parameters);
+        return $this->doCall('delete', self::INVENTORY_ITEM_TEMPLATES, $parameters);
     }
 
-    public function inventoryItemTemplatesById(int $id, array $parameters = []): NetBoxResult|null
+    public function inventoryItemTemplatesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::INVENTORY_ITEM_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::INVENTORY_ITEM_TEMPLATES, $parameters, $id);
     }
 
-    public function inventoryItemTemplatesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function inventoryItemTemplatesByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::INVENTORY_ITEM_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::INVENTORY_ITEM_TEMPLATES, $parameters, $id);
     }
 
-    public function inventoryItemTemplatesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function inventoryItemTemplatesByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::INVENTORY_ITEM_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::INVENTORY_ITEM_TEMPLATES, $parameters, $id);
     }
 
-    public function inventoryItemTemplatesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function inventoryItemTemplatesByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::INVENTORY_ITEM_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::INVENTORY_ITEM_TEMPLATES, $parameters, $id);
     }
     #endregion inventoryItemTemplates
 
     #region inventoryItems
-    public function inventoryItems(array $parameters = []): NetBoxResult|null
+    public function inventoryItems(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::INVENTORY_ITEMS, $parameters);
+        return $this->doCall('get', self::INVENTORY_ITEMS, $parameters);
     }
 
-    public function inventoryItemsCreate(array $parameters = []): NetBoxResult|null
+    public function inventoryItemsCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::INVENTORY_ITEMS, $parameters);
+        return $this->doCall('post', self::INVENTORY_ITEMS, $parameters);
     }
 
-    public function inventoryItemsPut(array $parameters = []): NetBoxResult|null
+    public function inventoryItemsPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::INVENTORY_ITEMS, $parameters);
+        return $this->doCall('put', self::INVENTORY_ITEMS, $parameters);
     }
 
-    public function inventoryItemsPatch(array $parameters = []): NetBoxResult|null
+    public function inventoryItemsPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::INVENTORY_ITEMS, $parameters);
+        return $this->doCall('patch', self::INVENTORY_ITEMS, $parameters);
     }
 
-    public function inventoryItemsDelete(array $parameters = []): NetBoxResult|null
+    public function inventoryItemsDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::INVENTORY_ITEMS, $parameters);
+        return $this->doCall('delete', self::INVENTORY_ITEMS, $parameters);
     }
 
-    public function inventoryItemsById(int $id, array $parameters = []): NetBoxResult|null
+    public function inventoryItemsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::INVENTORY_ITEMS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::INVENTORY_ITEMS, $parameters, $id);
     }
 
-    public function inventoryItemsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function inventoryItemsByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::INVENTORY_ITEMS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::INVENTORY_ITEMS, $parameters, $id);
     }
 
-    public function inventoryItemsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function inventoryItemsByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::INVENTORY_ITEMS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::INVENTORY_ITEMS, $parameters, $id);
     }
 
-    public function inventoryItemsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function inventoryItemsByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::INVENTORY_ITEMS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::INVENTORY_ITEMS, $parameters, $id);
     }
     #endregion inventoryItems
 
     #region locations
-    public function locations(array $parameters = []): NetBoxResult|null
+    public function locations(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::LOCATIONS, $parameters);
+        return $this->doCall('get', self::LOCATIONS, $parameters);
     }
 
-    public function locationsCreate(array $parameters = []): NetBoxResult|null
+    public function locationsCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::LOCATIONS, $parameters);
+        return $this->doCall('post', self::LOCATIONS, $parameters);
     }
 
-    public function locationsPut(array $parameters = []): NetBoxResult|null
+    public function locationsPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::LOCATIONS, $parameters);
+        return $this->doCall('put', self::LOCATIONS, $parameters);
     }
 
-    public function locationsPatch(array $parameters = []): NetBoxResult|null
+    public function locationsPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::LOCATIONS, $parameters);
+        return $this->doCall('patch', self::LOCATIONS, $parameters);
     }
 
-    public function locationsDelete(array $parameters = []): NetBoxResult|null
+    public function locationsDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::LOCATIONS, $parameters);
+        return $this->doCall('delete', self::LOCATIONS, $parameters);
     }
 
-    public function locationsById(int $id, array $parameters = []): NetBoxResult|null
+    public function locationsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::LOCATIONS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::LOCATIONS, $parameters, $id);
     }
 
-    public function locationsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function locationsByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::LOCATIONS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::LOCATIONS, $parameters, $id);
     }
 
-    public function locationsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function locationsByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::LOCATIONS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::LOCATIONS, $parameters, $id);
     }
 
-    public function locationsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function locationsByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::LOCATIONS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::LOCATIONS, $parameters, $id);
     }
     #endregion locations
 
     #region manufacturers
-    public function manufacturers(array $parameters = []): NetBoxResult|null
+    public function manufacturers(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::MANUFACTURERS, $parameters);
+        return $this->doCall('get', self::MANUFACTURERS, $parameters);
     }
 
-    public function manufacturersCreate(array $parameters = []): NetBoxResult|null
+    public function manufacturersCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::MANUFACTURERS, $parameters);
+        return $this->doCall('post', self::MANUFACTURERS, $parameters);
     }
 
-    public function manufacturersPut(array $parameters = []): NetBoxResult|null
+    public function manufacturersPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::MANUFACTURERS, $parameters);
+        return $this->doCall('put', self::MANUFACTURERS, $parameters);
     }
 
-    public function manufacturersPatch(array $parameters = []): NetBoxResult|null
+    public function manufacturersPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::MANUFACTURERS, $parameters);
+        return $this->doCall('patch', self::MANUFACTURERS, $parameters);
     }
 
-    public function manufacturersDelete(array $parameters = []): NetBoxResult|null
+    public function manufacturersDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::MANUFACTURERS, $parameters);
+        return $this->doCall('delete', self::MANUFACTURERS, $parameters);
     }
 
-    public function manufacturersById(int $id, array $parameters = []): NetBoxResult|null
+    public function manufacturersById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::MANUFACTURERS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::MANUFACTURERS, $parameters, $id);
     }
 
-    public function manufacturersByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function manufacturersByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::MANUFACTURERS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::MANUFACTURERS, $parameters, $id);
     }
 
-    public function manufacturersByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function manufacturersByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::MANUFACTURERS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::MANUFACTURERS, $parameters, $id);
     }
 
-    public function manufacturersByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function manufacturersByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::MANUFACTURERS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::MANUFACTURERS, $parameters, $id);
     }
     #endregion manufacturers
 
     #region moduleBayTemplates
-    public function moduleBayTemplates(array $parameters = []): NetBoxResult|null
+    public function moduleBayTemplates(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::MODULE_BAY_TEMPLATES, $parameters);
+        return $this->doCall('get', self::MODULE_BAY_TEMPLATES, $parameters);
     }
 
-    public function moduleBayTemplatesCreate(array $parameters = []): NetBoxResult|null
+    public function moduleBayTemplatesCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::MODULE_BAY_TEMPLATES, $parameters);
+        return $this->doCall('post', self::MODULE_BAY_TEMPLATES, $parameters);
     }
 
-    public function moduleBayTemplatesPut(array $parameters = []): NetBoxResult|null
+    public function moduleBayTemplatesPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::MODULE_BAY_TEMPLATES, $parameters);
+        return $this->doCall('put', self::MODULE_BAY_TEMPLATES, $parameters);
     }
 
-    public function moduleBayTemplatesPatch(array $parameters = []): NetBoxResult|null
+    public function moduleBayTemplatesPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::MODULE_BAY_TEMPLATES, $parameters);
+        return $this->doCall('patch', self::MODULE_BAY_TEMPLATES, $parameters);
     }
 
-    public function moduleBayTemplatesDelete(array $parameters = []): NetBoxResult|null
+    public function moduleBayTemplatesDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::MODULE_BAY_TEMPLATES, $parameters);
+        return $this->doCall('delete', self::MODULE_BAY_TEMPLATES, $parameters);
     }
 
-    public function moduleBayTemplatesById(int $id, array $parameters = []): NetBoxResult|null
+    public function moduleBayTemplatesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::MODULE_BAY_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::MODULE_BAY_TEMPLATES, $parameters, $id);
     }
 
-    public function moduleBayTemplatesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function moduleBayTemplatesByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::MODULE_BAY_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::MODULE_BAY_TEMPLATES, $parameters, $id);
     }
 
-    public function moduleBayTemplatesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function moduleBayTemplatesByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::MODULE_BAY_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::MODULE_BAY_TEMPLATES, $parameters, $id);
     }
 
-    public function moduleBayTemplatesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function moduleBayTemplatesByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::MODULE_BAY_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::MODULE_BAY_TEMPLATES, $parameters, $id);
     }
     #endregion moduleBayTemplates
 
     #region moduleBays
-    public function moduleBays(array $parameters = []): NetBoxResult|null
+    public function moduleBays(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::MODULE_BAYS, $parameters);
+        return $this->doCall('get', self::MODULE_BAYS, $parameters);
     }
 
-    public function moduleBaysCreate(array $parameters = []): NetBoxResult|null
+    public function moduleBaysCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::MODULE_BAYS, $parameters);
+        return $this->doCall('post', self::MODULE_BAYS, $parameters);
     }
 
-    public function moduleBaysPut(array $parameters = []): NetBoxResult|null
+    public function moduleBaysPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::MODULE_BAYS, $parameters);
+        return $this->doCall('put', self::MODULE_BAYS, $parameters);
     }
 
-    public function moduleBaysPatch(array $parameters = []): NetBoxResult|null
+    public function moduleBaysPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::MODULE_BAYS, $parameters);
+        return $this->doCall('patch', self::MODULE_BAYS, $parameters);
     }
 
-    public function moduleBaysDelete(array $parameters = []): NetBoxResult|null
+    public function moduleBaysDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::MODULE_BAYS, $parameters);
+        return $this->doCall('delete', self::MODULE_BAYS, $parameters);
     }
 
-    public function moduleBaysById(int $id, array $parameters = []): NetBoxResult|null
+    public function moduleBaysById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::MODULE_BAYS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::MODULE_BAYS, $parameters, $id);
     }
 
-    public function moduleBaysByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function moduleBaysByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::MODULE_BAYS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::MODULE_BAYS, $parameters, $id);
     }
 
-    public function moduleBaysByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function moduleBaysByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::MODULE_BAYS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::MODULE_BAYS, $parameters, $id);
     }
 
-    public function moduleBaysByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function moduleBaysByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::MODULE_BAYS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::MODULE_BAYS, $parameters, $id);
     }
     #endregion moduleBays
 
     #region moduleTypes
-    public function moduleTypes(array $parameters = []): NetBoxResult|null
+    public function moduleTypes(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::MODULE_TYPES, $parameters);
+        return $this->doCall('get', self::MODULE_TYPES, $parameters);
     }
 
-    public function moduleTypesCreate(array $parameters = []): NetBoxResult|null
+    public function moduleTypesCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::MODULE_TYPES, $parameters);
+        return $this->doCall('post', self::MODULE_TYPES, $parameters);
     }
 
-    public function moduleTypesPut(array $parameters = []): NetBoxResult|null
+    public function moduleTypesPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::MODULE_TYPES, $parameters);
+        return $this->doCall('put', self::MODULE_TYPES, $parameters);
     }
 
-    public function moduleTypesPatch(array $parameters = []): NetBoxResult|null
+    public function moduleTypesPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::MODULE_TYPES, $parameters);
+        return $this->doCall('patch', self::MODULE_TYPES, $parameters);
     }
 
-    public function moduleTypesDelete(array $parameters = []): NetBoxResult|null
+    public function moduleTypesDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::MODULE_TYPES, $parameters);
+        return $this->doCall('delete', self::MODULE_TYPES, $parameters);
     }
 
-    public function moduleTypesById(int $id, array $parameters = []): NetBoxResult|null
+    public function moduleTypesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::MODULE_TYPES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::MODULE_TYPES, $parameters, $id);
     }
 
-    public function moduleTypesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function moduleTypesByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::MODULE_TYPES, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::MODULE_TYPES, $parameters, $id);
     }
 
-    public function moduleTypesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function moduleTypesByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::MODULE_TYPES, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::MODULE_TYPES, $parameters, $id);
     }
 
-    public function moduleTypesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function moduleTypesByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::MODULE_TYPES, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::MODULE_TYPES, $parameters, $id);
     }
     #endregion moduleTypes
 
     #region modules
-    public function modules(array $parameters = []): NetBoxResult|null
+    public function modules(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::MODULES, $parameters);
+        return $this->doCall('get', self::MODULES, $parameters);
     }
 
-    public function modulesCreate(array $parameters = []): NetBoxResult|null
+    public function modulesCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::MODULES, $parameters);
+        return $this->doCall('post', self::MODULES, $parameters);
     }
 
-    public function modulesPut(array $parameters = []): NetBoxResult|null
+    public function modulesPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::MODULES, $parameters);
+        return $this->doCall('put', self::MODULES, $parameters);
     }
 
-    public function modulesPatch(array $parameters = []): NetBoxResult|null
+    public function modulesPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::MODULES, $parameters);
+        return $this->doCall('patch', self::MODULES, $parameters);
     }
 
-    public function modulesDelete(array $parameters = []): NetBoxResult|null
+    public function modulesDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::MODULES, $parameters);
+        return $this->doCall('delete', self::MODULES, $parameters);
     }
 
-    public function modulesById(int $id, array $parameters = []): NetBoxResult|null
+    public function modulesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::MODULES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::MODULES, $parameters, $id);
     }
 
-    public function modulesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function modulesByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::MODULES, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::MODULES, $parameters, $id);
     }
 
-    public function modulesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function modulesByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::MODULES, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::MODULES, $parameters, $id);
     }
 
-    public function modulesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function modulesByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::MODULES, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::MODULES, $parameters, $id);
     }
     #endregion modules
 
     #region platforms
-    public function platforms(array $parameters = []): NetBoxResult|null
+    public function platforms(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::PLATFORMS, $parameters);
+        return $this->doCall('get', self::PLATFORMS, $parameters);
     }
 
-    public function platformsCreate(array $parameters = []): NetBoxResult|null
+    public function platformsCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::PLATFORMS, $parameters);
+        return $this->doCall('post', self::PLATFORMS, $parameters);
     }
 
-    public function platformsPut(array $parameters = []): NetBoxResult|null
+    public function platformsPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::PLATFORMS, $parameters);
+        return $this->doCall('put', self::PLATFORMS, $parameters);
     }
 
-    public function platformsPatch(array $parameters = []): NetBoxResult|null
+    public function platformsPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::PLATFORMS, $parameters);
+        return $this->doCall('patch', self::PLATFORMS, $parameters);
     }
 
-    public function platformsDelete(array $parameters = []): NetBoxResult|null
+    public function platformsDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::PLATFORMS, $parameters);
+        return $this->doCall('delete', self::PLATFORMS, $parameters);
     }
 
-    public function platformsById(int $id, array $parameters = []): NetBoxResult|null
+    public function platformsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::PLATFORMS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::PLATFORMS, $parameters, $id);
     }
 
-    public function platformsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function platformsByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::PLATFORMS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::PLATFORMS, $parameters, $id);
     }
 
-    public function platformsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function platformsByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::PLATFORMS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::PLATFORMS, $parameters, $id);
     }
 
-    public function platformsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function platformsByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::PLATFORMS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::PLATFORMS, $parameters, $id);
     }
     #endregion platforms
 
     #region powerFeeds
-    public function powerFeeds(array $parameters = []): NetBoxResult|null
+    public function powerFeeds(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::POWER_FEEDS, $parameters);
+        return $this->doCall('get', self::POWER_FEEDS, $parameters);
     }
 
-    public function powerFeedsCreate(array $parameters = []): NetBoxResult|null
+    public function powerFeedsCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::POWER_FEEDS, $parameters);
+        return $this->doCall('post', self::POWER_FEEDS, $parameters);
     }
 
-    public function powerFeedsPut(array $parameters = []): NetBoxResult|null
+    public function powerFeedsPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::POWER_FEEDS, $parameters);
+        return $this->doCall('put', self::POWER_FEEDS, $parameters);
     }
 
-    public function powerFeedsPatch(array $parameters = []): NetBoxResult|null
+    public function powerFeedsPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::POWER_FEEDS, $parameters);
+        return $this->doCall('patch', self::POWER_FEEDS, $parameters);
     }
 
-    public function powerFeedsDelete(array $parameters = []): NetBoxResult|null
+    public function powerFeedsDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::POWER_FEEDS, $parameters);
+        return $this->doCall('delete', self::POWER_FEEDS, $parameters);
     }
 
-    public function powerFeedsById(int $id, array $parameters = []): NetBoxResult|null
+    public function powerFeedsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::POWER_FEEDS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::POWER_FEEDS, $parameters, $id);
     }
 
-    public function powerFeedsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function powerFeedsByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::POWER_FEEDS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::POWER_FEEDS, $parameters, $id);
     }
 
-    public function powerFeedsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function powerFeedsByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::POWER_FEEDS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::POWER_FEEDS, $parameters, $id);
     }
 
-    public function powerFeedsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function powerFeedsByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::POWER_FEEDS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::POWER_FEEDS, $parameters, $id);
     }
 
-    public function powerFeedsByIdTrace(int $id, array $parameters = []): NetBoxResult|null
+    public function powerFeedsByIdTrace(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::POWER_FEEDS, ['id' => $id, 'submodule' => 'trace', ...$parameters]);
+        return $this->doCall('get', self::POWER_FEEDS, $parameters, $id, 'trace');
     }
     #endregion powerFeeds
 
     #region powerOutletTemplates
-    public function powerOutletTemplates(array $parameters = []): NetBoxResult|null
+    public function powerOutletTemplates(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::POWER_OUTLET_TEMPLATES, $parameters);
+        return $this->doCall('get', self::POWER_OUTLET_TEMPLATES, $parameters);
     }
 
-    public function powerOutletTemplatesCreate(array $parameters = []): NetBoxResult|null
+    public function powerOutletTemplatesCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::POWER_OUTLET_TEMPLATES, $parameters);
+        return $this->doCall('post', self::POWER_OUTLET_TEMPLATES, $parameters);
     }
 
-    public function powerOutletTemplatesPut(array $parameters = []): NetBoxResult|null
+    public function powerOutletTemplatesPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::POWER_OUTLET_TEMPLATES, $parameters);
+        return $this->doCall('put', self::POWER_OUTLET_TEMPLATES, $parameters);
     }
 
-    public function powerOutletTemplatesPatch(array $parameters = []): NetBoxResult|null
+    public function powerOutletTemplatesPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::POWER_OUTLET_TEMPLATES, $parameters);
+        return $this->doCall('patch', self::POWER_OUTLET_TEMPLATES, $parameters);
     }
 
-    public function powerOutletTemplatesDelete(array $parameters = []): NetBoxResult|null
+    public function powerOutletTemplatesDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::POWER_OUTLET_TEMPLATES, $parameters);
+        return $this->doCall('delete', self::POWER_OUTLET_TEMPLATES, $parameters);
     }
 
-    public function powerOutletTemplatesById(int $id, array $parameters = []): NetBoxResult|null
+    public function powerOutletTemplatesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::POWER_OUTLET_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::POWER_OUTLET_TEMPLATES, $parameters, $id);
     }
 
-    public function powerOutletTemplatesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function powerOutletTemplatesByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::POWER_OUTLET_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::POWER_OUTLET_TEMPLATES, $parameters, $id);
     }
 
-    public function powerOutletTemplatesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function powerOutletTemplatesByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::POWER_OUTLET_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::POWER_OUTLET_TEMPLATES, $parameters, $id);
     }
 
-    public function powerOutletTemplatesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function powerOutletTemplatesByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::POWER_OUTLET_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::POWER_OUTLET_TEMPLATES, $parameters, $id);
     }
     #endregion powerOutletTemplates
 
     #region powerOutlets
-    public function powerOutlets(array $parameters = []): NetBoxResult|null
+    public function powerOutlets(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::POWER_OUTLETS, $parameters);
+        return $this->doCall('get', self::POWER_OUTLETS, $parameters);
     }
 
-    public function powerOutletsCreate(array $parameters = []): NetBoxResult|null
+    public function powerOutletsCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::POWER_OUTLETS, $parameters);
+        return $this->doCall('post', self::POWER_OUTLETS, $parameters);
     }
 
-    public function powerOutletsPut(array $parameters = []): NetBoxResult|null
+    public function powerOutletsPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::POWER_OUTLETS, $parameters);
+        return $this->doCall('put', self::POWER_OUTLETS, $parameters);
     }
 
-    public function powerOutletsPatch(array $parameters = []): NetBoxResult|null
+    public function powerOutletsPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::POWER_OUTLETS, $parameters);
+        return $this->doCall('patch', self::POWER_OUTLETS, $parameters);
     }
 
-    public function powerOutletsDelete(array $parameters = []): NetBoxResult|null
+    public function powerOutletsDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::POWER_OUTLETS, $parameters);
+        return $this->doCall('delete', self::POWER_OUTLETS, $parameters);
     }
 
-    public function powerOutletsById(int $id, array $parameters = []): NetBoxResult|null
+    public function powerOutletsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::POWER_OUTLETS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::POWER_OUTLETS, $parameters, $id);
     }
 
-    public function powerOutletsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function powerOutletsByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::POWER_OUTLETS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::POWER_OUTLETS, $parameters, $id);
     }
 
-    public function powerOutletsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function powerOutletsByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::POWER_OUTLETS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::POWER_OUTLETS, $parameters, $id);
     }
 
-    public function powerOutletsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function powerOutletsByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::POWER_OUTLETS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::POWER_OUTLETS, $parameters, $id);
     }
 
-    public function powerOutletsByIdTrace(int $id, array $parameters = []): NetBoxResult|null
+    public function powerOutletsByIdTrace(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::POWER_OUTLETS, ['id' => $id, 'submodule' => 'trace', ...$parameters]);
+        return $this->doCall('get', self::POWER_OUTLETS, $parameters, $id, 'trace');
     }
     #endregion powerOutlets
 
     #region powerPanels
-    public function powerPanels(array $parameters = []): NetBoxResult|null
+    public function powerPanels(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::POWER_PANELS, $parameters);
+        return $this->doCall('get', self::POWER_PANELS, $parameters);
     }
 
-    public function powerPanelsCreate(array $parameters = []): NetBoxResult|null
+    public function powerPanelsCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::POWER_PANELS, $parameters);
+        return $this->doCall('post', self::POWER_PANELS, $parameters);
     }
 
-    public function powerPanelsPut(array $parameters = []): NetBoxResult|null
+    public function powerPanelsPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::POWER_PANELS, $parameters);
+        return $this->doCall('put', self::POWER_PANELS, $parameters);
     }
 
-    public function powerPanelsPatch(array $parameters = []): NetBoxResult|null
+    public function powerPanelsPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::POWER_PANELS, $parameters);
+        return $this->doCall('patch', self::POWER_PANELS, $parameters);
     }
 
-    public function powerPanelsDelete(array $parameters = []): NetBoxResult|null
+    public function powerPanelsDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::POWER_PANELS, $parameters);
+        return $this->doCall('delete', self::POWER_PANELS, $parameters);
     }
 
-    public function powerPanelsById(int $id, array $parameters = []): NetBoxResult|null
+    public function powerPanelsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::POWER_PANELS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::POWER_PANELS, $parameters, $id);
     }
 
-    public function powerPanelsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function powerPanelsByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::POWER_PANELS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::POWER_PANELS, $parameters, $id);
     }
 
-    public function powerPanelsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function powerPanelsByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::POWER_PANELS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::POWER_PANELS, $parameters, $id);
     }
 
-    public function powerPanelsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function powerPanelsByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::POWER_PANELS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::POWER_PANELS, $parameters, $id);
     }
     #endregion powerPanels
 
     #region powerPortTemplates
-    public function powerPortTemplates(array $parameters = []): NetBoxResult|null
+    public function powerPortTemplates(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::POWER_PORT_TEMPLATES, $parameters);
+        return $this->doCall('get', self::POWER_PORT_TEMPLATES, $parameters);
     }
 
-    public function powerPortTemplatesCreate(array $parameters = []): NetBoxResult|null
+    public function powerPortTemplatesCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::POWER_PORT_TEMPLATES, $parameters);
+        return $this->doCall('post', self::POWER_PORT_TEMPLATES, $parameters);
     }
 
-    public function powerPortTemplatesPut(array $parameters = []): NetBoxResult|null
+    public function powerPortTemplatesPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::POWER_PORT_TEMPLATES, $parameters);
+        return $this->doCall('put', self::POWER_PORT_TEMPLATES, $parameters);
     }
 
-    public function powerPortTemplatesPatch(array $parameters = []): NetBoxResult|null
+    public function powerPortTemplatesPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::POWER_PORT_TEMPLATES, $parameters);
+        return $this->doCall('patch', self::POWER_PORT_TEMPLATES, $parameters);
     }
 
-    public function powerPortTemplatesDelete(array $parameters = []): NetBoxResult|null
+    public function powerPortTemplatesDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::POWER_PORT_TEMPLATES, $parameters);
+        return $this->doCall('delete', self::POWER_PORT_TEMPLATES, $parameters);
     }
 
-    public function powerPortTemplatesById(int $id, array $parameters = []): NetBoxResult|null
+    public function powerPortTemplatesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::POWER_PORT_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::POWER_PORT_TEMPLATES, $parameters, $id);
     }
 
-    public function powerPortTemplatesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function powerPortTemplatesByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::POWER_PORT_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::POWER_PORT_TEMPLATES, $parameters, $id);
     }
 
-    public function powerPortTemplatesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function powerPortTemplatesByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::POWER_PORT_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::POWER_PORT_TEMPLATES, $parameters, $id);
     }
 
-    public function powerPortTemplatesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function powerPortTemplatesByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::POWER_PORT_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::POWER_PORT_TEMPLATES, $parameters, $id);
     }
     #endregion powerPortTemplates
 
     #region powerPorts
-    public function powerPorts(array $parameters = []): NetBoxResult|null
+    public function powerPorts(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::POWER_PORTS, $parameters);
+        return $this->doCall('get', self::POWER_PORTS, $parameters);
     }
 
-    public function powerPortsCreate(array $parameters = []): NetBoxResult|null
+    public function powerPortsCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::POWER_PORTS, $parameters);
+        return $this->doCall('post', self::POWER_PORTS, $parameters);
     }
 
-    public function powerPortsPut(array $parameters = []): NetBoxResult|null
+    public function powerPortsPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::POWER_PORTS, $parameters);
+        return $this->doCall('put', self::POWER_PORTS, $parameters);
     }
 
-    public function powerPortsPatch(array $parameters = []): NetBoxResult|null
+    public function powerPortsPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::POWER_PORTS, $parameters);
+        return $this->doCall('patch', self::POWER_PORTS, $parameters);
     }
 
-    public function powerPortsDelete(array $parameters = []): NetBoxResult|null
+    public function powerPortsDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::POWER_PORTS, $parameters);
+        return $this->doCall('delete', self::POWER_PORTS, $parameters);
     }
 
-    public function powerPortsById(int $id, array $parameters = []): NetBoxResult|null
+    public function powerPortsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::POWER_PORTS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::POWER_PORTS, $parameters, $id);
     }
 
-    public function powerPortsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function powerPortsByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::POWER_PORTS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::POWER_PORTS, $parameters, $id);
     }
 
-    public function powerPortsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function powerPortsByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::POWER_PORTS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::POWER_PORTS, $parameters, $id);
     }
 
-    public function powerPortsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function powerPortsByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::POWER_PORTS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::POWER_PORTS, $parameters, $id);
     }
 
-    public function powerPortsByIdTrace(int $id, array $parameters = []): NetBoxResult|null
+    public function powerPortsByIdTrace(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::POWER_PORTS, ['id' => $id, 'submodule' => 'trace', ...$parameters]);
+        return $this->doCall('get', self::POWER_PORTS, $parameters, $id, 'trace');
     }
     #endregion powerPorts
 
     #region rackReservations
-    public function rackReservations(array $parameters = []): NetBoxResult|null
+    public function rackReservations(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::RACK_RESERVATIONS, $parameters);
+        return $this->doCall('get', self::RACK_RESERVATIONS, $parameters);
     }
 
-    public function rackReservationsCreate(array $parameters = []): NetBoxResult|null
+    public function rackReservationsCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::RACK_RESERVATIONS, $parameters);
+        return $this->doCall('post', self::RACK_RESERVATIONS, $parameters);
     }
 
-    public function rackReservationsPut(array $parameters = []): NetBoxResult|null
+    public function rackReservationsPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::RACK_RESERVATIONS, $parameters);
+        return $this->doCall('put', self::RACK_RESERVATIONS, $parameters);
     }
 
-    public function rackReservationsPatch(array $parameters = []): NetBoxResult|null
+    public function rackReservationsPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::RACK_RESERVATIONS, $parameters);
+        return $this->doCall('patch', self::RACK_RESERVATIONS, $parameters);
     }
 
-    public function rackReservationsDelete(array $parameters = []): NetBoxResult|null
+    public function rackReservationsDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::RACK_RESERVATIONS, $parameters);
+        return $this->doCall('delete', self::RACK_RESERVATIONS, $parameters);
     }
 
-    public function rackReservationsById(int $id, array $parameters = []): NetBoxResult|null
+    public function rackReservationsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::RACK_RESERVATIONS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::RACK_RESERVATIONS, $parameters, $id);
     }
 
-    public function rackReservationsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function rackReservationsByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::RACK_RESERVATIONS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::RACK_RESERVATIONS, $parameters, $id);
     }
 
-    public function rackReservationsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function rackReservationsByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::RACK_RESERVATIONS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::RACK_RESERVATIONS, $parameters, $id);
     }
 
-    public function rackReservationsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function rackReservationsByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::RACK_RESERVATIONS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::RACK_RESERVATIONS, $parameters, $id);
     }
     #endregion rackReservations
 
     #region rackRoles
-    public function rackRoles(array $parameters = []): NetBoxResult|null
+    public function rackRoles(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::RACK_ROLES, $parameters);
+        return $this->doCall('get', self::RACK_ROLES, $parameters);
     }
 
-    public function rackRolesCreate(array $parameters = []): NetBoxResult|null
+    public function rackRolesCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::RACK_ROLES, $parameters);
+        return $this->doCall('post', self::RACK_ROLES, $parameters);
     }
 
-    public function rackRolesPut(array $parameters = []): NetBoxResult|null
+    public function rackRolesPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::RACK_ROLES, $parameters);
+        return $this->doCall('put', self::RACK_ROLES, $parameters);
     }
 
-    public function rackRolesPatch(array $parameters = []): NetBoxResult|null
+    public function rackRolesPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::RACK_ROLES, $parameters);
+        return $this->doCall('patch', self::RACK_ROLES, $parameters);
     }
 
-    public function rackRolesDelete(array $parameters = []): NetBoxResult|null
+    public function rackRolesDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::RACK_ROLES, $parameters);
+        return $this->doCall('delete', self::RACK_ROLES, $parameters);
     }
 
-    public function rackRolesById(int $id, array $parameters = []): NetBoxResult|null
+    public function rackRolesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::RACK_ROLES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::RACK_ROLES, $parameters, $id);
     }
 
-    public function rackRolesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function rackRolesByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::RACK_ROLES, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::RACK_ROLES, $parameters, $id);
     }
 
-    public function rackRolesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function rackRolesByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::RACK_ROLES, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::RACK_ROLES, $parameters, $id);
     }
 
-    public function rackRolesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function rackRolesByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::RACK_ROLES, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::RACK_ROLES, $parameters, $id);
     }
     #endregion rackRoles
 
     #region rackTypes
-    public function rackTypes(array $parameters = []): NetBoxResult|null
+    public function rackTypes(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::RACK_TYPES, $parameters);
+        return $this->doCall('get', self::RACK_TYPES, $parameters);
     }
 
-    public function rackTypesCreate(array $parameters = []): NetBoxResult|null
+    public function rackTypesCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::RACK_TYPES, $parameters);
+        return $this->doCall('post', self::RACK_TYPES, $parameters);
     }
 
-    public function rackTypesPut(array $parameters = []): NetBoxResult|null
+    public function rackTypesPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::RACK_TYPES, $parameters);
+        return $this->doCall('put', self::RACK_TYPES, $parameters);
     }
 
-    public function rackTypesPatch(array $parameters = []): NetBoxResult|null
+    public function rackTypesPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::RACK_TYPES, $parameters);
+        return $this->doCall('patch', self::RACK_TYPES, $parameters);
     }
 
-    public function rackTypesDelete(array $parameters = []): NetBoxResult|null
+    public function rackTypesDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::RACK_TYPES, $parameters);
+        return $this->doCall('delete', self::RACK_TYPES, $parameters);
     }
 
-    public function rackTypesById(int $id, array $parameters = []): NetBoxResult|null
+    public function rackTypesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::RACK_TYPES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::RACK_TYPES, $parameters, $id);
     }
 
-    public function rackTypesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function rackTypesByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::RACK_TYPES, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::RACK_TYPES, $parameters, $id);
     }
 
-    public function rackTypesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function rackTypesByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::RACK_TYPES, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::RACK_TYPES, $parameters, $id);
     }
 
-    public function rackTypesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function rackTypesByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::RACK_TYPES, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::RACK_TYPES, $parameters, $id);
     }
     #endregion rackTypes
 
     #region racks
-    public function racks(array $parameters = []): NetBoxResult|null
+    public function racks(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::RACKS, $parameters);
+        return $this->doCall('get', self::RACKS, $parameters);
     }
 
-    public function racksCreate(array $parameters = []): NetBoxResult|null
+    public function racksCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::RACKS, $parameters);
+        return $this->doCall('post', self::RACKS, $parameters);
     }
 
-    public function racksPut(array $parameters = []): NetBoxResult|null
+    public function racksPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::RACKS, $parameters);
+        return $this->doCall('put', self::RACKS, $parameters);
     }
 
-    public function racksPatch(array $parameters = []): NetBoxResult|null
+    public function racksPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::RACKS, $parameters);
+        return $this->doCall('patch', self::RACKS, $parameters);
     }
 
-    public function racksDelete(array $parameters = []): NetBoxResult|null
+    public function racksDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::RACKS, $parameters);
+        return $this->doCall('delete', self::RACKS, $parameters);
     }
 
-    public function racksById(int $id, array $parameters = []): NetBoxResult|null
+    public function racksById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::RACKS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::RACKS, $parameters, $id);
     }
 
-    public function racksByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function racksByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::RACKS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::RACKS, $parameters, $id);
     }
 
-    public function racksByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function racksByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::RACKS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::RACKS, $parameters, $id);
     }
 
-    public function racksByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function racksByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::RACKS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::RACKS, $parameters, $id);
     }
 
-    public function racksByIdElevation(int $id, array $parameters = []): NetBoxResult|null
+    public function racksByIdElevation(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::RACKS, ['id' => $id, 'submodule' => 'elevation', ...$parameters]);
+        return $this->doCall('get', self::RACKS, $parameters, $id, 'elevation');
     }
     #endregion racks
 
     #region rearPortTemplates
-    public function rearPortTemplates(array $parameters = []): NetBoxResult|null
+    public function rearPortTemplates(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::REAR_PORT_TEMPLATES, $parameters);
+        return $this->doCall('get', self::REAR_PORT_TEMPLATES, $parameters);
     }
 
-    public function rearPortTemplatesCreate(array $parameters = []): NetBoxResult|null
+    public function rearPortTemplatesCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::REAR_PORT_TEMPLATES, $parameters);
+        return $this->doCall('post', self::REAR_PORT_TEMPLATES, $parameters);
     }
 
-    public function rearPortTemplatesPut(array $parameters = []): NetBoxResult|null
+    public function rearPortTemplatesPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::REAR_PORT_TEMPLATES, $parameters);
+        return $this->doCall('put', self::REAR_PORT_TEMPLATES, $parameters);
     }
 
-    public function rearPortTemplatesPatch(array $parameters = []): NetBoxResult|null
+    public function rearPortTemplatesPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::REAR_PORT_TEMPLATES, $parameters);
+        return $this->doCall('patch', self::REAR_PORT_TEMPLATES, $parameters);
     }
 
-    public function rearPortTemplatesDelete(array $parameters = []): NetBoxResult|null
+    public function rearPortTemplatesDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::REAR_PORT_TEMPLATES, $parameters);
+        return $this->doCall('delete', self::REAR_PORT_TEMPLATES, $parameters);
     }
 
-    public function rearPortTemplatesById(int $id, array $parameters = []): NetBoxResult|null
+    public function rearPortTemplatesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::REAR_PORT_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::REAR_PORT_TEMPLATES, $parameters, $id);
     }
 
-    public function rearPortTemplatesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function rearPortTemplatesByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::REAR_PORT_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::REAR_PORT_TEMPLATES, $parameters, $id);
     }
 
-    public function rearPortTemplatesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function rearPortTemplatesByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::REAR_PORT_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::REAR_PORT_TEMPLATES, $parameters, $id);
     }
 
-    public function rearPortTemplatesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function rearPortTemplatesByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::REAR_PORT_TEMPLATES, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::REAR_PORT_TEMPLATES, $parameters, $id);
     }
     #endregion rearPortTemplates
 
     #region rearPorts
-    public function rearPorts(array $parameters = []): NetBoxResult|null
+    public function rearPorts(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::REAR_PORTS, $parameters);
+        return $this->doCall('get', self::REAR_PORTS, $parameters);
     }
 
-    public function rearPortsCreate(array $parameters = []): NetBoxResult|null
+    public function rearPortsCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::REAR_PORTS, $parameters);
+        return $this->doCall('post', self::REAR_PORTS, $parameters);
     }
 
-    public function rearPortsPut(array $parameters = []): NetBoxResult|null
+    public function rearPortsPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::REAR_PORTS, $parameters);
+        return $this->doCall('put', self::REAR_PORTS, $parameters);
     }
 
-    public function rearPortsPatch(array $parameters = []): NetBoxResult|null
+    public function rearPortsPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::REAR_PORTS, $parameters);
+        return $this->doCall('patch', self::REAR_PORTS, $parameters);
     }
 
-    public function rearPortsDelete(array $parameters = []): NetBoxResult|null
+    public function rearPortsDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::REAR_PORTS, $parameters);
+        return $this->doCall('delete', self::REAR_PORTS, $parameters);
     }
 
-    public function rearPortsById(int $id, array $parameters = []): NetBoxResult|null
+    public function rearPortsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::REAR_PORTS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::REAR_PORTS, $parameters, $id);
     }
 
-    public function rearPortsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function rearPortsByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::REAR_PORTS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::REAR_PORTS, $parameters, $id);
     }
 
-    public function rearPortsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function rearPortsByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::REAR_PORTS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::REAR_PORTS, $parameters, $id);
     }
 
-    public function rearPortsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function rearPortsByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::REAR_PORTS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::REAR_PORTS, $parameters, $id);
     }
 
-    public function rearPortsByIdPaths(int $id, array $parameters = []): NetBoxResult|null
+    public function rearPortsByIdPaths(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::REAR_PORTS, ['id' => $id, 'submodule' => 'paths', ...$parameters]);
+        return $this->doCall('get', self::REAR_PORTS, $parameters, $id, 'paths');
     }
     #endregion rearPorts
 
     #region regions
-    public function regions(array $parameters = []): NetBoxResult|null
+    public function regions(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::REGIONS, $parameters);
+        return $this->doCall('get', self::REGIONS, $parameters);
     }
 
-    public function regionsCreate(array $parameters = []): NetBoxResult|null
+    public function regionsCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::REGIONS, $parameters);
+        return $this->doCall('post', self::REGIONS, $parameters);
     }
 
-    public function regionsPut(array $parameters = []): NetBoxResult|null
+    public function regionsPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::REGIONS, $parameters);
+        return $this->doCall('put', self::REGIONS, $parameters);
     }
 
-    public function regionsPatch(array $parameters = []): NetBoxResult|null
+    public function regionsPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::REGIONS, $parameters);
+        return $this->doCall('patch', self::REGIONS, $parameters);
     }
 
-    public function regionsDelete(array $parameters = []): NetBoxResult|null
+    public function regionsDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::REGIONS, $parameters);
+        return $this->doCall('delete', self::REGIONS, $parameters);
     }
 
-    public function regionsById(int $id, array $parameters = []): NetBoxResult|null
+    public function regionsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::REGIONS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::REGIONS, $parameters, $id);
     }
 
-    public function regionsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function regionsByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::REGIONS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::REGIONS, $parameters, $id);
     }
 
-    public function regionsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function regionsByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::REGIONS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::REGIONS, $parameters, $id);
     }
 
-    public function regionsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function regionsByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::REGIONS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::REGIONS, $parameters, $id);
     }
     #endregion regions
 
     #region siteGroups
-    public function siteGroups(array $parameters = []): NetBoxResult|null
+    public function siteGroups(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::SITE_GROUPS, $parameters);
+        return $this->doCall('get', self::SITE_GROUPS, $parameters);
     }
 
-    public function siteGroupsCreate(array $parameters = []): NetBoxResult|null
+    public function siteGroupsCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::SITE_GROUPS, $parameters);
+        return $this->doCall('post', self::SITE_GROUPS, $parameters);
     }
 
-    public function siteGroupsPut(array $parameters = []): NetBoxResult|null
+    public function siteGroupsPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::SITE_GROUPS, $parameters);
+        return $this->doCall('put', self::SITE_GROUPS, $parameters);
     }
 
-    public function siteGroupsPatch(array $parameters = []): NetBoxResult|null
+    public function siteGroupsPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::SITE_GROUPS, $parameters);
+        return $this->doCall('patch', self::SITE_GROUPS, $parameters);
     }
 
-    public function siteGroupsDelete(array $parameters = []): NetBoxResult|null
+    public function siteGroupsDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::SITE_GROUPS, $parameters);
+        return $this->doCall('delete', self::SITE_GROUPS, $parameters);
     }
 
-    public function siteGroupsById(int $id, array $parameters = []): NetBoxResult|null
+    public function siteGroupsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::SITE_GROUPS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::SITE_GROUPS, $parameters, $id);
     }
 
-    public function siteGroupsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function siteGroupsByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::SITE_GROUPS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::SITE_GROUPS, $parameters, $id);
     }
 
-    public function siteGroupsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function siteGroupsByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::SITE_GROUPS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::SITE_GROUPS, $parameters, $id);
     }
 
-    public function siteGroupsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function siteGroupsByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::SITE_GROUPS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::SITE_GROUPS, $parameters, $id);
     }
     #endregion siteGroups
 
     #region sites
-    public function sites(array $parameters = []): NetBoxResult|null
+    public function sites(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::SITES, $parameters);
+        return $this->doCall('get', self::SITES, $parameters);
     }
 
-    public function sitesCreate(array $parameters = []): NetBoxResult|null
+    public function sitesCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::SITES, $parameters);
+        return $this->doCall('post', self::SITES, $parameters);
     }
 
-    public function sitesPut(array $parameters = []): NetBoxResult|null
+    public function sitesPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::SITES, $parameters);
+        return $this->doCall('put', self::SITES, $parameters);
     }
 
-    public function sitesPatch(array $parameters = []): NetBoxResult|null
+    public function sitesPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::SITES, $parameters);
+        return $this->doCall('patch', self::SITES, $parameters);
     }
 
-    public function sitesDelete(array $parameters = []): NetBoxResult|null
+    public function sitesDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::SITES, $parameters);
+        return $this->doCall('delete', self::SITES, $parameters);
     }
 
-    public function sitesById(int $id, array $parameters = []): NetBoxResult|null
+    public function sitesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::SITES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::SITES, $parameters, $id);
     }
 
-    public function sitesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function sitesByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::SITES, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::SITES, $parameters, $id);
     }
 
-    public function sitesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function sitesByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::SITES, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::SITES, $parameters, $id);
     }
 
-    public function sitesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function sitesByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::SITES, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::SITES, $parameters, $id);
     }
     #endregion sites
 
     #region virtualChassis
-    public function virtualChassis(array $parameters = []): NetBoxResult|null
+    public function virtualChassis(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::VIRTUAL_CHASSIS, $parameters);
+        return $this->doCall('get', self::VIRTUAL_CHASSIS, $parameters);
     }
 
-    public function virtualChassisCreate(array $parameters = []): NetBoxResult|null
+    public function virtualChassisCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::VIRTUAL_CHASSIS, $parameters);
+        return $this->doCall('post', self::VIRTUAL_CHASSIS, $parameters);
     }
 
-    public function virtualChassisPut(array $parameters = []): NetBoxResult|null
+    public function virtualChassisPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::VIRTUAL_CHASSIS, $parameters);
+        return $this->doCall('put', self::VIRTUAL_CHASSIS, $parameters);
     }
 
-    public function virtualChassisPatch(array $parameters = []): NetBoxResult|null
+    public function virtualChassisPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::VIRTUAL_CHASSIS, $parameters);
+        return $this->doCall('patch', self::VIRTUAL_CHASSIS, $parameters);
     }
 
-    public function virtualChassisDelete(array $parameters = []): NetBoxResult|null
+    public function virtualChassisDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::VIRTUAL_CHASSIS, $parameters);
+        return $this->doCall('delete', self::VIRTUAL_CHASSIS, $parameters);
     }
 
-    public function virtualChassisById(int $id, array $parameters = []): NetBoxResult|null
+    public function virtualChassisById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::VIRTUAL_CHASSIS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::VIRTUAL_CHASSIS, $parameters, $id);
     }
 
-    public function virtualChassisByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function virtualChassisByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::VIRTUAL_CHASSIS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::VIRTUAL_CHASSIS, $parameters, $id);
     }
 
-    public function virtualChassisByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function virtualChassisByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::VIRTUAL_CHASSIS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::VIRTUAL_CHASSIS, $parameters, $id);
     }
 
-    public function virtualChassisByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function virtualChassisByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::VIRTUAL_CHASSIS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::VIRTUAL_CHASSIS, $parameters, $id);
     }
     #endregion virtualChassis
 
     #region virtualDeviceContexts
-    public function virtualDeviceContexts(array $parameters = []): NetBoxResult|null
+    public function virtualDeviceContexts(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::VIRTUAL_DEVICE_CONTEXTS, $parameters);
+        return $this->doCall('get', self::VIRTUAL_DEVICE_CONTEXTS, $parameters);
     }
 
-    public function virtualDeviceContextsCreate(array $parameters = []): NetBoxResult|null
+    public function virtualDeviceContextsCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::VIRTUAL_DEVICE_CONTEXTS, $parameters);
+        return $this->doCall('post', self::VIRTUAL_DEVICE_CONTEXTS, $parameters);
     }
 
-    public function virtualDeviceContextsPut(array $parameters = []): NetBoxResult|null
+    public function virtualDeviceContextsPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::VIRTUAL_DEVICE_CONTEXTS, $parameters);
+        return $this->doCall('put', self::VIRTUAL_DEVICE_CONTEXTS, $parameters);
     }
 
-    public function virtualDeviceContextsPatch(array $parameters = []): NetBoxResult|null
+    public function virtualDeviceContextsPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::VIRTUAL_DEVICE_CONTEXTS, $parameters);
+        return $this->doCall('patch', self::VIRTUAL_DEVICE_CONTEXTS, $parameters);
     }
 
-    public function virtualDeviceContextsDelete(array $parameters = []): NetBoxResult|null
+    public function virtualDeviceContextsDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::VIRTUAL_DEVICE_CONTEXTS, $parameters);
+        return $this->doCall('delete', self::VIRTUAL_DEVICE_CONTEXTS, $parameters);
     }
 
-    public function virtualDeviceContextsById(int $id, array $parameters = []): NetBoxResult|null
+    public function virtualDeviceContextsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::VIRTUAL_DEVICE_CONTEXTS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::VIRTUAL_DEVICE_CONTEXTS, $parameters, $id);
     }
 
-    public function virtualDeviceContextsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function virtualDeviceContextsByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::VIRTUAL_DEVICE_CONTEXTS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::VIRTUAL_DEVICE_CONTEXTS, $parameters, $id);
     }
 
-    public function virtualDeviceContextsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function virtualDeviceContextsByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::VIRTUAL_DEVICE_CONTEXTS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::VIRTUAL_DEVICE_CONTEXTS, $parameters, $id);
     }
 
-    public function virtualDeviceContextsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function virtualDeviceContextsByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::VIRTUAL_DEVICE_CONTEXTS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::VIRTUAL_DEVICE_CONTEXTS, $parameters, $id);
     }
     #endregion virtualDeviceContexts
 }
