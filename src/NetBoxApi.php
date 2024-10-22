@@ -31,6 +31,7 @@ class NetBoxApi
     protected Client $client;
     private bool $error = false;
     private string $lastError = '';
+    private int $limit = 50;
 
     /**
      * @throws NetBoxMissingAuthenticationException
@@ -108,7 +109,7 @@ class NetBoxApi
             $response = $this->client->get(sprintf(
                 '%s?%s',
                 $this->getUrl($endpoint, $parameters),
-                http_build_query($parameters)
+                http_build_query($parameters + ['limit' => $this->limit])
             ));
             return $noResult ? $response : new NetBoxResult($endpoint, $response);
         } catch (GuzzleException $e) {
@@ -169,6 +170,23 @@ class NetBoxApi
         }
 
         return null;
+    }
+
+    public function setLimit(int $limit): void
+    {
+        if ($limit >= 1 && $limit <= 10000) {
+            $this->limit = $limit;
+        }
+    }
+
+    public function resetLimit(): void
+    {
+        $this->limit = 50;
+    }
+
+    public function setUnlimitedResults(): void
+    {
+        $this->limit = 0;
     }
 
     public function circuits(): NetBoxCircuits
