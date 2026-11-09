@@ -7,6 +7,7 @@ use Cis\NetBox\NetBoxResult;
 
 class NetBoxDcim extends NetBoxApiAbstract
 {
+    private const string CABLE_BUNDLES = 'dcim/cable-bundles';
     private const string CABLE_TERMINATIONS = 'dcim/cable-terminations';
     private const string CABLES = 'dcim/cables';
     private const string CONNECTED_DEVICE = 'dcim/connected-device';
@@ -14,6 +15,12 @@ class NetBoxDcim extends NetBoxApiAbstract
     private const string CONSOLE_PORTS = 'dcim/console-ports';
     private const string CONSOLE_SERVER_PORT_TEMPLATES = 'dcim/console-server-port-templates';
     private const string CONSOLE_SERVER_PORTS = 'dcim/console-server-ports';
+    private const string COOLING_FEEDS = 'dcim/cooling-feeds';
+    private const string COOLING_INTAKE_TEMPLATES = 'dcim/cooling-intake-templates';
+    private const string COOLING_INTAKES = 'dcim/cooling-intakes';
+    private const string COOLING_OUTFLOW_TEMPLATES = 'dcim/cooling-outflow-templates';
+    private const string COOLING_OUTFLOWS = 'dcim/cooling-outflows';
+    private const string COOLING_SOURCES = 'dcim/cooling-sources';
     private const string DEVICE_BAY_TEMPLATES = 'dcim/device-bay-templates';
     private const string DEVICE_BAYS = 'dcim/device-bays';
     private const string DEVICE_ROLES = 'dcim/device-roles';
@@ -27,9 +34,12 @@ class NetBoxDcim extends NetBoxApiAbstract
     private const string INVENTORY_ITEM_TEMPLATES = 'dcim/inventory-item-templates';
     private const string INVENTORY_ITEMS = 'dcim/inventory-items';
     private const string LOCATIONS = 'dcim/locations';
+    private const string MAC_ADDRESSES = 'dcim/mac-addresses';
     private const string MANUFACTURERS = 'dcim/manufacturers';
     private const string MODULE_BAY_TEMPLATES = 'dcim/module-bay-templates';
+    private const string MODULE_BAY_TYPES = 'dcim/module-bay-types';
     private const string MODULE_BAYS = 'dcim/module-bays';
+    private const string MODULE_TYPE_PROFILES = 'dcim/module-type-profiles';
     private const string MODULE_TYPES = 'dcim/module-types';
     private const string MODULES = 'dcim/modules';
     private const string PLATFORMS = 'dcim/platforms';
@@ -39,6 +49,7 @@ class NetBoxDcim extends NetBoxApiAbstract
     private const string POWER_PANELS = 'dcim/power-panels';
     private const string POWER_PORT_TEMPLATES = 'dcim/power-port-templates';
     private const string POWER_PORTS = 'dcim/power-ports';
+    private const string RACK_GROUPS = 'dcim/rack-groups';
     private const string RACK_RESERVATIONS = 'dcim/rack-reservations';
     private const string RACK_ROLES = 'dcim/rack-roles';
     private const string RACK_TYPES = 'dcim/rack-types';
@@ -51,50 +62,62 @@ class NetBoxDcim extends NetBoxApiAbstract
     private const string VIRTUAL_CHASSIS = 'dcim/virtual-chassis';
     private const string VIRTUAL_DEVICE_CONTEXTS = 'dcim/virtual-device-contexts';
 
+    #region cableBundles
+    public function cableBundles(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('get', self::CABLE_BUNDLES, $parameters);
+    }
+
+    public function cableBundlesCreate(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('post', self::CABLE_BUNDLES, $parameters);
+    }
+
+    public function cableBundlesPut(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('put', self::CABLE_BUNDLES, $parameters);
+    }
+
+    public function cableBundlesPatch(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('patch', self::CABLE_BUNDLES, $parameters);
+    }
+
+    public function cableBundlesDelete(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('delete', self::CABLE_BUNDLES, $parameters);
+    }
+
+    public function cableBundlesById(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('get', self::CABLE_BUNDLES, $parameters, $id);
+    }
+
+    public function cableBundlesByIdPut(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('put', self::CABLE_BUNDLES, $parameters, $id);
+    }
+
+    public function cableBundlesByIdPatch(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('patch', self::CABLE_BUNDLES, $parameters, $id);
+    }
+
+    public function cableBundlesByIdDelete(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('delete', self::CABLE_BUNDLES, $parameters, $id);
+    }
+    #endregion cableBundles
+
     #region cableTerminations
     public function cableTerminations(...$parameters): NetBoxResult|null
     {
         return $this->doCall('get', self::CABLE_TERMINATIONS, $parameters);
     }
 
-    public function cableTerminationsCreate(...$parameters): NetBoxResult|null
-    {
-        return $this->doCall('post', self::CABLE_TERMINATIONS, $parameters);
-    }
-
-    public function cableTerminationsPut(...$parameters): NetBoxResult|null
-    {
-        return $this->doCall('put', self::CABLE_TERMINATIONS, $parameters);
-    }
-
-    public function cableTerminationsPatch(...$parameters): NetBoxResult|null
-    {
-        return $this->doCall('patch', self::CABLE_TERMINATIONS, $parameters);
-    }
-
-    public function cableTerminationsDelete(...$parameters): NetBoxResult|null
-    {
-        return $this->doCall('delete', self::CABLE_TERMINATIONS, $parameters);
-    }
-
     public function cableTerminationsById(int $id, ...$parameters): NetBoxResult|null
     {
         return $this->doCall('get', self::CABLE_TERMINATIONS, $parameters, $id);
-    }
-
-    public function cableTerminationsByIdPut(int $id, ...$parameters): NetBoxResult|null
-    {
-        return $this->doCall('put', self::CABLE_TERMINATIONS, $parameters, $id);
-    }
-
-    public function cableTerminationsByIdPatch(int $id, ...$parameters): NetBoxResult|null
-    {
-        return $this->doCall('patch', self::CABLE_TERMINATIONS, $parameters, $id);
-    }
-
-    public function cableTerminationsByIdDelete(int $id, ...$parameters): NetBoxResult|null
-    {
-        return $this->doCall('delete', self::CABLE_TERMINATIONS, $parameters, $id);
     }
     #endregion cableTerminations
 
@@ -349,6 +372,288 @@ class NetBoxDcim extends NetBoxApiAbstract
         return $this->doCall('get', self::CONSOLE_SERVER_PORTS, $parameters, $id, 'trace');
     }
     #endregion consoleServerPorts
+
+    #region coolingFeeds
+    public function coolingFeeds(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('get', self::COOLING_FEEDS, $parameters);
+    }
+
+    public function coolingFeedsCreate(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('post', self::COOLING_FEEDS, $parameters);
+    }
+
+    public function coolingFeedsPut(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('put', self::COOLING_FEEDS, $parameters);
+    }
+
+    public function coolingFeedsPatch(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('patch', self::COOLING_FEEDS, $parameters);
+    }
+
+    public function coolingFeedsDelete(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('delete', self::COOLING_FEEDS, $parameters);
+    }
+
+    public function coolingFeedsById(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('get', self::COOLING_FEEDS, $parameters, $id);
+    }
+
+    public function coolingFeedsByIdPut(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('put', self::COOLING_FEEDS, $parameters, $id);
+    }
+
+    public function coolingFeedsByIdPatch(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('patch', self::COOLING_FEEDS, $parameters, $id);
+    }
+
+    public function coolingFeedsByIdDelete(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('delete', self::COOLING_FEEDS, $parameters, $id);
+    }
+    #endregion coolingFeeds
+
+    #region coolingIntakeTemplates
+    public function coolingIntakeTemplates(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('get', self::COOLING_INTAKE_TEMPLATES, $parameters);
+    }
+
+    public function coolingIntakeTemplatesCreate(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('post', self::COOLING_INTAKE_TEMPLATES, $parameters);
+    }
+
+    public function coolingIntakeTemplatesPut(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('put', self::COOLING_INTAKE_TEMPLATES, $parameters);
+    }
+
+    public function coolingIntakeTemplatesPatch(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('patch', self::COOLING_INTAKE_TEMPLATES, $parameters);
+    }
+
+    public function coolingIntakeTemplatesDelete(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('delete', self::COOLING_INTAKE_TEMPLATES, $parameters);
+    }
+
+    public function coolingIntakeTemplatesById(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('get', self::COOLING_INTAKE_TEMPLATES, $parameters, $id);
+    }
+
+    public function coolingIntakeTemplatesByIdPut(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('put', self::COOLING_INTAKE_TEMPLATES, $parameters, $id);
+    }
+
+    public function coolingIntakeTemplatesByIdPatch(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('patch', self::COOLING_INTAKE_TEMPLATES, $parameters, $id);
+    }
+
+    public function coolingIntakeTemplatesByIdDelete(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('delete', self::COOLING_INTAKE_TEMPLATES, $parameters, $id);
+    }
+    #endregion coolingIntakeTemplates
+
+    #region coolingIntakes
+    public function coolingIntakes(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('get', self::COOLING_INTAKES, $parameters);
+    }
+
+    public function coolingIntakesCreate(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('post', self::COOLING_INTAKES, $parameters);
+    }
+
+    public function coolingIntakesPut(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('put', self::COOLING_INTAKES, $parameters);
+    }
+
+    public function coolingIntakesPatch(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('patch', self::COOLING_INTAKES, $parameters);
+    }
+
+    public function coolingIntakesDelete(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('delete', self::COOLING_INTAKES, $parameters);
+    }
+
+    public function coolingIntakesById(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('get', self::COOLING_INTAKES, $parameters, $id);
+    }
+
+    public function coolingIntakesByIdPut(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('put', self::COOLING_INTAKES, $parameters, $id);
+    }
+
+    public function coolingIntakesByIdPatch(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('patch', self::COOLING_INTAKES, $parameters, $id);
+    }
+
+    public function coolingIntakesByIdDelete(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('delete', self::COOLING_INTAKES, $parameters, $id);
+    }
+    #endregion coolingIntakes
+
+    #region coolingOutflowTemplates
+    public function coolingOutflowTemplates(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('get', self::COOLING_OUTFLOW_TEMPLATES, $parameters);
+    }
+
+    public function coolingOutflowTemplatesCreate(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('post', self::COOLING_OUTFLOW_TEMPLATES, $parameters);
+    }
+
+    public function coolingOutflowTemplatesPut(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('put', self::COOLING_OUTFLOW_TEMPLATES, $parameters);
+    }
+
+    public function coolingOutflowTemplatesPatch(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('patch', self::COOLING_OUTFLOW_TEMPLATES, $parameters);
+    }
+
+    public function coolingOutflowTemplatesDelete(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('delete', self::COOLING_OUTFLOW_TEMPLATES, $parameters);
+    }
+
+    public function coolingOutflowTemplatesById(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('get', self::COOLING_OUTFLOW_TEMPLATES, $parameters, $id);
+    }
+
+    public function coolingOutflowTemplatesByIdPut(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('put', self::COOLING_OUTFLOW_TEMPLATES, $parameters, $id);
+    }
+
+    public function coolingOutflowTemplatesByIdPatch(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('patch', self::COOLING_OUTFLOW_TEMPLATES, $parameters, $id);
+    }
+
+    public function coolingOutflowTemplatesByIdDelete(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('delete', self::COOLING_OUTFLOW_TEMPLATES, $parameters, $id);
+    }
+    #endregion coolingOutflowTemplates
+
+    #region coolingOutflows
+    public function coolingOutflows(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('get', self::COOLING_OUTFLOWS, $parameters);
+    }
+
+    public function coolingOutflowsCreate(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('post', self::COOLING_OUTFLOWS, $parameters);
+    }
+
+    public function coolingOutflowsPut(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('put', self::COOLING_OUTFLOWS, $parameters);
+    }
+
+    public function coolingOutflowsPatch(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('patch', self::COOLING_OUTFLOWS, $parameters);
+    }
+
+    public function coolingOutflowsDelete(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('delete', self::COOLING_OUTFLOWS, $parameters);
+    }
+
+    public function coolingOutflowsById(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('get', self::COOLING_OUTFLOWS, $parameters, $id);
+    }
+
+    public function coolingOutflowsByIdPut(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('put', self::COOLING_OUTFLOWS, $parameters, $id);
+    }
+
+    public function coolingOutflowsByIdPatch(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('patch', self::COOLING_OUTFLOWS, $parameters, $id);
+    }
+
+    public function coolingOutflowsByIdDelete(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('delete', self::COOLING_OUTFLOWS, $parameters, $id);
+    }
+    #endregion coolingOutflows
+
+    #region coolingSources
+    public function coolingSources(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('get', self::COOLING_SOURCES, $parameters);
+    }
+
+    public function coolingSourcesCreate(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('post', self::COOLING_SOURCES, $parameters);
+    }
+
+    public function coolingSourcesPut(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('put', self::COOLING_SOURCES, $parameters);
+    }
+
+    public function coolingSourcesPatch(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('patch', self::COOLING_SOURCES, $parameters);
+    }
+
+    public function coolingSourcesDelete(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('delete', self::COOLING_SOURCES, $parameters);
+    }
+
+    public function coolingSourcesById(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('get', self::COOLING_SOURCES, $parameters, $id);
+    }
+
+    public function coolingSourcesByIdPut(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('put', self::COOLING_SOURCES, $parameters, $id);
+    }
+
+    public function coolingSourcesByIdPatch(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('patch', self::COOLING_SOURCES, $parameters, $id);
+    }
+
+    public function coolingSourcesByIdDelete(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('delete', self::COOLING_SOURCES, $parameters, $id);
+    }
+    #endregion coolingSources
 
     #region deviceBayTemplates
     public function deviceBayTemplates(...$parameters): NetBoxResult|null
@@ -976,6 +1281,53 @@ class NetBoxDcim extends NetBoxApiAbstract
     }
     #endregion locations
 
+    #region macAddresses
+    public function macAddresses(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('get', self::MAC_ADDRESSES, $parameters);
+    }
+
+    public function macAddressesCreate(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('post', self::MAC_ADDRESSES, $parameters);
+    }
+
+    public function macAddressesPut(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('put', self::MAC_ADDRESSES, $parameters);
+    }
+
+    public function macAddressesPatch(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('patch', self::MAC_ADDRESSES, $parameters);
+    }
+
+    public function macAddressesDelete(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('delete', self::MAC_ADDRESSES, $parameters);
+    }
+
+    public function macAddressesById(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('get', self::MAC_ADDRESSES, $parameters, $id);
+    }
+
+    public function macAddressesByIdPut(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('put', self::MAC_ADDRESSES, $parameters, $id);
+    }
+
+    public function macAddressesByIdPatch(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('patch', self::MAC_ADDRESSES, $parameters, $id);
+    }
+
+    public function macAddressesByIdDelete(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('delete', self::MAC_ADDRESSES, $parameters, $id);
+    }
+    #endregion macAddresses
+
     #region manufacturers
     public function manufacturers(...$parameters): NetBoxResult|null
     {
@@ -1070,6 +1422,53 @@ class NetBoxDcim extends NetBoxApiAbstract
     }
     #endregion moduleBayTemplates
 
+    #region moduleBayTypes
+    public function moduleBayTypes(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('get', self::MODULE_BAY_TYPES, $parameters);
+    }
+
+    public function moduleBayTypesCreate(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('post', self::MODULE_BAY_TYPES, $parameters);
+    }
+
+    public function moduleBayTypesPut(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('put', self::MODULE_BAY_TYPES, $parameters);
+    }
+
+    public function moduleBayTypesPatch(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('patch', self::MODULE_BAY_TYPES, $parameters);
+    }
+
+    public function moduleBayTypesDelete(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('delete', self::MODULE_BAY_TYPES, $parameters);
+    }
+
+    public function moduleBayTypesById(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('get', self::MODULE_BAY_TYPES, $parameters, $id);
+    }
+
+    public function moduleBayTypesByIdPut(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('put', self::MODULE_BAY_TYPES, $parameters, $id);
+    }
+
+    public function moduleBayTypesByIdPatch(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('patch', self::MODULE_BAY_TYPES, $parameters, $id);
+    }
+
+    public function moduleBayTypesByIdDelete(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('delete', self::MODULE_BAY_TYPES, $parameters, $id);
+    }
+    #endregion moduleBayTypes
+
     #region moduleBays
     public function moduleBays(...$parameters): NetBoxResult|null
     {
@@ -1116,6 +1515,53 @@ class NetBoxDcim extends NetBoxApiAbstract
         return $this->doCall('delete', self::MODULE_BAYS, $parameters, $id);
     }
     #endregion moduleBays
+
+    #region moduleTypeProfiles
+    public function moduleTypeProfiles(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('get', self::MODULE_TYPE_PROFILES, $parameters);
+    }
+
+    public function moduleTypeProfilesCreate(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('post', self::MODULE_TYPE_PROFILES, $parameters);
+    }
+
+    public function moduleTypeProfilesPut(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('put', self::MODULE_TYPE_PROFILES, $parameters);
+    }
+
+    public function moduleTypeProfilesPatch(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('patch', self::MODULE_TYPE_PROFILES, $parameters);
+    }
+
+    public function moduleTypeProfilesDelete(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('delete', self::MODULE_TYPE_PROFILES, $parameters);
+    }
+
+    public function moduleTypeProfilesById(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('get', self::MODULE_TYPE_PROFILES, $parameters, $id);
+    }
+
+    public function moduleTypeProfilesByIdPut(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('put', self::MODULE_TYPE_PROFILES, $parameters, $id);
+    }
+
+    public function moduleTypeProfilesByIdPatch(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('patch', self::MODULE_TYPE_PROFILES, $parameters, $id);
+    }
+
+    public function moduleTypeProfilesByIdDelete(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('delete', self::MODULE_TYPE_PROFILES, $parameters, $id);
+    }
+    #endregion moduleTypeProfiles
 
     #region moduleTypes
     public function moduleTypes(...$parameters): NetBoxResult|null
@@ -1554,6 +2000,53 @@ class NetBoxDcim extends NetBoxApiAbstract
         return $this->doCall('get', self::POWER_PORTS, $parameters, $id, 'trace');
     }
     #endregion powerPorts
+
+    #region rackGroups
+    public function rackGroups(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('get', self::RACK_GROUPS, $parameters);
+    }
+
+    public function rackGroupsCreate(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('post', self::RACK_GROUPS, $parameters);
+    }
+
+    public function rackGroupsPut(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('put', self::RACK_GROUPS, $parameters);
+    }
+
+    public function rackGroupsPatch(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('patch', self::RACK_GROUPS, $parameters);
+    }
+
+    public function rackGroupsDelete(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('delete', self::RACK_GROUPS, $parameters);
+    }
+
+    public function rackGroupsById(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('get', self::RACK_GROUPS, $parameters, $id);
+    }
+
+    public function rackGroupsByIdPut(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('put', self::RACK_GROUPS, $parameters, $id);
+    }
+
+    public function rackGroupsByIdPatch(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('patch', self::RACK_GROUPS, $parameters, $id);
+    }
+
+    public function rackGroupsByIdDelete(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('delete', self::RACK_GROUPS, $parameters, $id);
+    }
+    #endregion rackGroups
 
     #region rackReservations
     public function rackReservations(...$parameters): NetBoxResult|null

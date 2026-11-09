@@ -17,48 +17,48 @@ class NetBoxCore extends NetBoxApiAbstract
     private const string OBJECT_TYPES = 'core/object-types';
 
     #region backgroundQueues
-    public function backgroundQueues(array $parameters = []): NetBoxResult|null
+    public function backgroundQueues(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::BACKGROUND_QUEUES, $parameters);
+        return $this->doCall('get', self::BACKGROUND_QUEUES, $parameters);
     }
     #endregion backgroundQueues
 
     #region backgroundTasks
-    public function backgroundTasks(array $parameters = []): NetBoxResult|null
+    public function backgroundTasks(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::BACKGROUND_TASKS, $parameters);
+        return $this->doCall('get', self::BACKGROUND_TASKS, $parameters);
     }
 
-    public function backgroundTasksById(int $id, array $parameters = []): NetBoxResult|null
+    public function backgroundTasksById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::BACKGROUND_TASKS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::BACKGROUND_TASKS, $parameters, $id);
     }
 
-    public function backgroundTasksByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function backgroundTasksByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::BACKGROUND_TASKS, ['id' => $id, 'submodule' => 'delete', ...$parameters]);
+        return $this->doCall('get', self::BACKGROUND_TASKS, $parameters, $id, 'delete');
     }
 
-    public function backgroundTasksByIdEnqueue(int $id, array $parameters = []): NetBoxResult|null
+    public function backgroundTasksByIdEnqueue(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::BACKGROUND_TASKS, ['id' => $id, 'submodule' => 'enqueue', ...$parameters]);
+        return $this->doCall('get', self::BACKGROUND_TASKS, $parameters, $id, 'enqueue');
     }
 
-    public function backgroundTasksByIdRequeue(int $id, array $parameters = []): NetBoxResult|null
+    public function backgroundTasksByIdRequeue(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::BACKGROUND_TASKS, ['id' => $id, 'submodule' => 'requeue', ...$parameters]);
+        return $this->doCall('get', self::BACKGROUND_TASKS, $parameters, $id, 'requeue');
     }
 
-    public function backgroundTasksByIdStop(int $id, array $parameters = []): NetBoxResult|null
+    public function backgroundTasksByIdStop(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::BACKGROUND_TASKS, ['id' => $id, 'submodule' => 'stop', ...$parameters]);
+        return $this->doCall('get', self::BACKGROUND_TASKS, $parameters, $id, 'stop');
     }
     #endregion backgroundTasks
 
     #region backgroundWorkers
-    public function backgroundWorkers(array $parameters = []): NetBoxResult|null
+    public function backgroundWorkers(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::BACKGROUND_WORKERS, $parameters);
+        return $this->doCall('get', self::BACKGROUND_WORKERS, $parameters);
     }
     #endregion backgroundWorkers
 
@@ -151,14 +151,14 @@ class NetBoxCore extends NetBoxApiAbstract
     #endregion objectChanges
 
     #region objectTypes
-    public function objectTypes(array $parameters = []): NetBoxResult|null
+    public function objectTypes(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::OBJECT_TYPES, $parameters);
+        return $this->doCall('get', self::OBJECT_TYPES, $parameters);
     }
 
-    public function objectTypesById(int $id, array $parameters = []): NetBoxResult|null
+    public function objectTypesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::OBJECT_TYPES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::OBJECT_TYPES, $parameters, $id);
     }
     #endregion objectTypes
 }

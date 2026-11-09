@@ -9,9 +9,9 @@ class NetBoxAuthenticationCheck extends NetBoxApiAbstract
 {
     private const string AUTHENTICATION_CHECK = 'authentication-check/';
 
-    public function authenticationCheck(array $parameters = []): NetBoxResult|null
+    public function authenticationCheck(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::AUTHENTICATION_CHECK, $parameters);
+        return $this->doCall('get', self::AUTHENTICATION_CHECK, $parameters);
     }
     #endregion authenticationCheck
 }
