@@ -21,6 +21,8 @@ class NetBoxIpam extends NetBoxApiAbstract
     private const string SERVICE_TEMPLATES = 'ipam/service-templates';
     private const string SERVICES = 'ipam/services';
     private const string VLAN_GROUPS = 'ipam/vlan-groups';
+    private const string VLAN_TRANSLATION_POLICIES = 'ipam/vlan-translation-policies';
+    private const string VLAN_TRANSLATION_RULES = 'ipam/vlan-translation-rules';
     private const string VLANS = 'ipam/vlans';
     private const string VRFS = 'ipam/vrfs';
 
@@ -706,6 +708,100 @@ class NetBoxIpam extends NetBoxApiAbstract
         return $this->doCall('get', self::VLAN_GROUPS, $parameters, $id, 'available-vlans');
     }
     #endregion vlanGroups
+
+    #region vlanTranslationPolicies
+    public function vlanTranslationPolicies(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('get', self::VLAN_TRANSLATION_POLICIES, $parameters);
+    }
+
+    public function vlanTranslationPoliciesCreate(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('post', self::VLAN_TRANSLATION_POLICIES, $parameters);
+    }
+
+    public function vlanTranslationPoliciesPut(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('put', self::VLAN_TRANSLATION_POLICIES, $parameters);
+    }
+
+    public function vlanTranslationPoliciesPatch(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('patch', self::VLAN_TRANSLATION_POLICIES, $parameters);
+    }
+
+    public function vlanTranslationPoliciesDelete(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('delete', self::VLAN_TRANSLATION_POLICIES, $parameters);
+    }
+
+    public function vlanTranslationPoliciesById(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('get', self::VLAN_TRANSLATION_POLICIES, $parameters, $id);
+    }
+
+    public function vlanTranslationPoliciesByIdPut(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('put', self::VLAN_TRANSLATION_POLICIES, $parameters, $id);
+    }
+
+    public function vlanTranslationPoliciesByIdPatch(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('patch', self::VLAN_TRANSLATION_POLICIES, $parameters, $id);
+    }
+
+    public function vlanTranslationPoliciesByIdDelete(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('delete', self::VLAN_TRANSLATION_POLICIES, $parameters, $id);
+    }
+    #endregion vlanTranslationPolicies
+
+    #region vlanTranslationRules
+    public function vlanTranslationRules(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('get', self::VLAN_TRANSLATION_RULES, $parameters);
+    }
+
+    public function vlanTranslationRulesCreate(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('post', self::VLAN_TRANSLATION_RULES, $parameters);
+    }
+
+    public function vlanTranslationRulesPut(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('put', self::VLAN_TRANSLATION_RULES, $parameters);
+    }
+
+    public function vlanTranslationRulesPatch(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('patch', self::VLAN_TRANSLATION_RULES, $parameters);
+    }
+
+    public function vlanTranslationRulesDelete(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('delete', self::VLAN_TRANSLATION_RULES, $parameters);
+    }
+
+    public function vlanTranslationRulesById(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('get', self::VLAN_TRANSLATION_RULES, $parameters, $id);
+    }
+
+    public function vlanTranslationRulesByIdPut(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('put', self::VLAN_TRANSLATION_RULES, $parameters, $id);
+    }
+
+    public function vlanTranslationRulesByIdPatch(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('patch', self::VLAN_TRANSLATION_RULES, $parameters, $id);
+    }
+
+    public function vlanTranslationRulesByIdDelete(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('delete', self::VLAN_TRANSLATION_RULES, $parameters, $id);
+    }
+    #endregion vlanTranslationRules
 
     #region vlans
     public function vlans(...$parameters): NetBoxResult|null

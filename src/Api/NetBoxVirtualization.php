@@ -12,6 +12,7 @@ class NetBoxVirtualization extends NetBoxApiAbstract
     private const string CLUSTERS = 'virtualization/clusters';
     private const string INTERFACES = 'virtualization/interfaces';
     private const string VIRTUAL_DISKS = 'virtualization/virtual-disks';
+    private const string VIRTUAL_MACHINE_TYPES = 'virtualization/virtual-machine-types';
     private const string VIRTUAL_MACHINES = 'virtualization/virtual-machines';
 
     #region clusterGroups
@@ -248,6 +249,53 @@ class NetBoxVirtualization extends NetBoxApiAbstract
         return $this->doCall('delete', self::VIRTUAL_DISKS, $parameters, $id);
     }
     #endregion virtualDisks
+
+    #region virtualMachineTypes
+    public function virtualMachineTypes(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('get', self::VIRTUAL_MACHINE_TYPES, $parameters);
+    }
+
+    public function virtualMachineTypesCreate(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('post', self::VIRTUAL_MACHINE_TYPES, $parameters);
+    }
+
+    public function virtualMachineTypesPut(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('put', self::VIRTUAL_MACHINE_TYPES, $parameters);
+    }
+
+    public function virtualMachineTypesPatch(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('patch', self::VIRTUAL_MACHINE_TYPES, $parameters);
+    }
+
+    public function virtualMachineTypesDelete(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('delete', self::VIRTUAL_MACHINE_TYPES, $parameters);
+    }
+
+    public function virtualMachineTypesById(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('get', self::VIRTUAL_MACHINE_TYPES, $parameters, $id);
+    }
+
+    public function virtualMachineTypesByIdPut(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('put', self::VIRTUAL_MACHINE_TYPES, $parameters, $id);
+    }
+
+    public function virtualMachineTypesByIdPatch(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('patch', self::VIRTUAL_MACHINE_TYPES, $parameters, $id);
+    }
+
+    public function virtualMachineTypesByIdDelete(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('delete', self::VIRTUAL_MACHINE_TYPES, $parameters, $id);
+    }
+    #endregion virtualMachineTypes
 
     #region virtualMachines
     public function virtualMachines(...$parameters): NetBoxResult|null

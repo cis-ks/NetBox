@@ -9,6 +9,8 @@ class NetBoxUsers extends NetBoxApiAbstract
 {
     private const string CONFIG = 'users/config';
     private const string GROUPS = 'users/groups';
+    private const string OWNER_GROUPS = 'users/owner-groups';
+    private const string OWNERS = 'users/owners';
     private const string PERMISSIONS = 'users/permissions';
     private const string TOKENS = 'users/tokens';
     private const string USERS = 'users/users';
@@ -66,6 +68,100 @@ class NetBoxUsers extends NetBoxApiAbstract
         return $this->doCall('delete', self::GROUPS, $parameters, $id);
     }
     #endregion groups
+
+    #region ownerGroups
+    public function ownerGroups(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('get', self::OWNER_GROUPS, $parameters);
+    }
+
+    public function ownerGroupsCreate(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('post', self::OWNER_GROUPS, $parameters);
+    }
+
+    public function ownerGroupsPut(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('put', self::OWNER_GROUPS, $parameters);
+    }
+
+    public function ownerGroupsPatch(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('patch', self::OWNER_GROUPS, $parameters);
+    }
+
+    public function ownerGroupsDelete(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('delete', self::OWNER_GROUPS, $parameters);
+    }
+
+    public function ownerGroupsById(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('get', self::OWNER_GROUPS, $parameters, $id);
+    }
+
+    public function ownerGroupsByIdPut(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('put', self::OWNER_GROUPS, $parameters, $id);
+    }
+
+    public function ownerGroupsByIdPatch(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('patch', self::OWNER_GROUPS, $parameters, $id);
+    }
+
+    public function ownerGroupsByIdDelete(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('delete', self::OWNER_GROUPS, $parameters, $id);
+    }
+    #endregion ownerGroups
+
+    #region owners
+    public function owners(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('get', self::OWNERS, $parameters);
+    }
+
+    public function ownersCreate(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('post', self::OWNERS, $parameters);
+    }
+
+    public function ownersPut(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('put', self::OWNERS, $parameters);
+    }
+
+    public function ownersPatch(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('patch', self::OWNERS, $parameters);
+    }
+
+    public function ownersDelete(...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('delete', self::OWNERS, $parameters);
+    }
+
+    public function ownersById(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('get', self::OWNERS, $parameters, $id);
+    }
+
+    public function ownersByIdPut(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('put', self::OWNERS, $parameters, $id);
+    }
+
+    public function ownersByIdPatch(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('patch', self::OWNERS, $parameters, $id);
+    }
+
+    public function ownersByIdDelete(int $id, ...$parameters): NetBoxResult|null
+    {
+        return $this->doCall('delete', self::OWNERS, $parameters, $id);
+    }
+    #endregion owners
 
     #region permissions
     public function permissions(...$parameters): NetBoxResult|null

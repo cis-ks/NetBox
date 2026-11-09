@@ -68,7 +68,7 @@ class NetBoxApi
             'allow_redirects' => array_replace(RedirectMiddleware::$defaultSettings, ['track_redirects' => true]),
             'verify' => $this->verifySsl,
             'headers' => [
-                'authorization' => sprintf('Token %s', $this->apiToken),
+                'authorization' => $this->apiToken,
                 'content-type' => 'application/json',
                 'accept' => 'application/json; indent=4'
             ]
