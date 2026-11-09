@@ -17,7 +17,7 @@
   "require": {
     "php": "^8.3",
     "cis-bv/gql-builder": "^v0.1.0",
-    "guzzlehttp/guzzle": "7.9.2"
+    "guzzlehttp/guzzle": "^8.0.1"
   },
   "require-dev": {
     "pestphp/pest": "^3.4"

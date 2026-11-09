@@ -7,6 +7,7 @@ use Cis\NetBox\NetBoxResult;
 
 class NetBoxDcim extends NetBoxApiAbstract
 {
+    private const string CABLE_BUNDLES = 'dcim/cable-bundles';
     private const string CABLE_TERMINATIONS = 'dcim/cable-terminations';
     private const string CABLES = 'dcim/cables';
     private const string CONNECTED_DEVICE = 'dcim/connected-device';
@@ -14,6 +15,12 @@ class NetBoxDcim extends NetBoxApiAbstract
     private const string CONSOLE_PORTS = 'dcim/console-ports';
     private const string CONSOLE_SERVER_PORT_TEMPLATES = 'dcim/console-server-port-templates';
     private const string CONSOLE_SERVER_PORTS = 'dcim/console-server-ports';
+    private const string COOLING_FEEDS = 'dcim/cooling-feeds';
+    private const string COOLING_INTAKE_TEMPLATES = 'dcim/cooling-intake-templates';
+    private const string COOLING_INTAKES = 'dcim/cooling-intakes';
+    private const string COOLING_OUTFLOW_TEMPLATES = 'dcim/cooling-outflow-templates';
+    private const string COOLING_OUTFLOWS = 'dcim/cooling-outflows';
+    private const string COOLING_SOURCES = 'dcim/cooling-sources';
     private const string DEVICE_BAY_TEMPLATES = 'dcim/device-bay-templates';
     private const string DEVICE_BAYS = 'dcim/device-bays';
     private const string DEVICE_ROLES = 'dcim/device-roles';
@@ -27,9 +34,12 @@ class NetBoxDcim extends NetBoxApiAbstract
     private const string INVENTORY_ITEM_TEMPLATES = 'dcim/inventory-item-templates';
     private const string INVENTORY_ITEMS = 'dcim/inventory-items';
     private const string LOCATIONS = 'dcim/locations';
+    private const string MAC_ADDRESSES = 'dcim/mac-addresses';
     private const string MANUFACTURERS = 'dcim/manufacturers';
     private const string MODULE_BAY_TEMPLATES = 'dcim/module-bay-templates';
+    private const string MODULE_BAY_TYPES = 'dcim/module-bay-types';
     private const string MODULE_BAYS = 'dcim/module-bays';
+    private const string MODULE_TYPE_PROFILES = 'dcim/module-type-profiles';
     private const string MODULE_TYPES = 'dcim/module-types';
     private const string MODULES = 'dcim/modules';
     private const string PLATFORMS = 'dcim/platforms';
@@ -39,6 +49,7 @@ class NetBoxDcim extends NetBoxApiAbstract
     private const string POWER_PANELS = 'dcim/power-panels';
     private const string POWER_PORT_TEMPLATES = 'dcim/power-port-templates';
     private const string POWER_PORTS = 'dcim/power-ports';
+    private const string RACK_GROUPS = 'dcim/rack-groups';
     private const string RACK_RESERVATIONS = 'dcim/rack-reservations';
     private const string RACK_ROLES = 'dcim/rack-roles';
     private const string RACK_TYPES = 'dcim/rack-types';
@@ -51,50 +62,62 @@ class NetBoxDcim extends NetBoxApiAbstract
     private const string VIRTUAL_CHASSIS = 'dcim/virtual-chassis';
     private const string VIRTUAL_DEVICE_CONTEXTS = 'dcim/virtual-device-contexts';
 
+    #region cableBundles
+    public function cableBundles(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::CABLE_BUNDLES, $parameters);
+    }
+
+    public function cableBundlesCreate(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->post(self::CABLE_BUNDLES, $parameters);
+    }
+
+    public function cableBundlesPut(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->put(self::CABLE_BUNDLES, $parameters);
+    }
+
+    public function cableBundlesPatch(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->patch(self::CABLE_BUNDLES, $parameters);
+    }
+
+    public function cableBundlesDelete(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->delete(self::CABLE_BUNDLES, $parameters);
+    }
+
+    public function cableBundlesById(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::CABLE_BUNDLES, ['id' => $id, ...$parameters]);
+    }
+
+    public function cableBundlesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->put(self::CABLE_BUNDLES, ['id' => $id, ...$parameters]);
+    }
+
+    public function cableBundlesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->patch(self::CABLE_BUNDLES, ['id' => $id, ...$parameters]);
+    }
+
+    public function cableBundlesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->delete(self::CABLE_BUNDLES, ['id' => $id, ...$parameters]);
+    }
+    #endregion cableBundles
+
     #region cableTerminations
     public function cableTerminations(array $parameters = []): NetBoxResult|null
     {
         return $this->api->get(self::CABLE_TERMINATIONS, $parameters);
     }
 
-    public function cableTerminationsCreate(array $parameters = []): NetBoxResult|null
-    {
-        return $this->api->post(self::CABLE_TERMINATIONS, $parameters);
-    }
-
-    public function cableTerminationsPut(array $parameters = []): NetBoxResult|null
-    {
-        return $this->api->put(self::CABLE_TERMINATIONS, $parameters);
-    }
-
-    public function cableTerminationsPatch(array $parameters = []): NetBoxResult|null
-    {
-        return $this->api->patch(self::CABLE_TERMINATIONS, $parameters);
-    }
-
-    public function cableTerminationsDelete(array $parameters = []): NetBoxResult|null
-    {
-        return $this->api->delete(self::CABLE_TERMINATIONS, $parameters);
-    }
-
     public function cableTerminationsById(int $id, array $parameters = []): NetBoxResult|null
     {
         return $this->api->get(self::CABLE_TERMINATIONS, ['id' => $id, ...$parameters]);
-    }
-
-    public function cableTerminationsByIdPut(int $id, array $parameters = []): NetBoxResult|null
-    {
-        return $this->api->put(self::CABLE_TERMINATIONS, ['id' => $id, ...$parameters]);
-    }
-
-    public function cableTerminationsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
-    {
-        return $this->api->patch(self::CABLE_TERMINATIONS, ['id' => $id, ...$parameters]);
-    }
-
-    public function cableTerminationsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
-    {
-        return $this->api->delete(self::CABLE_TERMINATIONS, ['id' => $id, ...$parameters]);
     }
     #endregion cableTerminations
 
@@ -349,6 +372,288 @@ class NetBoxDcim extends NetBoxApiAbstract
         return $this->api->get(self::CONSOLE_SERVER_PORTS, ['id' => $id, 'submodule' => 'trace', ...$parameters]);
     }
     #endregion consoleServerPorts
+
+    #region coolingFeeds
+    public function coolingFeeds(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::COOLING_FEEDS, $parameters);
+    }
+
+    public function coolingFeedsCreate(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->post(self::COOLING_FEEDS, $parameters);
+    }
+
+    public function coolingFeedsPut(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->put(self::COOLING_FEEDS, $parameters);
+    }
+
+    public function coolingFeedsPatch(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->patch(self::COOLING_FEEDS, $parameters);
+    }
+
+    public function coolingFeedsDelete(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->delete(self::COOLING_FEEDS, $parameters);
+    }
+
+    public function coolingFeedsById(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::COOLING_FEEDS, ['id' => $id, ...$parameters]);
+    }
+
+    public function coolingFeedsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->put(self::COOLING_FEEDS, ['id' => $id, ...$parameters]);
+    }
+
+    public function coolingFeedsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->patch(self::COOLING_FEEDS, ['id' => $id, ...$parameters]);
+    }
+
+    public function coolingFeedsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->delete(self::COOLING_FEEDS, ['id' => $id, ...$parameters]);
+    }
+    #endregion coolingFeeds
+
+    #region coolingIntakeTemplates
+    public function coolingIntakeTemplates(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::COOLING_INTAKE_TEMPLATES, $parameters);
+    }
+
+    public function coolingIntakeTemplatesCreate(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->post(self::COOLING_INTAKE_TEMPLATES, $parameters);
+    }
+
+    public function coolingIntakeTemplatesPut(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->put(self::COOLING_INTAKE_TEMPLATES, $parameters);
+    }
+
+    public function coolingIntakeTemplatesPatch(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->patch(self::COOLING_INTAKE_TEMPLATES, $parameters);
+    }
+
+    public function coolingIntakeTemplatesDelete(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->delete(self::COOLING_INTAKE_TEMPLATES, $parameters);
+    }
+
+    public function coolingIntakeTemplatesById(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::COOLING_INTAKE_TEMPLATES, ['id' => $id, ...$parameters]);
+    }
+
+    public function coolingIntakeTemplatesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->put(self::COOLING_INTAKE_TEMPLATES, ['id' => $id, ...$parameters]);
+    }
+
+    public function coolingIntakeTemplatesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->patch(self::COOLING_INTAKE_TEMPLATES, ['id' => $id, ...$parameters]);
+    }
+
+    public function coolingIntakeTemplatesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->delete(self::COOLING_INTAKE_TEMPLATES, ['id' => $id, ...$parameters]);
+    }
+    #endregion coolingIntakeTemplates
+
+    #region coolingIntakes
+    public function coolingIntakes(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::COOLING_INTAKES, $parameters);
+    }
+
+    public function coolingIntakesCreate(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->post(self::COOLING_INTAKES, $parameters);
+    }
+
+    public function coolingIntakesPut(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->put(self::COOLING_INTAKES, $parameters);
+    }
+
+    public function coolingIntakesPatch(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->patch(self::COOLING_INTAKES, $parameters);
+    }
+
+    public function coolingIntakesDelete(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->delete(self::COOLING_INTAKES, $parameters);
+    }
+
+    public function coolingIntakesById(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::COOLING_INTAKES, ['id' => $id, ...$parameters]);
+    }
+
+    public function coolingIntakesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->put(self::COOLING_INTAKES, ['id' => $id, ...$parameters]);
+    }
+
+    public function coolingIntakesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->patch(self::COOLING_INTAKES, ['id' => $id, ...$parameters]);
+    }
+
+    public function coolingIntakesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->delete(self::COOLING_INTAKES, ['id' => $id, ...$parameters]);
+    }
+    #endregion coolingIntakes
+
+    #region coolingOutflowTemplates
+    public function coolingOutflowTemplates(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::COOLING_OUTFLOW_TEMPLATES, $parameters);
+    }
+
+    public function coolingOutflowTemplatesCreate(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->post(self::COOLING_OUTFLOW_TEMPLATES, $parameters);
+    }
+
+    public function coolingOutflowTemplatesPut(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->put(self::COOLING_OUTFLOW_TEMPLATES, $parameters);
+    }
+
+    public function coolingOutflowTemplatesPatch(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->patch(self::COOLING_OUTFLOW_TEMPLATES, $parameters);
+    }
+
+    public function coolingOutflowTemplatesDelete(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->delete(self::COOLING_OUTFLOW_TEMPLATES, $parameters);
+    }
+
+    public function coolingOutflowTemplatesById(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::COOLING_OUTFLOW_TEMPLATES, ['id' => $id, ...$parameters]);
+    }
+
+    public function coolingOutflowTemplatesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->put(self::COOLING_OUTFLOW_TEMPLATES, ['id' => $id, ...$parameters]);
+    }
+
+    public function coolingOutflowTemplatesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->patch(self::COOLING_OUTFLOW_TEMPLATES, ['id' => $id, ...$parameters]);
+    }
+
+    public function coolingOutflowTemplatesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->delete(self::COOLING_OUTFLOW_TEMPLATES, ['id' => $id, ...$parameters]);
+    }
+    #endregion coolingOutflowTemplates
+
+    #region coolingOutflows
+    public function coolingOutflows(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::COOLING_OUTFLOWS, $parameters);
+    }
+
+    public function coolingOutflowsCreate(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->post(self::COOLING_OUTFLOWS, $parameters);
+    }
+
+    public function coolingOutflowsPut(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->put(self::COOLING_OUTFLOWS, $parameters);
+    }
+
+    public function coolingOutflowsPatch(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->patch(self::COOLING_OUTFLOWS, $parameters);
+    }
+
+    public function coolingOutflowsDelete(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->delete(self::COOLING_OUTFLOWS, $parameters);
+    }
+
+    public function coolingOutflowsById(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::COOLING_OUTFLOWS, ['id' => $id, ...$parameters]);
+    }
+
+    public function coolingOutflowsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->put(self::COOLING_OUTFLOWS, ['id' => $id, ...$parameters]);
+    }
+
+    public function coolingOutflowsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->patch(self::COOLING_OUTFLOWS, ['id' => $id, ...$parameters]);
+    }
+
+    public function coolingOutflowsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->delete(self::COOLING_OUTFLOWS, ['id' => $id, ...$parameters]);
+    }
+    #endregion coolingOutflows
+
+    #region coolingSources
+    public function coolingSources(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::COOLING_SOURCES, $parameters);
+    }
+
+    public function coolingSourcesCreate(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->post(self::COOLING_SOURCES, $parameters);
+    }
+
+    public function coolingSourcesPut(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->put(self::COOLING_SOURCES, $parameters);
+    }
+
+    public function coolingSourcesPatch(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->patch(self::COOLING_SOURCES, $parameters);
+    }
+
+    public function coolingSourcesDelete(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->delete(self::COOLING_SOURCES, $parameters);
+    }
+
+    public function coolingSourcesById(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::COOLING_SOURCES, ['id' => $id, ...$parameters]);
+    }
+
+    public function coolingSourcesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->put(self::COOLING_SOURCES, ['id' => $id, ...$parameters]);
+    }
+
+    public function coolingSourcesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->patch(self::COOLING_SOURCES, ['id' => $id, ...$parameters]);
+    }
+
+    public function coolingSourcesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->delete(self::COOLING_SOURCES, ['id' => $id, ...$parameters]);
+    }
+    #endregion coolingSources
 
     #region deviceBayTemplates
     public function deviceBayTemplates(array $parameters = []): NetBoxResult|null
@@ -976,6 +1281,53 @@ class NetBoxDcim extends NetBoxApiAbstract
     }
     #endregion locations
 
+    #region macAddresses
+    public function macAddresses(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::MAC_ADDRESSES, $parameters);
+    }
+
+    public function macAddressesCreate(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->post(self::MAC_ADDRESSES, $parameters);
+    }
+
+    public function macAddressesPut(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->put(self::MAC_ADDRESSES, $parameters);
+    }
+
+    public function macAddressesPatch(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->patch(self::MAC_ADDRESSES, $parameters);
+    }
+
+    public function macAddressesDelete(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->delete(self::MAC_ADDRESSES, $parameters);
+    }
+
+    public function macAddressesById(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::MAC_ADDRESSES, ['id' => $id, ...$parameters]);
+    }
+
+    public function macAddressesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->put(self::MAC_ADDRESSES, ['id' => $id, ...$parameters]);
+    }
+
+    public function macAddressesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->patch(self::MAC_ADDRESSES, ['id' => $id, ...$parameters]);
+    }
+
+    public function macAddressesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->delete(self::MAC_ADDRESSES, ['id' => $id, ...$parameters]);
+    }
+    #endregion macAddresses
+
     #region manufacturers
     public function manufacturers(array $parameters = []): NetBoxResult|null
     {
@@ -1070,6 +1422,53 @@ class NetBoxDcim extends NetBoxApiAbstract
     }
     #endregion moduleBayTemplates
 
+    #region moduleBayTypes
+    public function moduleBayTypes(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::MODULE_BAY_TYPES, $parameters);
+    }
+
+    public function moduleBayTypesCreate(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->post(self::MODULE_BAY_TYPES, $parameters);
+    }
+
+    public function moduleBayTypesPut(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->put(self::MODULE_BAY_TYPES, $parameters);
+    }
+
+    public function moduleBayTypesPatch(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->patch(self::MODULE_BAY_TYPES, $parameters);
+    }
+
+    public function moduleBayTypesDelete(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->delete(self::MODULE_BAY_TYPES, $parameters);
+    }
+
+    public function moduleBayTypesById(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::MODULE_BAY_TYPES, ['id' => $id, ...$parameters]);
+    }
+
+    public function moduleBayTypesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->put(self::MODULE_BAY_TYPES, ['id' => $id, ...$parameters]);
+    }
+
+    public function moduleBayTypesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->patch(self::MODULE_BAY_TYPES, ['id' => $id, ...$parameters]);
+    }
+
+    public function moduleBayTypesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->delete(self::MODULE_BAY_TYPES, ['id' => $id, ...$parameters]);
+    }
+    #endregion moduleBayTypes
+
     #region moduleBays
     public function moduleBays(array $parameters = []): NetBoxResult|null
     {
@@ -1116,6 +1515,53 @@ class NetBoxDcim extends NetBoxApiAbstract
         return $this->api->delete(self::MODULE_BAYS, ['id' => $id, ...$parameters]);
     }
     #endregion moduleBays
+
+    #region moduleTypeProfiles
+    public function moduleTypeProfiles(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::MODULE_TYPE_PROFILES, $parameters);
+    }
+
+    public function moduleTypeProfilesCreate(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->post(self::MODULE_TYPE_PROFILES, $parameters);
+    }
+
+    public function moduleTypeProfilesPut(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->put(self::MODULE_TYPE_PROFILES, $parameters);
+    }
+
+    public function moduleTypeProfilesPatch(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->patch(self::MODULE_TYPE_PROFILES, $parameters);
+    }
+
+    public function moduleTypeProfilesDelete(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->delete(self::MODULE_TYPE_PROFILES, $parameters);
+    }
+
+    public function moduleTypeProfilesById(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::MODULE_TYPE_PROFILES, ['id' => $id, ...$parameters]);
+    }
+
+    public function moduleTypeProfilesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->put(self::MODULE_TYPE_PROFILES, ['id' => $id, ...$parameters]);
+    }
+
+    public function moduleTypeProfilesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->patch(self::MODULE_TYPE_PROFILES, ['id' => $id, ...$parameters]);
+    }
+
+    public function moduleTypeProfilesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->delete(self::MODULE_TYPE_PROFILES, ['id' => $id, ...$parameters]);
+    }
+    #endregion moduleTypeProfiles
 
     #region moduleTypes
     public function moduleTypes(array $parameters = []): NetBoxResult|null
@@ -1554,6 +2000,53 @@ class NetBoxDcim extends NetBoxApiAbstract
         return $this->api->get(self::POWER_PORTS, ['id' => $id, 'submodule' => 'trace', ...$parameters]);
     }
     #endregion powerPorts
+
+    #region rackGroups
+    public function rackGroups(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::RACK_GROUPS, $parameters);
+    }
+
+    public function rackGroupsCreate(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->post(self::RACK_GROUPS, $parameters);
+    }
+
+    public function rackGroupsPut(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->put(self::RACK_GROUPS, $parameters);
+    }
+
+    public function rackGroupsPatch(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->patch(self::RACK_GROUPS, $parameters);
+    }
+
+    public function rackGroupsDelete(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->delete(self::RACK_GROUPS, $parameters);
+    }
+
+    public function rackGroupsById(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::RACK_GROUPS, ['id' => $id, ...$parameters]);
+    }
+
+    public function rackGroupsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->put(self::RACK_GROUPS, ['id' => $id, ...$parameters]);
+    }
+
+    public function rackGroupsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->patch(self::RACK_GROUPS, ['id' => $id, ...$parameters]);
+    }
+
+    public function rackGroupsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->delete(self::RACK_GROUPS, ['id' => $id, ...$parameters]);
+    }
+    #endregion rackGroups
 
     #region rackReservations
     public function rackReservations(array $parameters = []): NetBoxResult|null

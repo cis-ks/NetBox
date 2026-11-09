@@ -5,8 +5,8 @@ use Cis\NetBox\Exceptions\NetBoxUrlValidationException;
 use Cis\NetBox\NetBoxApi;
 use Cis\NetBox\NetBoxGraphQlResult;
 
-const NETBOX_VERSION = "4.1";
-const NETBOX_TOKEN = "92a04a610801ed7e62384ce510daa61539f6c5db";
+const NETBOX_VERSION = "4.7";
+const NETBOX_TOKEN = "Bearer nbt_BP6rc0XTzvqc.NRBKVSsfMrLLJZPDOPv4LDCkq18JujTaXUh7a5Mo";
 const NETBOX_API_URL = 'https://demo.netbox.dev/api';
 
 it('Test API Generation throws exception when missing Token', function () {

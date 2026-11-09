@@ -8,6 +8,7 @@ use Cis\NetBox\NetBoxResult;
 class NetBoxExtras extends NetBoxApiAbstract
 {
     private const string BOOKMARKS = 'extras/bookmarks';
+    private const string CONFIG_CONTEXT_PROFILES = 'extras/config-context-profiles';
     private const string CONFIG_CONTEXTS = 'extras/config-contexts';
     private const string CONFIG_TEMPLATES = 'extras/config-templates';
     private const string CUSTOM_FIELD_CHOICE_SETS = 'extras/custom-field-choice-sets';
@@ -20,10 +21,11 @@ class NetBoxExtras extends NetBoxApiAbstract
     private const string JOURNAL_ENTRIES = 'extras/journal-entries';
     private const string NOTIFICATION_GROUPS = 'extras/notification-groups';
     private const string NOTIFICATIONS = 'extras/notifications';
-    private const string OBJECT_TYPES = 'extras/object-types';
     private const string SAVED_FILTERS = 'extras/saved-filters';
     private const string SCRIPTS = 'extras/scripts';
     private const string SUBSCRIPTIONS = 'extras/subscriptions';
+    private const string TABLE_CONFIGS = 'extras/table-configs';
+    private const string TAGGED_OBJECTS = 'extras/tagged-objects';
     private const string TAGS = 'extras/tags';
     private const string WEBHOOKS = 'extras/webhooks';
 
@@ -73,6 +75,58 @@ class NetBoxExtras extends NetBoxApiAbstract
         return $this->api->delete(self::BOOKMARKS, ['id' => $id, ...$parameters]);
     }
     #endregion bookmarks
+
+    #region configContextProfiles
+    public function configContextProfiles(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::CONFIG_CONTEXT_PROFILES, $parameters);
+    }
+
+    public function configContextProfilesCreate(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->post(self::CONFIG_CONTEXT_PROFILES, $parameters);
+    }
+
+    public function configContextProfilesPut(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->put(self::CONFIG_CONTEXT_PROFILES, $parameters);
+    }
+
+    public function configContextProfilesPatch(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->patch(self::CONFIG_CONTEXT_PROFILES, $parameters);
+    }
+
+    public function configContextProfilesDelete(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->delete(self::CONFIG_CONTEXT_PROFILES, $parameters);
+    }
+
+    public function configContextProfilesById(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::CONFIG_CONTEXT_PROFILES, ['id' => $id, ...$parameters]);
+    }
+
+    public function configContextProfilesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->put(self::CONFIG_CONTEXT_PROFILES, ['id' => $id, ...$parameters]);
+    }
+
+    public function configContextProfilesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->patch(self::CONFIG_CONTEXT_PROFILES, ['id' => $id, ...$parameters]);
+    }
+
+    public function configContextProfilesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->delete(self::CONFIG_CONTEXT_PROFILES, ['id' => $id, ...$parameters]);
+    }
+
+    public function configContextProfilesByIdSync(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::CONFIG_CONTEXT_PROFILES, ['id' => $id, 'submodule' => 'sync', ...$parameters]);
+    }
+    #endregion configContextProfiles
 
     #region configContexts
     public function configContexts(array $parameters = []): NetBoxResult|null
@@ -638,18 +692,6 @@ class NetBoxExtras extends NetBoxApiAbstract
     }
     #endregion notifications
 
-    #region objectTypes
-    public function objectTypes(array $parameters = []): NetBoxResult|null
-    {
-        return $this->api->get(self::OBJECT_TYPES, $parameters);
-    }
-
-    public function objectTypesById(int $id, array $parameters = []): NetBoxResult|null
-    {
-        return $this->api->get(self::OBJECT_TYPES, ['id' => $id, ...$parameters]);
-    }
-    #endregion objectTypes
-
     #region savedFilters
     public function savedFilters(array $parameters = []): NetBoxResult|null
     {
@@ -703,29 +745,14 @@ class NetBoxExtras extends NetBoxApiAbstract
         return $this->api->get(self::SCRIPTS, $parameters);
     }
 
-    public function scriptsCreate(array $parameters = []): NetBoxResult|null
-    {
-        return $this->api->post(self::SCRIPTS, $parameters);
-    }
-
     public function scriptsById(int $id, array $parameters = []): NetBoxResult|null
     {
         return $this->api->get(self::SCRIPTS, ['id' => $id, ...$parameters]);
     }
 
-    public function scriptsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function scriptsByIdCreate(int $id, array $parameters = []): NetBoxResult|null
     {
-        return $this->api->put(self::SCRIPTS, ['id' => $id, ...$parameters]);
-    }
-
-    public function scriptsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
-    {
-        return $this->api->patch(self::SCRIPTS, ['id' => $id, ...$parameters]);
-    }
-
-    public function scriptsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
-    {
-        return $this->api->delete(self::SCRIPTS, ['id' => $id, ...$parameters]);
+        return $this->api->post(self::SCRIPTS, ['id' => $id, ...$parameters]);
     }
     #endregion scripts
 
@@ -775,6 +802,65 @@ class NetBoxExtras extends NetBoxApiAbstract
         return $this->api->delete(self::SUBSCRIPTIONS, ['id' => $id, ...$parameters]);
     }
     #endregion subscriptions
+
+    #region tableConfigs
+    public function tableConfigs(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::TABLE_CONFIGS, $parameters);
+    }
+
+    public function tableConfigsCreate(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->post(self::TABLE_CONFIGS, $parameters);
+    }
+
+    public function tableConfigsPut(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->put(self::TABLE_CONFIGS, $parameters);
+    }
+
+    public function tableConfigsPatch(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->patch(self::TABLE_CONFIGS, $parameters);
+    }
+
+    public function tableConfigsDelete(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->delete(self::TABLE_CONFIGS, $parameters);
+    }
+
+    public function tableConfigsById(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::TABLE_CONFIGS, ['id' => $id, ...$parameters]);
+    }
+
+    public function tableConfigsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->put(self::TABLE_CONFIGS, ['id' => $id, ...$parameters]);
+    }
+
+    public function tableConfigsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->patch(self::TABLE_CONFIGS, ['id' => $id, ...$parameters]);
+    }
+
+    public function tableConfigsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->delete(self::TABLE_CONFIGS, ['id' => $id, ...$parameters]);
+    }
+    #endregion tableConfigs
+
+    #region taggedObjects
+    public function taggedObjects(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::TAGGED_OBJECTS, $parameters);
+    }
+
+    public function taggedObjectsById(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::TAGGED_OBJECTS, ['id' => $id, ...$parameters]);
+    }
+    #endregion taggedObjects
 
     #region tags
     public function tags(array $parameters = []): NetBoxResult|null

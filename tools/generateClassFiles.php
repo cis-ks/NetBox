@@ -2,8 +2,8 @@
 
 use Cis\NetBox\NetBoxApi;
 
-if (file_exists('../vendor/autoload.php')) {
-    require '../vendor/autoload.php';
+if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
+    require_once __DIR__ . '/../vendor/autoload.php';
 }
 
 const NETBOX_API_URL = "https://demo.netbox.dev/api";
@@ -59,8 +59,13 @@ foreach ($classes as $class) {
     }
 
     foreach ($classEndpoints as $endpoint) {
-        $constName = strtoupper(str_replace('-', '_', $endpoint['parts'][1]));
-        $functionName = preg_replace_callback('/-([a-z])/', fn ($m) => strtoupper($m[1]), $endpoint['parts'][1]);
+        if (empty(trim($endpoint['parts'][1]))) {
+            $constName = strtoupper(str_replace('-', '_', $endpoint['parts'][0]));
+            $functionName = preg_replace_callback('/-([a-z])/', fn ($m) => strtoupper($m[1]), $endpoint['parts'][0]);
+        } else {
+            $constName = strtoupper(str_replace('-', '_', $endpoint['parts'][1]));
+            $functionName = preg_replace_callback('/-([a-z])/', fn ($m) => strtoupper($m[1]), $endpoint['parts'][1]);
+        }
 
         if (!array_key_exists($endpoint['parts'][1], $consts)) {
             $consts[$endpoint['parts'][1]] = sprintf($constTemplate, $constName, $endpoint['parts'][0], $endpoint['parts'][1]);
@@ -119,7 +124,7 @@ foreach ($classes as $class) {
         $endpointSlug,
         implode("\n", $consts),
         implode("\n", $functions)
-    ));
+    )) . "\n";
 
     $fileName = str_replace('tools', 'src', __DIR__) . DIRECTORY_SEPARATOR . 'Api' . DIRECTORY_SEPARATOR . 'NetBox' . $endpointSlug . '.php';
     file_put_contents($fileName, str_replace("\t", str_repeat(" ", LINE_INDENT), $classString));

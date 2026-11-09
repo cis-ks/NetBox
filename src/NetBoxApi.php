@@ -64,10 +64,10 @@ class NetBoxApi
         $this->client = new Client([
             'base_uri' => $this->baseUrl,
             'timeout' => 5,
-            'allow_redirects' => array_replace(RedirectMiddleware::$defaultSettings, ['track_redirects' => true]),
+            'allow_redirects' => array_replace(RedirectMiddleware::DEFAULT_SETTINGS, ['track_redirects' => true]),
             'verify' => $this->verifySsl,
             'headers' => [
-                'authorization' => sprintf('Token %s', $this->apiToken),
+                'authorization' => $this->apiToken,
                 'content-type' => 'application/json',
                 'accept' => 'application/json; indent=4'
             ]

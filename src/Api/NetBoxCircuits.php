@@ -15,6 +15,9 @@ class NetBoxCircuits extends NetBoxApiAbstract
     private const string PROVIDER_ACCOUNTS = 'circuits/provider-accounts';
     private const string PROVIDER_NETWORKS = 'circuits/provider-networks';
     private const string PROVIDERS = 'circuits/providers';
+    private const string VIRTUAL_CIRCUIT_TERMINATIONS = 'circuits/virtual-circuit-terminations';
+    private const string VIRTUAL_CIRCUIT_TYPES = 'circuits/virtual-circuit-types';
+    private const string VIRTUAL_CIRCUITS = 'circuits/virtual-circuits';
 
     #region circuitGroupAssignments
     public function circuitGroupAssignments(array $parameters = []): NetBoxResult|null
@@ -396,4 +399,150 @@ class NetBoxCircuits extends NetBoxApiAbstract
         return $this->api->delete(self::PROVIDERS, ['id' => $id, ...$parameters]);
     }
     #endregion providers
+
+    #region virtualCircuitTerminations
+    public function virtualCircuitTerminations(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::VIRTUAL_CIRCUIT_TERMINATIONS, $parameters);
+    }
+
+    public function virtualCircuitTerminationsCreate(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->post(self::VIRTUAL_CIRCUIT_TERMINATIONS, $parameters);
+    }
+
+    public function virtualCircuitTerminationsPut(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->put(self::VIRTUAL_CIRCUIT_TERMINATIONS, $parameters);
+    }
+
+    public function virtualCircuitTerminationsPatch(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->patch(self::VIRTUAL_CIRCUIT_TERMINATIONS, $parameters);
+    }
+
+    public function virtualCircuitTerminationsDelete(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->delete(self::VIRTUAL_CIRCUIT_TERMINATIONS, $parameters);
+    }
+
+    public function virtualCircuitTerminationsById(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::VIRTUAL_CIRCUIT_TERMINATIONS, ['id' => $id, ...$parameters]);
+    }
+
+    public function virtualCircuitTerminationsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->put(self::VIRTUAL_CIRCUIT_TERMINATIONS, ['id' => $id, ...$parameters]);
+    }
+
+    public function virtualCircuitTerminationsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->patch(self::VIRTUAL_CIRCUIT_TERMINATIONS, ['id' => $id, ...$parameters]);
+    }
+
+    public function virtualCircuitTerminationsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->delete(self::VIRTUAL_CIRCUIT_TERMINATIONS, ['id' => $id, ...$parameters]);
+    }
+
+    public function virtualCircuitTerminationsByIdPaths(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::VIRTUAL_CIRCUIT_TERMINATIONS, ['id' => $id, 'submodule' => 'paths', ...$parameters]);
+    }
+    #endregion virtualCircuitTerminations
+
+    #region virtualCircuitTypes
+    public function virtualCircuitTypes(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::VIRTUAL_CIRCUIT_TYPES, $parameters);
+    }
+
+    public function virtualCircuitTypesCreate(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->post(self::VIRTUAL_CIRCUIT_TYPES, $parameters);
+    }
+
+    public function virtualCircuitTypesPut(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->put(self::VIRTUAL_CIRCUIT_TYPES, $parameters);
+    }
+
+    public function virtualCircuitTypesPatch(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->patch(self::VIRTUAL_CIRCUIT_TYPES, $parameters);
+    }
+
+    public function virtualCircuitTypesDelete(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->delete(self::VIRTUAL_CIRCUIT_TYPES, $parameters);
+    }
+
+    public function virtualCircuitTypesById(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::VIRTUAL_CIRCUIT_TYPES, ['id' => $id, ...$parameters]);
+    }
+
+    public function virtualCircuitTypesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->put(self::VIRTUAL_CIRCUIT_TYPES, ['id' => $id, ...$parameters]);
+    }
+
+    public function virtualCircuitTypesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->patch(self::VIRTUAL_CIRCUIT_TYPES, ['id' => $id, ...$parameters]);
+    }
+
+    public function virtualCircuitTypesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->delete(self::VIRTUAL_CIRCUIT_TYPES, ['id' => $id, ...$parameters]);
+    }
+    #endregion virtualCircuitTypes
+
+    #region virtualCircuits
+    public function virtualCircuits(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::VIRTUAL_CIRCUITS, $parameters);
+    }
+
+    public function virtualCircuitsCreate(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->post(self::VIRTUAL_CIRCUITS, $parameters);
+    }
+
+    public function virtualCircuitsPut(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->put(self::VIRTUAL_CIRCUITS, $parameters);
+    }
+
+    public function virtualCircuitsPatch(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->patch(self::VIRTUAL_CIRCUITS, $parameters);
+    }
+
+    public function virtualCircuitsDelete(array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->delete(self::VIRTUAL_CIRCUITS, $parameters);
+    }
+
+    public function virtualCircuitsById(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->get(self::VIRTUAL_CIRCUITS, ['id' => $id, ...$parameters]);
+    }
+
+    public function virtualCircuitsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->put(self::VIRTUAL_CIRCUITS, ['id' => $id, ...$parameters]);
+    }
+
+    public function virtualCircuitsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->patch(self::VIRTUAL_CIRCUITS, ['id' => $id, ...$parameters]);
+    }
+
+    public function virtualCircuitsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    {
+        return $this->api->delete(self::VIRTUAL_CIRCUITS, ['id' => $id, ...$parameters]);
+    }
+    #endregion virtualCircuits
 }
