@@ -12,143 +12,143 @@ class NetBoxWireless extends NetBoxApiAbstract
     private const string WIRELESS_LINKS = 'wireless/wireless-links';
 
     #region wirelessLanGroups
-    public function wirelessLanGroups(array $parameters = []): NetBoxResult|null
+    public function wirelessLanGroups(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::WIRELESS_LAN_GROUPS, $parameters);
+        return $this->doCall('get', self::WIRELESS_LAN_GROUPS, $parameters);
     }
 
-    public function wirelessLanGroupsCreate(array $parameters = []): NetBoxResult|null
+    public function wirelessLanGroupsCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::WIRELESS_LAN_GROUPS, $parameters);
+        return $this->doCall('post', self::WIRELESS_LAN_GROUPS, $parameters);
     }
 
-    public function wirelessLanGroupsPut(array $parameters = []): NetBoxResult|null
+    public function wirelessLanGroupsPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::WIRELESS_LAN_GROUPS, $parameters);
+        return $this->doCall('put', self::WIRELESS_LAN_GROUPS, $parameters);
     }
 
-    public function wirelessLanGroupsPatch(array $parameters = []): NetBoxResult|null
+    public function wirelessLanGroupsPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::WIRELESS_LAN_GROUPS, $parameters);
+        return $this->doCall('patch', self::WIRELESS_LAN_GROUPS, $parameters);
     }
 
-    public function wirelessLanGroupsDelete(array $parameters = []): NetBoxResult|null
+    public function wirelessLanGroupsDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::WIRELESS_LAN_GROUPS, $parameters);
+        return $this->doCall('delete', self::WIRELESS_LAN_GROUPS, $parameters);
     }
 
-    public function wirelessLanGroupsById(int $id, array $parameters = []): NetBoxResult|null
+    public function wirelessLanGroupsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::WIRELESS_LAN_GROUPS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::WIRELESS_LAN_GROUPS, $parameters, $id);
     }
 
-    public function wirelessLanGroupsByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function wirelessLanGroupsByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::WIRELESS_LAN_GROUPS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::WIRELESS_LAN_GROUPS, $parameters, $id);
     }
 
-    public function wirelessLanGroupsByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function wirelessLanGroupsByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::WIRELESS_LAN_GROUPS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::WIRELESS_LAN_GROUPS, $parameters, $id);
     }
 
-    public function wirelessLanGroupsByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function wirelessLanGroupsByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::WIRELESS_LAN_GROUPS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::WIRELESS_LAN_GROUPS, $parameters, $id);
     }
     #endregion wirelessLanGroups
 
     #region wirelessLans
-    public function wirelessLans(array $parameters = []): NetBoxResult|null
+    public function wirelessLans(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::WIRELESS_LANS, $parameters);
+        return $this->doCall('get', self::WIRELESS_LANS, $parameters);
     }
 
-    public function wirelessLansCreate(array $parameters = []): NetBoxResult|null
+    public function wirelessLansCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::WIRELESS_LANS, $parameters);
+        return $this->doCall('post', self::WIRELESS_LANS, $parameters);
     }
 
-    public function wirelessLansPut(array $parameters = []): NetBoxResult|null
+    public function wirelessLansPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::WIRELESS_LANS, $parameters);
+        return $this->doCall('put', self::WIRELESS_LANS, $parameters);
     }
 
-    public function wirelessLansPatch(array $parameters = []): NetBoxResult|null
+    public function wirelessLansPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::WIRELESS_LANS, $parameters);
+        return $this->doCall('patch', self::WIRELESS_LANS, $parameters);
     }
 
-    public function wirelessLansDelete(array $parameters = []): NetBoxResult|null
+    public function wirelessLansDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::WIRELESS_LANS, $parameters);
+        return $this->doCall('delete', self::WIRELESS_LANS, $parameters);
     }
 
-    public function wirelessLansById(int $id, array $parameters = []): NetBoxResult|null
+    public function wirelessLansById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::WIRELESS_LANS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::WIRELESS_LANS, $parameters, $id);
     }
 
-    public function wirelessLansByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function wirelessLansByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::WIRELESS_LANS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::WIRELESS_LANS, $parameters, $id);
     }
 
-    public function wirelessLansByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function wirelessLansByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::WIRELESS_LANS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::WIRELESS_LANS, $parameters, $id);
     }
 
-    public function wirelessLansByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function wirelessLansByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::WIRELESS_LANS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::WIRELESS_LANS, $parameters, $id);
     }
     #endregion wirelessLans
 
     #region wirelessLinks
-    public function wirelessLinks(array $parameters = []): NetBoxResult|null
+    public function wirelessLinks(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::WIRELESS_LINKS, $parameters);
+        return $this->doCall('get', self::WIRELESS_LINKS, $parameters);
     }
 
-    public function wirelessLinksCreate(array $parameters = []): NetBoxResult|null
+    public function wirelessLinksCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::WIRELESS_LINKS, $parameters);
+        return $this->doCall('post', self::WIRELESS_LINKS, $parameters);
     }
 
-    public function wirelessLinksPut(array $parameters = []): NetBoxResult|null
+    public function wirelessLinksPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::WIRELESS_LINKS, $parameters);
+        return $this->doCall('put', self::WIRELESS_LINKS, $parameters);
     }
 
-    public function wirelessLinksPatch(array $parameters = []): NetBoxResult|null
+    public function wirelessLinksPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::WIRELESS_LINKS, $parameters);
+        return $this->doCall('patch', self::WIRELESS_LINKS, $parameters);
     }
 
-    public function wirelessLinksDelete(array $parameters = []): NetBoxResult|null
+    public function wirelessLinksDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::WIRELESS_LINKS, $parameters);
+        return $this->doCall('delete', self::WIRELESS_LINKS, $parameters);
     }
 
-    public function wirelessLinksById(int $id, array $parameters = []): NetBoxResult|null
+    public function wirelessLinksById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::WIRELESS_LINKS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::WIRELESS_LINKS, $parameters, $id);
     }
 
-    public function wirelessLinksByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function wirelessLinksByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::WIRELESS_LINKS, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::WIRELESS_LINKS, $parameters, $id);
     }
 
-    public function wirelessLinksByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function wirelessLinksByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::WIRELESS_LINKS, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::WIRELESS_LINKS, $parameters, $id);
     }
 
-    public function wirelessLinksByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function wirelessLinksByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::WIRELESS_LINKS, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::WIRELESS_LINKS, $parameters, $id);
     }
     #endregion wirelessLinks
 }

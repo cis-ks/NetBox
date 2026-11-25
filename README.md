@@ -26,9 +26,10 @@ $netBoxApi = new NetBoxApi();
 
 ## API
 
-All API-calls are made fluently and are based on the URL of the endpoint. For Hypen-based paths you need to convert it to camelCase:
+All API calls are made fluently and are based on the URL of the endpoint.
+For Hypen-based paths, you need to convert it to camelCase:
 
-For retrieving data you omit the "Get"-Method. All filters ar passed in an array:
+For retrieving data, you omit the "Get"-Method. All filters ar passed in an array:
 ```php
 use Cis\NetBox\NetBoxApi;
 
@@ -39,6 +40,9 @@ $consolePorts = $netBoxApi->dcim()->consolePorts();
 
 // Getting all Console-Ports for a specific device
 $consolePorts = $netBoxApi->dcim()->consolePorts(['device_id' => 12]);
+
+// Using named Parameters for filter
+$consolePorts = $netBoxApi->dcim()->consolePorts(device_id: 12);
 ```
 
 For all Non-Get-Operations add the necessary Method to the End of the function name:

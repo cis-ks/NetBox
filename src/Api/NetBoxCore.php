@@ -17,148 +17,148 @@ class NetBoxCore extends NetBoxApiAbstract
     private const string OBJECT_TYPES = 'core/object-types';
 
     #region backgroundQueues
-    public function backgroundQueues(array $parameters = []): NetBoxResult|null
+    public function backgroundQueues(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::BACKGROUND_QUEUES, $parameters);
+        return $this->doCall('get', self::BACKGROUND_QUEUES, $parameters);
     }
     #endregion backgroundQueues
 
     #region backgroundTasks
-    public function backgroundTasks(array $parameters = []): NetBoxResult|null
+    public function backgroundTasks(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::BACKGROUND_TASKS, $parameters);
+        return $this->doCall('get', self::BACKGROUND_TASKS, $parameters);
     }
 
-    public function backgroundTasksById(int $id, array $parameters = []): NetBoxResult|null
+    public function backgroundTasksById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::BACKGROUND_TASKS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::BACKGROUND_TASKS, $parameters, $id);
     }
 
-    public function backgroundTasksByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function backgroundTasksByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::BACKGROUND_TASKS, ['id' => $id, 'submodule' => 'delete', ...$parameters]);
+        return $this->doCall('get', self::BACKGROUND_TASKS, $parameters, $id, 'delete');
     }
 
-    public function backgroundTasksByIdEnqueue(int $id, array $parameters = []): NetBoxResult|null
+    public function backgroundTasksByIdEnqueue(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::BACKGROUND_TASKS, ['id' => $id, 'submodule' => 'enqueue', ...$parameters]);
+        return $this->doCall('get', self::BACKGROUND_TASKS, $parameters, $id, 'enqueue');
     }
 
-    public function backgroundTasksByIdRequeue(int $id, array $parameters = []): NetBoxResult|null
+    public function backgroundTasksByIdRequeue(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::BACKGROUND_TASKS, ['id' => $id, 'submodule' => 'requeue', ...$parameters]);
+        return $this->doCall('get', self::BACKGROUND_TASKS, $parameters, $id, 'requeue');
     }
 
-    public function backgroundTasksByIdStop(int $id, array $parameters = []): NetBoxResult|null
+    public function backgroundTasksByIdStop(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::BACKGROUND_TASKS, ['id' => $id, 'submodule' => 'stop', ...$parameters]);
+        return $this->doCall('get', self::BACKGROUND_TASKS, $parameters, $id, 'stop');
     }
     #endregion backgroundTasks
 
     #region backgroundWorkers
-    public function backgroundWorkers(array $parameters = []): NetBoxResult|null
+    public function backgroundWorkers(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::BACKGROUND_WORKERS, $parameters);
+        return $this->doCall('get', self::BACKGROUND_WORKERS, $parameters);
     }
     #endregion backgroundWorkers
 
     #region dataFiles
-    public function dataFiles(array $parameters = []): NetBoxResult|null
+    public function dataFiles(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::DATA_FILES, $parameters);
+        return $this->doCall('get', self::DATA_FILES, $parameters);
     }
 
-    public function dataFilesById(int $id, array $parameters = []): NetBoxResult|null
+    public function dataFilesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::DATA_FILES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::DATA_FILES, $parameters, $id);
     }
     #endregion dataFiles
 
     #region dataSources
-    public function dataSources(array $parameters = []): NetBoxResult|null
+    public function dataSources(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::DATA_SOURCES, $parameters);
+        return $this->doCall('get', self::DATA_SOURCES, $parameters);
     }
 
-    public function dataSourcesCreate(array $parameters = []): NetBoxResult|null
+    public function dataSourcesCreate(...$parameters): NetBoxResult|null
     {
-        return $this->api->post(self::DATA_SOURCES, $parameters);
+        return $this->doCall('post', self::DATA_SOURCES, $parameters);
     }
 
-    public function dataSourcesPut(array $parameters = []): NetBoxResult|null
+    public function dataSourcesPut(...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::DATA_SOURCES, $parameters);
+        return $this->doCall('put', self::DATA_SOURCES, $parameters);
     }
 
-    public function dataSourcesPatch(array $parameters = []): NetBoxResult|null
+    public function dataSourcesPatch(...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::DATA_SOURCES, $parameters);
+        return $this->doCall('patch', self::DATA_SOURCES, $parameters);
     }
 
-    public function dataSourcesDelete(array $parameters = []): NetBoxResult|null
+    public function dataSourcesDelete(...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::DATA_SOURCES, $parameters);
+        return $this->doCall('delete', self::DATA_SOURCES, $parameters);
     }
 
-    public function dataSourcesById(int $id, array $parameters = []): NetBoxResult|null
+    public function dataSourcesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::DATA_SOURCES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::DATA_SOURCES, $parameters, $id);
     }
 
-    public function dataSourcesByIdPut(int $id, array $parameters = []): NetBoxResult|null
+    public function dataSourcesByIdPut(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->put(self::DATA_SOURCES, ['id' => $id, ...$parameters]);
+        return $this->doCall('put', self::DATA_SOURCES, $parameters, $id);
     }
 
-    public function dataSourcesByIdPatch(int $id, array $parameters = []): NetBoxResult|null
+    public function dataSourcesByIdPatch(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->patch(self::DATA_SOURCES, ['id' => $id, ...$parameters]);
+        return $this->doCall('patch', self::DATA_SOURCES, $parameters, $id);
     }
 
-    public function dataSourcesByIdDelete(int $id, array $parameters = []): NetBoxResult|null
+    public function dataSourcesByIdDelete(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->delete(self::DATA_SOURCES, ['id' => $id, ...$parameters]);
+        return $this->doCall('delete', self::DATA_SOURCES, $parameters, $id);
     }
 
-    public function dataSourcesByIdSync(int $id, array $parameters = []): NetBoxResult|null
+    public function dataSourcesByIdSync(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::DATA_SOURCES, ['id' => $id, 'submodule' => 'sync', ...$parameters]);
+        return $this->doCall('get', self::DATA_SOURCES, $parameters, $id, 'sync');
     }
     #endregion dataSources
 
     #region jobs
-    public function jobs(array $parameters = []): NetBoxResult|null
+    public function jobs(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::JOBS, $parameters);
+        return $this->doCall('get', self::JOBS, $parameters);
     }
 
-    public function jobsById(int $id, array $parameters = []): NetBoxResult|null
+    public function jobsById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::JOBS, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::JOBS, $parameters, $id);
     }
     #endregion jobs
 
     #region objectChanges
-    public function objectChanges(array $parameters = []): NetBoxResult|null
+    public function objectChanges(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::OBJECT_CHANGES, $parameters);
+        return $this->doCall('get', self::OBJECT_CHANGES, $parameters);
     }
 
-    public function objectChangesById(int $id, array $parameters = []): NetBoxResult|null
+    public function objectChangesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::OBJECT_CHANGES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::OBJECT_CHANGES, $parameters, $id);
     }
     #endregion objectChanges
 
     #region objectTypes
-    public function objectTypes(array $parameters = []): NetBoxResult|null
+    public function objectTypes(...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::OBJECT_TYPES, $parameters);
+        return $this->doCall('get', self::OBJECT_TYPES, $parameters);
     }
 
-    public function objectTypesById(int $id, array $parameters = []): NetBoxResult|null
+    public function objectTypesById(int $id, ...$parameters): NetBoxResult|null
     {
-        return $this->api->get(self::OBJECT_TYPES, ['id' => $id, ...$parameters]);
+        return $this->doCall('get', self::OBJECT_TYPES, $parameters, $id);
     }
     #endregion objectTypes
 }

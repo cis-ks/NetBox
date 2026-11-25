@@ -1,6 +1,9 @@
 <?php
 
+namespace Cis\NetBox\Tests;
+
 use Cis\NetBox\Exceptions\NetBoxMissingAuthenticationException;
+use Cis\NetBox\Exceptions\NetBoxMissingUrlException;
 use Cis\NetBox\Exceptions\NetBoxUrlValidationException;
 use Cis\NetBox\NetBoxApi;
 use Cis\NetBox\NetBoxGraphQlResult;
@@ -15,7 +18,7 @@ it('Test API Generation throws exception when missing Token', function () {
 
 it('Test API Generation throws URL exception when missing', function () {
     $netBoxApi = new NetBoxApi(apiToken: 'abc');
-})->throws(RuntimeException::class);
+})->throws(NetBoxMissingUrlException::class);
 
 it('Test API Generation throws URL when wrong', function () {
     $netBoxApi = new NetBoxApi(baseUrl: 'test', apiToken: 'abc');
