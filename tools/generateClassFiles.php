@@ -16,7 +16,7 @@ $schema = file_get_contents(rtrim(NETBOX_API_URL, '/') . '/schema/?format=json')
 $paths = (array)json_decode($schema)->paths;
 
 foreach (array_keys($paths) as $path) {
-    $parts = explode('/', preg_replace('/.*\/api\/(.*)/', '$1', $path), 5);
+    $parts = array_pad(explode('/', preg_replace('/.*\/api\/(.*)/', '$1', $path), 5), 5, '');
     if (in_array($parts[0], ['plugins', 'status', 'schema'])) {
         continue;
     }
@@ -46,13 +46,14 @@ foreach ($classes as $class) {
     $lastEndpoint = '';
 
     $endpointSlug = ucfirst(preg_replace_callback('/[-_]([a-zA-Z])/', fn ($m) => strtoupper($m[1]), $class));
+    $accessorName = lcfirst($endpointSlug);
     $className = 'Cis\NetBox\Api\NetBox' . $endpointSlug;
     $classEndpoints = array_filter($endpoints, fn ($ep) => $ep['parts'][0] == $class);
 
-    if (!$apiReflection->hasMethod($class)) {
+    if (!$apiReflection->hasMethod($accessorName)) {
         $missingClasses[] = sprintf(
             "\tpublic function %s(): NetBox%s\n\t{\n\t\treturn new NetBox%s(\$this);\n\t}\n",
-            $class,
+            $accessorName,
             $endpointSlug,
             $endpointSlug,
         );
