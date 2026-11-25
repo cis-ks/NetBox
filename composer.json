@@ -14,6 +14,11 @@
       "Cis\\NetBox\\": "src/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "Cis\\NetBox\\Tests": "tests/"
+    }
+  },
   "require": {
     "php": "^8.3",
     "cis-bv/gql-builder": "^v0.1.0 | dev-development",
